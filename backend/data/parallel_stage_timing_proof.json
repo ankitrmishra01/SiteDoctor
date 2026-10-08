@@ -1,0 +1,119 @@
+[
+  {
+    "url": "https://developer.mozilla.org",
+    "name": "MDN Web Docs",
+    "overallStartIso": "2026-09-28T11:45:55.444Z",
+    "overallEndIso": "2026-09-28T11:46:30.662Z",
+    "totalWallClockMs": 35218,
+    "stages": {
+      "ssl": {
+        "stage": "SSL Certificate & TLS Handshake",
+        "startIso": "2026-09-28T11:45:55.445Z",
+        "endIso": "2026-09-28T11:45:55.680Z",
+        "startEpochMs": 1790595955445,
+        "endEpochMs": 1790595955680,
+        "durationMs": 235
+      },
+      "frontend": {
+        "stage": "Frontend Browser, WCAG Axe & Crawler",
+        "startIso": "2026-09-28T11:45:55.459Z",
+        "endIso": "2026-09-28T11:46:30.662Z",
+        "startEpochMs": 1790595955459,
+        "endEpochMs": 1790595990662,
+        "durationMs": 35203
+      },
+      "backend": {
+        "stage": "Backend Headers, CORS & API Endpoints",
+        "startIso": "2026-09-28T11:45:55.478Z",
+        "endIso": "2026-09-28T11:45:56.781Z",
+        "startEpochMs": 1790595955478,
+        "endEpochMs": 1790595956781,
+        "durationMs": 1303
+      }
+    },
+    "concurrencyProof": {
+      "stagesSimultaneousLaunchDeltaMs": 33,
+      "sequentialSumMs": 36741,
+      "timeSavedMs": 1523,
+      "parallelOverlapPercentage": "4.1%"
+    }
+  },
+  {
+    "url": "https://vite.dev",
+    "name": "Vite Docs",
+    "overallStartIso": "2026-09-28T11:46:30.663Z",
+    "overallEndIso": "2026-09-28T11:46:36.120Z",
+    "totalWallClockMs": 5457,
+    "stages": {
+      "ssl": {
+        "stage": "SSL Certificate & TLS Handshake",
+        "startIso": "2026-09-28T11:46:30.663Z",
+        "endIso": "2026-09-28T11:46:30.826Z",
+        "startEpochMs": 1790595990663,
+        "endEpochMs": 1790595990826,
+        "durationMs": 163
+      },
+      "frontend": {
+        "stage": "Frontend Browser, WCAG Axe & Crawler",
+        "startIso": "2026-09-28T11:46:30.665Z",
+        "endIso": "2026-09-28T11:46:36.120Z",
+        "startEpochMs": 1790595990665,
+        "endEpochMs": 1790595996120,
+        "durationMs": 5455
+      },
+      "backend": {
+        "stage": "Backend Headers, CORS & API Endpoints",
+        "startIso": "2026-09-28T11:46:30.666Z",
+        "endIso": "2026-09-28T11:46:32.323Z",
+        "startEpochMs": 1790595990666,
+        "endEpochMs": 1790595992323,
+        "durationMs": 1657
+      }
+    },
+    "concurrencyProof": {
+      "stagesSimultaneousLaunchDeltaMs": 3,
+      "sequentialSumMs": 7275,
+      "timeSavedMs": 1818,
+      "parallelOverlapPercentage": "25.0%"
+    }
+  },
+  {
+    "url": "https://github.com",
+    "name": "GitHub",
+    "overallStartIso": "2026-09-28T11:46:36.121Z",
+    "overallEndIso": "2026-09-28T11:47:16.547Z",
+    "totalWallClockMs": 40426,
+    "stages": {
+      "ssl": {
+        "stage": "SSL Certificate & TLS Handshake",
+        "startIso": "2026-09-28T11:46:36.121Z",
+        "endIso": "2026-09-28T11:46:36.279Z",
+        "startEpochMs": 1790595996121,
+        "endEpochMs": 1790595996279,
+        "durationMs": 158
+      },
+      "frontend": {
+        "stage": "Frontend Browser, WCAG Axe & Crawler",
+        "startIso": "2026-09-28T11:46:36.123Z",
+        "endIso": "2026-09-28T11:47:16.547Z",
+        "startEpochMs": 1790595996123,
+        "endEpochMs": 1790596036547,
+        "durationMs": 40424
+      },
+      "backend": {
+        "stage": "Backend Headers, CORS & API Endpoints",
+        "startIso": "2026-09-28T11:46:36.124Z",
+        "endIso": "2026-09-28T11:46:40.119Z",
+        "startEpochMs": 1790595996124,
+        "endEpochMs": 1790596000119,
+        "durationMs": 3995
+      }
+    },
+    "concurrencyProof": {
+      "stagesSimultaneousLaunchDeltaMs": 3,
+      "sequentialSumMs": 44577,
+      "timeSavedMs": 4151,
+      "parallelOverlapPercentage": "9.3%"
+    }
+  }
+]

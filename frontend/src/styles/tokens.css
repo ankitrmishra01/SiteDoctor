@@ -1,0 +1,131 @@
+:root {
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "DM Mono", "JetBrains Mono", monospace;
+  
+  --radius-xs: 4px;
+  --radius-sm: 7px;
+  --radius-md: 11px;
+  --radius-lg: 13px;
+  --radius-xl: 16px;
+  
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════
+   LIGHT THEME ("Ops Daylight") — Refined Warm Off-White (#f5f5f2), Deep Ochre (#c9770b)
+   ═════════════════════════════════════════════════════════════════════════════ */
+[data-theme="light"], :root:not([data-theme="dark"]) {
+  --bg: #f5f5f2;
+  --bg-app: #f5f5f2;
+  --ink: #111111;
+  --text-primary: #111111;
+  --text-secondary: #555552;
+  --text-muted: #777773;
+  --text-dim: #999994;
+
+  --line: #deded9;
+  --border-subtle: #e4e4df;
+  --border-card: #dcdcd7;
+  --border-strong: #c8c8c2;
+
+  --bg-card: #ffffff;
+  --bg-card-hover: #fbfbf9;
+  --bg-surface: #efefeb;
+  --bg-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-code: #1a1d20;
+
+  /* Primary Accent: Deep Ochre/Amber (#b45309 - WCAG AA 5.8:1) | Secondary: Deep Teal (#0f7c8c - WCAG AA 5.1:1) */
+  --accent-primary: #b45309;
+  --accent-primary-bg: rgba(180, 83, 9, 0.08);
+  --accent-secondary: #0f7c8c;
+  --accent-secondary-bg: rgba(15, 124, 140, 0.08);
+
+  /* Status Colors matching reference aesthetic */
+  --color-critical: #dc2626;
+  --color-critical-bg: #fff0f0;
+  --color-critical-border: #fca5a5;
+  --color-critical-text: #b91c1c;
+
+  --color-warning: #c9770b;
+  --color-warning-bg: #fff8eb;
+  --color-warning-border: #fde68a;
+  --color-warning-text: #92400e;
+
+  --color-info: #0f7c8c;
+  --color-info-bg: #eaf6f8;
+  --color-info-border: #a5e0e8;
+  --color-info-text: #0e6573;
+
+  --color-pass: #2c7a58;
+  --color-pass-bg: #edf5f0;
+  --color-pass-border: #a7d9be;
+  --color-pass-text: #1f573e;
+
+  /* Elevation Shadows from Reference */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 20px 45px rgba(17, 17, 17, 0.08);
+  --shadow-device: 0 25px 70px rgba(17, 17, 17, 0.09);
+  --shadow-glow: none;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════
+   DARK THEME ("Control Room") — #0a0d10, Dark Surfaces (#12161a), Amber & Cyan
+   ═════════════════════════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg: #0a0d10;
+  --bg-app: #0a0d10;
+  --ink: #f1f5f9;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+
+  --line: #1f262c;
+  --border-subtle: #182026;
+  --border-card: #222b33;
+  --border-strong: #2e3944;
+
+  --bg-card: #12161a;
+  --bg-card-hover: #161c22;
+  --bg-surface: #182028;
+  --bg-elevated: #1b232c;
+  --bg-input: #0c0f13;
+  --bg-code: #07090c;
+
+  /* Primary Accent: Amber (#ffb347) | Secondary: Cyan (#4fd8e6) */
+  --accent-primary: #ffb347;
+  --accent-primary-bg: rgba(255, 179, 71, 0.12);
+  --accent-secondary: #4fd8e6;
+  --accent-secondary-bg: rgba(79, 216, 230, 0.12);
+
+  /* Status Colors */
+  --color-critical: #ef4444;
+  --color-critical-bg: rgba(239, 68, 68, 0.12);
+  --color-critical-border: rgba(239, 68, 68, 0.35);
+  --color-critical-text: #fca5a5;
+
+  --color-warning: #ffb347;
+  --color-warning-bg: rgba(255, 179, 71, 0.12);
+  --color-warning-border: rgba(255, 179, 71, 0.35);
+  --color-warning-text: #ffd28f;
+
+  --color-info: #4fd8e6;
+  --color-info-bg: rgba(79, 216, 230, 0.12);
+  --color-info-border: rgba(79, 216, 230, 0.35);
+  --color-info-text: #a5f3fc;
+
+  --color-pass: #10b981;
+  --color-pass-bg: rgba(16, 185, 129, 0.12);
+  --color-pass-border: rgba(16, 185, 129, 0.35);
+  --color-pass-text: #6ee7b7;
+
+  /* Dark Elevation & Glow */
+  --shadow-sm: none;
+  --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 12px 36px rgba(0, 0, 0, 0.55);
+  --shadow-device: 0 20px 60px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 25px rgba(255, 179, 71, 0.08);
+}

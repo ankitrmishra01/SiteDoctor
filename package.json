@@ -1,0 +1,22 @@
+{
+  "name": "sitedoctor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-Time Full-Stack Health & Fix Diagnostics Platform",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test": "npm --prefix backend test"
+  },
+  "keywords": [
+    "sitedoctor",
+    "diagnostics",
+    "health-check",
+    "playwright",
+    "axe-core",
+    "real-time"
+  ],
+  "author": "",
+  "license": "MIT"
+}

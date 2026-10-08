@@ -1,0 +1,75 @@
+{
+  "benchmark": "8 Concurrent Full Browser Scans",
+  "timestamp": "2026-10-08T13:56:09.790Z",
+  "targetsCount": 8,
+  "totalWallClockMs": 59725,
+  "averageDurationMs": 52673.125,
+  "peakRssMb": 384,
+  "peakHeapUsedMb": 206,
+  "results": [
+    {
+      "url": "https://www.rust-lang.org",
+      "success": true,
+      "durationMs": 55880,
+      "healthScore": 73,
+      "completeness": "full",
+      "findingsCount": 7
+    },
+    {
+      "url": "https://deno.com",
+      "success": true,
+      "durationMs": 59680,
+      "healthScore": 55,
+      "completeness": "full",
+      "findingsCount": 7
+    },
+    {
+      "url": "https://svelte.dev",
+      "success": true,
+      "durationMs": 54795,
+      "healthScore": 84,
+      "completeness": "full",
+      "findingsCount": 4
+    },
+    {
+      "url": "https://curl.se",
+      "success": true,
+      "durationMs": 50708,
+      "healthScore": 78,
+      "completeness": "full",
+      "findingsCount": 6
+    },
+    {
+      "url": "https://go.dev",
+      "success": true,
+      "durationMs": 59598,
+      "healthScore": 44,
+      "completeness": "full",
+      "findingsCount": 11
+    },
+    {
+      "url": "https://www.python.org",
+      "success": true,
+      "durationMs": 56390,
+      "healthScore": 49,
+      "completeness": "full",
+      "findingsCount": 9
+    },
+    {
+      "url": "https://vuejs.org",
+      "success": true,
+      "durationMs": 27817,
+      "healthScore": 85,
+      "completeness": "full",
+      "findingsCount": 3
+    },
+    {
+      "url": "https://expressjs.com",
+      "success": true,
+      "durationMs": 56517,
+      "healthScore": 64,
+      "completeness": "full",
+      "findingsCount": 8
+    }
+  ]
+}

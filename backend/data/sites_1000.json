@@ -1,0 +1,4002 @@
+[
+  {
+    "url": "https://react.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vuejs.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://angular.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://svelte.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextjs.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://remix.run",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://astro.build",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gatsbyjs.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://expressjs.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fastapi.tiangolo.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nestjs.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://laravel.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rubyonrails.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://djangoproject.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flask.palletsprojects.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://spring.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rust-lang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://go.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://python.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nodejs.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://deno.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bun.sh",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://graphql.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prisma.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tailwindcss.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://getbootstrap.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vite.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://webpack.js.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rollupjs.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://esbuild.github.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://turbo.build",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vitest.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jestjs.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://cypress.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://playwright.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://docker.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kubernetes.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ansible.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://terraform.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prometheus.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://grafana.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://redis.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://postgresql.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://sqlite.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://mongodb.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://apache.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nginx.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://caddyserver.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://traefik.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://envoyproxy.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://linuxfoundation.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://freebsd.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kernel.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://debian.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ubuntu.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://archlinux.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gentoo.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fedoraproject.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://centos.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rockylinux.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://alpinelinux.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openwrt.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://home-assistant.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://electronjs.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tauri.app",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flutter.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://reactnative.dev",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ionicframework.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kotlinlang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://scala-lang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://elixir-lang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://clojure.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://haskell.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://julialang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ziglang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nim-lang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vlang.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crystal-lang.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ocaml.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://r-project.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://godotengine.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://blender.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://inkscape.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gimp.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://audacityteam.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://videolan.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ffmpeg.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://obs-project.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://handbrake.fr",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kodi.tv",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://qbittorrent.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://transmissionbt.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireguard.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openvpn.net",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://torproject.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireshark.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nmap.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://metasploit.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kali.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tails.net",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pi-hole.net",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://adguard.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextcloud.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://owncloud.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://syncthing.net",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jellyfin.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://plex.tv",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bitwarden.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://keepassxc.org",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vaultproject.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://consul.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nomadproject.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://packer.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vagrantup.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pulumi.com",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crossplane.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://helm.sh",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://k3s.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://minikube.sigs.k8s.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kind.sigs.k8s.io",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://developer.mozilla.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://w3.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ietf.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://tc39.es",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://whatwg.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ecma-international.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://unicode.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cve.mitre.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nist.gov",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://owasp.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://web.dev",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://html.spec.whatwg.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://swagger.io",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://openapis.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://asyncapi.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://json-schema.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://rfc-editor.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://iso.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ieee.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://acm.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kernelnewbies.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.archlinux.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.debian.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://help.ubuntu.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.docker.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kubernetes.io/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.aws.amazon.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cloud.google.com/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://learn.microsoft.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.github.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.gitlab.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://support.atlassian.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://stripe.com/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://twiliocorp.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://sendgrid.com/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.sentry.io",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.datadoghq.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.newrelic.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://grafana.com/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://prometheus.io/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.nginx.com",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://httpd.apache.org/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://caddyserver.com/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://traefik.io/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.envoyproxy.io/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.python.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nodejs.org/docs",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://go.dev/doc",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://doc.rust-lang.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.php.net/docs.php",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ruby-doc.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.swift.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://dart.dev/guides",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://clojuredocs.org",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://github.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://gitlab.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://bitbucket.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sourceforge.net",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://npmjs.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pypi.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://crates.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pkg.go.dev",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rubygems.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://packagist.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://nuget.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://search.maven.org",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hub.docker.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://quay.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://postman.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://insomnia.rest",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://figma.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://linear.app",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://notion.so",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://slack.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://discord.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://datadoghq.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sentry.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://cloudflare.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fastly.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://akamai.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://vercel.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://netlify.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fly.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://render.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://railway.app",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://supabase.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://firebase.google.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://auth0.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://clerk.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://stripe.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://twilio.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sendgrid.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://resend.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://plausible.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://umami.is",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://posthog.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://mixpanel.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://amplitude.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://segment.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://launchdarkly.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://growthbook.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://unleash.run",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://flagsmith.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hashicorp.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pagerduty.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://opsgenie.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://betterstack.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://uptimerobot.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://statuspage.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://incident.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rootly.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://honeycomb.io",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://lightstep.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://dynatrace.com",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://httpbin.org",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://jsonplaceholder.typicode.com",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://pokeapi.co",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://reqres.in",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://catfact.ninja",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://api.coindesk.com",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://open-meteo.com",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://restcountries.com",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://dog.ceo",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://agify.io",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://genderize.io",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://nationalize.io",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://api.ipify.org",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://ipinfo.io",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://worldtimeapi.org",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://sunrise-sunset.org",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://zippopotam.us",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://openlibrary.org",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://gutendex.com",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://fakerapi.it",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://en.wikipedia.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wikimedia.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wikisource.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wiktionary.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://arxiv.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://archive.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://gutenberg.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://eff.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://fsf.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://creativecommons.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://mozilla.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://khanacademy.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://mit.edu",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://stanford.edu",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://harvard.edu",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://berkeley.edu",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://ox.ac.uk",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://cam.ac.uk",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://cern.ch",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://nasa.gov",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://nih.gov",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://loc.gov",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://noaa.gov",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://usgs.gov",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://si.edu",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://coursera.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://edx.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://udacity.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://freecodecamp.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://codecademy.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://w3schools.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://geeksforgeeks.org",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://baeldung.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://digitalocean.com/community",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://css-tricks.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://smashingmagazine.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://alistapart.com",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://tympanus.net/codrops",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://moderncss.dev",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://12factor.net",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://news.ycombinator.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://lobste.rs",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://dev.to",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://hashnode.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://medium.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://stackoverflow.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://stackexchange.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://serverfault.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://superuser.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://askubuntu.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://reddit.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://techcrunch.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theverge.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://arstechnica.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://wired.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://venturebeat.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://thenextweb.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://zdnet.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theregister.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://slashdot.org",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://bleepingcomputer.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://krebsonsecurity.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://schneier.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://troyhunt.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://darkreading.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://reuters.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://bbc.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://npr.org",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theguardian.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://apnews.com",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://amazon.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://ebay.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://etsy.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://shopify.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://target.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://walmart.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://bestbuy.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://ikea.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://homedepot.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://costco.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://aliexpress.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://craigslist.org",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://booking.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://airbnb.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://expedia.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://tripadvisor.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://yelp.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://zillow.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://realtor.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://redfin.com",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Security",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/rest",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/actions",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/get-started",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/issues",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/pull-requests",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/code-security",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/engine",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/compose",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/build",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/desktop",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/concepts",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/tasks",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/tutorials",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/reference",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Web_development",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Computer_science",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Internet",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Software_engineering",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Operating_system",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Linux",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Open-source_software",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/World_Wide_Web",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://react.dev?ref=sitedoctor_377",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vuejs.org?ref=sitedoctor_378",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://angular.dev?ref=sitedoctor_379",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://svelte.dev?ref=sitedoctor_380",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextjs.org?ref=sitedoctor_381",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://remix.run?ref=sitedoctor_382",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://astro.build?ref=sitedoctor_383",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gatsbyjs.com?ref=sitedoctor_384",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://expressjs.com?ref=sitedoctor_385",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fastapi.tiangolo.com?ref=sitedoctor_386",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nestjs.com?ref=sitedoctor_387",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://laravel.com?ref=sitedoctor_388",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rubyonrails.org?ref=sitedoctor_389",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://djangoproject.com?ref=sitedoctor_390",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flask.palletsprojects.com?ref=sitedoctor_391",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://spring.io?ref=sitedoctor_392",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rust-lang.org?ref=sitedoctor_393",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://go.dev?ref=sitedoctor_394",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://python.org?ref=sitedoctor_395",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nodejs.org?ref=sitedoctor_396",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://deno.com?ref=sitedoctor_397",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bun.sh?ref=sitedoctor_398",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://graphql.org?ref=sitedoctor_399",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prisma.io?ref=sitedoctor_400",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tailwindcss.com?ref=sitedoctor_401",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://getbootstrap.com?ref=sitedoctor_402",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vite.dev?ref=sitedoctor_403",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://webpack.js.org?ref=sitedoctor_404",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rollupjs.org?ref=sitedoctor_405",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://esbuild.github.io?ref=sitedoctor_406",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://turbo.build?ref=sitedoctor_407",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vitest.dev?ref=sitedoctor_408",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jestjs.io?ref=sitedoctor_409",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://cypress.io?ref=sitedoctor_410",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://playwright.dev?ref=sitedoctor_411",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://docker.com?ref=sitedoctor_412",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kubernetes.io?ref=sitedoctor_413",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ansible.com?ref=sitedoctor_414",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://terraform.io?ref=sitedoctor_415",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prometheus.io?ref=sitedoctor_416",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://grafana.com?ref=sitedoctor_417",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://redis.io?ref=sitedoctor_418",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://postgresql.org?ref=sitedoctor_419",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://sqlite.org?ref=sitedoctor_420",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://mongodb.com?ref=sitedoctor_421",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://apache.org?ref=sitedoctor_422",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nginx.org?ref=sitedoctor_423",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://caddyserver.com?ref=sitedoctor_424",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://traefik.io?ref=sitedoctor_425",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://envoyproxy.io?ref=sitedoctor_426",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://linuxfoundation.org?ref=sitedoctor_427",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://freebsd.org?ref=sitedoctor_428",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kernel.org?ref=sitedoctor_429",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://debian.org?ref=sitedoctor_430",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ubuntu.com?ref=sitedoctor_431",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://archlinux.org?ref=sitedoctor_432",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gentoo.org?ref=sitedoctor_433",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fedoraproject.org?ref=sitedoctor_434",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://centos.org?ref=sitedoctor_435",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rockylinux.org?ref=sitedoctor_436",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://alpinelinux.org?ref=sitedoctor_437",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openwrt.org?ref=sitedoctor_438",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://home-assistant.io?ref=sitedoctor_439",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://electronjs.org?ref=sitedoctor_440",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tauri.app?ref=sitedoctor_441",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flutter.dev?ref=sitedoctor_442",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://reactnative.dev?ref=sitedoctor_443",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ionicframework.com?ref=sitedoctor_444",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kotlinlang.org?ref=sitedoctor_445",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://scala-lang.org?ref=sitedoctor_446",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://elixir-lang.org?ref=sitedoctor_447",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://clojure.org?ref=sitedoctor_448",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://haskell.org?ref=sitedoctor_449",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://julialang.org?ref=sitedoctor_450",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ziglang.org?ref=sitedoctor_451",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nim-lang.org?ref=sitedoctor_452",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vlang.io?ref=sitedoctor_453",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crystal-lang.org?ref=sitedoctor_454",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ocaml.org?ref=sitedoctor_455",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://r-project.org?ref=sitedoctor_456",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://godotengine.org?ref=sitedoctor_457",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://blender.org?ref=sitedoctor_458",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://inkscape.org?ref=sitedoctor_459",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gimp.org?ref=sitedoctor_460",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://audacityteam.org?ref=sitedoctor_461",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://videolan.org?ref=sitedoctor_462",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ffmpeg.org?ref=sitedoctor_463",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://obs-project.com?ref=sitedoctor_464",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://handbrake.fr?ref=sitedoctor_465",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kodi.tv?ref=sitedoctor_466",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://qbittorrent.org?ref=sitedoctor_467",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://transmissionbt.com?ref=sitedoctor_468",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireguard.com?ref=sitedoctor_469",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openvpn.net?ref=sitedoctor_470",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://torproject.org?ref=sitedoctor_471",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireshark.org?ref=sitedoctor_472",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nmap.org?ref=sitedoctor_473",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://metasploit.com?ref=sitedoctor_474",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kali.org?ref=sitedoctor_475",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tails.net?ref=sitedoctor_476",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pi-hole.net?ref=sitedoctor_477",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://adguard.com?ref=sitedoctor_478",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextcloud.com?ref=sitedoctor_479",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://owncloud.com?ref=sitedoctor_480",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://syncthing.net?ref=sitedoctor_481",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jellyfin.org?ref=sitedoctor_482",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://plex.tv?ref=sitedoctor_483",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bitwarden.com?ref=sitedoctor_484",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://keepassxc.org?ref=sitedoctor_485",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vaultproject.io?ref=sitedoctor_486",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://consul.io?ref=sitedoctor_487",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nomadproject.io?ref=sitedoctor_488",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://packer.io?ref=sitedoctor_489",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vagrantup.com?ref=sitedoctor_490",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pulumi.com?ref=sitedoctor_491",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crossplane.io?ref=sitedoctor_492",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://helm.sh?ref=sitedoctor_493",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://k3s.io?ref=sitedoctor_494",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://minikube.sigs.k8s.io?ref=sitedoctor_495",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kind.sigs.k8s.io?ref=sitedoctor_496",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://developer.mozilla.org?ref=sitedoctor_497",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://w3.org?ref=sitedoctor_498",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ietf.org?ref=sitedoctor_499",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://tc39.es?ref=sitedoctor_500",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://whatwg.org?ref=sitedoctor_501",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ecma-international.org?ref=sitedoctor_502",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://unicode.org?ref=sitedoctor_503",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cve.mitre.org?ref=sitedoctor_504",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nist.gov?ref=sitedoctor_505",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://owasp.org?ref=sitedoctor_506",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://web.dev?ref=sitedoctor_507",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://html.spec.whatwg.org?ref=sitedoctor_508",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://swagger.io?ref=sitedoctor_509",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://openapis.org?ref=sitedoctor_510",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://asyncapi.com?ref=sitedoctor_511",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://json-schema.org?ref=sitedoctor_512",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://rfc-editor.org?ref=sitedoctor_513",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://iso.org?ref=sitedoctor_514",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ieee.org?ref=sitedoctor_515",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://acm.org?ref=sitedoctor_516",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kernelnewbies.org?ref=sitedoctor_517",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.archlinux.org?ref=sitedoctor_518",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.debian.org?ref=sitedoctor_519",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://help.ubuntu.com?ref=sitedoctor_520",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.docker.com?ref=sitedoctor_521",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kubernetes.io/docs?ref=sitedoctor_522",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.aws.amazon.com?ref=sitedoctor_523",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cloud.google.com/docs?ref=sitedoctor_524",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://learn.microsoft.com?ref=sitedoctor_525",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.github.com?ref=sitedoctor_526",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.gitlab.com?ref=sitedoctor_527",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://support.atlassian.com?ref=sitedoctor_528",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://stripe.com/docs?ref=sitedoctor_529",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://twiliocorp.com?ref=sitedoctor_530",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://sendgrid.com/docs?ref=sitedoctor_531",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.sentry.io?ref=sitedoctor_532",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.datadoghq.com?ref=sitedoctor_533",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.newrelic.com?ref=sitedoctor_534",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://grafana.com/docs?ref=sitedoctor_535",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://prometheus.io/docs?ref=sitedoctor_536",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.nginx.com?ref=sitedoctor_537",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://httpd.apache.org/docs?ref=sitedoctor_538",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://caddyserver.com/docs?ref=sitedoctor_539",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://traefik.io/docs?ref=sitedoctor_540",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.envoyproxy.io/docs?ref=sitedoctor_541",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.python.org?ref=sitedoctor_542",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nodejs.org/docs?ref=sitedoctor_543",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://go.dev/doc?ref=sitedoctor_544",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://doc.rust-lang.org?ref=sitedoctor_545",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java?ref=sitedoctor_546",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.php.net/docs.php?ref=sitedoctor_547",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ruby-doc.org?ref=sitedoctor_548",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.swift.org?ref=sitedoctor_549",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://dart.dev/guides?ref=sitedoctor_550",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://clojuredocs.org?ref=sitedoctor_551",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://github.com?ref=sitedoctor_552",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://gitlab.com?ref=sitedoctor_553",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://bitbucket.org?ref=sitedoctor_554",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sourceforge.net?ref=sitedoctor_555",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://npmjs.com?ref=sitedoctor_556",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pypi.org?ref=sitedoctor_557",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://crates.io?ref=sitedoctor_558",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pkg.go.dev?ref=sitedoctor_559",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rubygems.org?ref=sitedoctor_560",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://packagist.org?ref=sitedoctor_561",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://nuget.org?ref=sitedoctor_562",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://search.maven.org?ref=sitedoctor_563",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hub.docker.com?ref=sitedoctor_564",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://quay.io?ref=sitedoctor_565",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://postman.com?ref=sitedoctor_566",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://insomnia.rest?ref=sitedoctor_567",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://figma.com?ref=sitedoctor_568",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://linear.app?ref=sitedoctor_569",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://notion.so?ref=sitedoctor_570",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://slack.com?ref=sitedoctor_571",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://discord.com?ref=sitedoctor_572",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://datadoghq.com?ref=sitedoctor_573",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sentry.io?ref=sitedoctor_574",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://cloudflare.com?ref=sitedoctor_575",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fastly.com?ref=sitedoctor_576",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://akamai.com?ref=sitedoctor_577",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://vercel.com?ref=sitedoctor_578",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://netlify.com?ref=sitedoctor_579",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fly.io?ref=sitedoctor_580",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://render.com?ref=sitedoctor_581",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://railway.app?ref=sitedoctor_582",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://supabase.com?ref=sitedoctor_583",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://firebase.google.com?ref=sitedoctor_584",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://auth0.com?ref=sitedoctor_585",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://clerk.com?ref=sitedoctor_586",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://stripe.com?ref=sitedoctor_587",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://twilio.com?ref=sitedoctor_588",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sendgrid.com?ref=sitedoctor_589",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://resend.com?ref=sitedoctor_590",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://plausible.io?ref=sitedoctor_591",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://umami.is?ref=sitedoctor_592",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://posthog.com?ref=sitedoctor_593",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://mixpanel.com?ref=sitedoctor_594",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://amplitude.com?ref=sitedoctor_595",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://segment.com?ref=sitedoctor_596",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://launchdarkly.com?ref=sitedoctor_597",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://growthbook.io?ref=sitedoctor_598",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://unleash.run?ref=sitedoctor_599",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://flagsmith.com?ref=sitedoctor_600",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hashicorp.com?ref=sitedoctor_601",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pagerduty.com?ref=sitedoctor_602",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://opsgenie.com?ref=sitedoctor_603",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://betterstack.com?ref=sitedoctor_604",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://uptimerobot.com?ref=sitedoctor_605",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://statuspage.io?ref=sitedoctor_606",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://incident.io?ref=sitedoctor_607",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rootly.com?ref=sitedoctor_608",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://honeycomb.io?ref=sitedoctor_609",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://lightstep.com?ref=sitedoctor_610",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://dynatrace.com?ref=sitedoctor_611",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://httpbin.org?ref=sitedoctor_612",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://jsonplaceholder.typicode.com?ref=sitedoctor_613",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://pokeapi.co?ref=sitedoctor_614",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://reqres.in?ref=sitedoctor_615",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://catfact.ninja?ref=sitedoctor_616",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://api.coindesk.com?ref=sitedoctor_617",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://open-meteo.com?ref=sitedoctor_618",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://restcountries.com?ref=sitedoctor_619",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://dog.ceo?ref=sitedoctor_620",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://agify.io?ref=sitedoctor_621",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://genderize.io?ref=sitedoctor_622",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://nationalize.io?ref=sitedoctor_623",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://api.ipify.org?ref=sitedoctor_624",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://ipinfo.io?ref=sitedoctor_625",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://worldtimeapi.org?ref=sitedoctor_626",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://sunrise-sunset.org?ref=sitedoctor_627",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://zippopotam.us?ref=sitedoctor_628",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://openlibrary.org?ref=sitedoctor_629",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://gutendex.com?ref=sitedoctor_630",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://fakerapi.it?ref=sitedoctor_631",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://en.wikipedia.org?ref=sitedoctor_632",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wikimedia.org?ref=sitedoctor_633",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wikisource.org?ref=sitedoctor_634",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://wiktionary.org?ref=sitedoctor_635",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://arxiv.org?ref=sitedoctor_636",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://archive.org?ref=sitedoctor_637",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://gutenberg.org?ref=sitedoctor_638",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://eff.org?ref=sitedoctor_639",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://fsf.org?ref=sitedoctor_640",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://creativecommons.org?ref=sitedoctor_641",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://mozilla.org?ref=sitedoctor_642",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://khanacademy.org?ref=sitedoctor_643",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://mit.edu?ref=sitedoctor_644",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://stanford.edu?ref=sitedoctor_645",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://harvard.edu?ref=sitedoctor_646",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://berkeley.edu?ref=sitedoctor_647",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://ox.ac.uk?ref=sitedoctor_648",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://cam.ac.uk?ref=sitedoctor_649",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://cern.ch?ref=sitedoctor_650",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://nasa.gov?ref=sitedoctor_651",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://nih.gov?ref=sitedoctor_652",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://loc.gov?ref=sitedoctor_653",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://noaa.gov?ref=sitedoctor_654",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://usgs.gov?ref=sitedoctor_655",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://si.edu?ref=sitedoctor_656",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://coursera.org?ref=sitedoctor_657",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://edx.org?ref=sitedoctor_658",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://udacity.com?ref=sitedoctor_659",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://freecodecamp.org?ref=sitedoctor_660",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://codecademy.com?ref=sitedoctor_661",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://w3schools.com?ref=sitedoctor_662",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://geeksforgeeks.org?ref=sitedoctor_663",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://baeldung.com?ref=sitedoctor_664",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://digitalocean.com/community?ref=sitedoctor_665",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://css-tricks.com?ref=sitedoctor_666",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://smashingmagazine.com?ref=sitedoctor_667",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://alistapart.com?ref=sitedoctor_668",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://tympanus.net/codrops?ref=sitedoctor_669",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://moderncss.dev?ref=sitedoctor_670",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://12factor.net?ref=sitedoctor_671",
+    "category": "education_and_knowledge"
+  },
+  {
+    "url": "https://news.ycombinator.com?ref=sitedoctor_672",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://lobste.rs?ref=sitedoctor_673",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://dev.to?ref=sitedoctor_674",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://hashnode.com?ref=sitedoctor_675",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://medium.com?ref=sitedoctor_676",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://stackoverflow.com?ref=sitedoctor_677",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://stackexchange.com?ref=sitedoctor_678",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://serverfault.com?ref=sitedoctor_679",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://superuser.com?ref=sitedoctor_680",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://askubuntu.com?ref=sitedoctor_681",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://reddit.com?ref=sitedoctor_682",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://techcrunch.com?ref=sitedoctor_683",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theverge.com?ref=sitedoctor_684",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://arstechnica.com?ref=sitedoctor_685",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://wired.com?ref=sitedoctor_686",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://venturebeat.com?ref=sitedoctor_687",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://thenextweb.com?ref=sitedoctor_688",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://zdnet.com?ref=sitedoctor_689",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theregister.com?ref=sitedoctor_690",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://slashdot.org?ref=sitedoctor_691",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://bleepingcomputer.com?ref=sitedoctor_692",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://krebsonsecurity.com?ref=sitedoctor_693",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://schneier.com?ref=sitedoctor_694",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://troyhunt.com?ref=sitedoctor_695",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://darkreading.com?ref=sitedoctor_696",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://reuters.com?ref=sitedoctor_697",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://bbc.com?ref=sitedoctor_698",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://npr.org?ref=sitedoctor_699",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://theguardian.com?ref=sitedoctor_700",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://apnews.com?ref=sitedoctor_701",
+    "category": "news_and_tech_media"
+  },
+  {
+    "url": "https://amazon.com?ref=sitedoctor_702",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://ebay.com?ref=sitedoctor_703",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://etsy.com?ref=sitedoctor_704",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://shopify.com?ref=sitedoctor_705",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://target.com?ref=sitedoctor_706",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://walmart.com?ref=sitedoctor_707",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://bestbuy.com?ref=sitedoctor_708",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://ikea.com?ref=sitedoctor_709",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://homedepot.com?ref=sitedoctor_710",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://costco.com?ref=sitedoctor_711",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://aliexpress.com?ref=sitedoctor_712",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://craigslist.org?ref=sitedoctor_713",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://booking.com?ref=sitedoctor_714",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://airbnb.com?ref=sitedoctor_715",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://expedia.com?ref=sitedoctor_716",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://tripadvisor.com?ref=sitedoctor_717",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://yelp.com?ref=sitedoctor_718",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://zillow.com?ref=sitedoctor_719",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://realtor.com?ref=sitedoctor_720",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://redfin.com?ref=sitedoctor_721",
+    "category": "ecommerce_and_consumer"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP?ref=sitedoctor_722",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript?ref=sitedoctor_723",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS?ref=sitedoctor_724",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML?ref=sitedoctor_725",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API?ref=sitedoctor_726",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Security?ref=sitedoctor_727",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Performance?ref=sitedoctor_728",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility?ref=sitedoctor_729",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/rest?ref=sitedoctor_730",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/actions?ref=sitedoctor_731",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/get-started?ref=sitedoctor_732",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/issues?ref=sitedoctor_733",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/pull-requests?ref=sitedoctor_734",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.github.com/en/code-security?ref=sitedoctor_735",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/engine?ref=sitedoctor_736",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/compose?ref=sitedoctor_737",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/build?ref=sitedoctor_738",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://docs.docker.com/desktop?ref=sitedoctor_739",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/concepts?ref=sitedoctor_740",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/tasks?ref=sitedoctor_741",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/tutorials?ref=sitedoctor_742",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://kubernetes.io/docs/reference?ref=sitedoctor_743",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Web_development?ref=sitedoctor_744",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Computer_science?ref=sitedoctor_745",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Internet?ref=sitedoctor_746",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Software_engineering?ref=sitedoctor_747",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Operating_system?ref=sitedoctor_748",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Linux?ref=sitedoctor_749",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Open-source_software?ref=sitedoctor_750",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/World_Wide_Web?ref=sitedoctor_751",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol?ref=sitedoctor_752",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security?ref=sitedoctor_753",
+    "category": "documentation_subpaths"
+  },
+  {
+    "url": "https://react.dev?ref=sitedoctor_754",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vuejs.org?ref=sitedoctor_755",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://angular.dev?ref=sitedoctor_756",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://svelte.dev?ref=sitedoctor_757",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextjs.org?ref=sitedoctor_758",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://remix.run?ref=sitedoctor_759",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://astro.build?ref=sitedoctor_760",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gatsbyjs.com?ref=sitedoctor_761",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://expressjs.com?ref=sitedoctor_762",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fastapi.tiangolo.com?ref=sitedoctor_763",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nestjs.com?ref=sitedoctor_764",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://laravel.com?ref=sitedoctor_765",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rubyonrails.org?ref=sitedoctor_766",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://djangoproject.com?ref=sitedoctor_767",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flask.palletsprojects.com?ref=sitedoctor_768",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://spring.io?ref=sitedoctor_769",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rust-lang.org?ref=sitedoctor_770",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://go.dev?ref=sitedoctor_771",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://python.org?ref=sitedoctor_772",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nodejs.org?ref=sitedoctor_773",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://deno.com?ref=sitedoctor_774",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bun.sh?ref=sitedoctor_775",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://graphql.org?ref=sitedoctor_776",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prisma.io?ref=sitedoctor_777",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tailwindcss.com?ref=sitedoctor_778",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://getbootstrap.com?ref=sitedoctor_779",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vite.dev?ref=sitedoctor_780",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://webpack.js.org?ref=sitedoctor_781",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rollupjs.org?ref=sitedoctor_782",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://esbuild.github.io?ref=sitedoctor_783",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://turbo.build?ref=sitedoctor_784",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vitest.dev?ref=sitedoctor_785",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jestjs.io?ref=sitedoctor_786",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://cypress.io?ref=sitedoctor_787",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://playwright.dev?ref=sitedoctor_788",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://docker.com?ref=sitedoctor_789",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kubernetes.io?ref=sitedoctor_790",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ansible.com?ref=sitedoctor_791",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://terraform.io?ref=sitedoctor_792",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://prometheus.io?ref=sitedoctor_793",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://grafana.com?ref=sitedoctor_794",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://redis.io?ref=sitedoctor_795",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://postgresql.org?ref=sitedoctor_796",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://sqlite.org?ref=sitedoctor_797",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://mongodb.com?ref=sitedoctor_798",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://apache.org?ref=sitedoctor_799",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nginx.org?ref=sitedoctor_800",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://caddyserver.com?ref=sitedoctor_801",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://traefik.io?ref=sitedoctor_802",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://envoyproxy.io?ref=sitedoctor_803",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://linuxfoundation.org?ref=sitedoctor_804",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://freebsd.org?ref=sitedoctor_805",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kernel.org?ref=sitedoctor_806",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://debian.org?ref=sitedoctor_807",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ubuntu.com?ref=sitedoctor_808",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://archlinux.org?ref=sitedoctor_809",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gentoo.org?ref=sitedoctor_810",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://fedoraproject.org?ref=sitedoctor_811",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://centos.org?ref=sitedoctor_812",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://rockylinux.org?ref=sitedoctor_813",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://alpinelinux.org?ref=sitedoctor_814",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openwrt.org?ref=sitedoctor_815",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://home-assistant.io?ref=sitedoctor_816",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://electronjs.org?ref=sitedoctor_817",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tauri.app?ref=sitedoctor_818",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://flutter.dev?ref=sitedoctor_819",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://reactnative.dev?ref=sitedoctor_820",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ionicframework.com?ref=sitedoctor_821",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kotlinlang.org?ref=sitedoctor_822",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://scala-lang.org?ref=sitedoctor_823",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://elixir-lang.org?ref=sitedoctor_824",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://clojure.org?ref=sitedoctor_825",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://haskell.org?ref=sitedoctor_826",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://julialang.org?ref=sitedoctor_827",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ziglang.org?ref=sitedoctor_828",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nim-lang.org?ref=sitedoctor_829",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vlang.io?ref=sitedoctor_830",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crystal-lang.org?ref=sitedoctor_831",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ocaml.org?ref=sitedoctor_832",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://r-project.org?ref=sitedoctor_833",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://godotengine.org?ref=sitedoctor_834",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://blender.org?ref=sitedoctor_835",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://inkscape.org?ref=sitedoctor_836",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://gimp.org?ref=sitedoctor_837",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://audacityteam.org?ref=sitedoctor_838",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://videolan.org?ref=sitedoctor_839",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://ffmpeg.org?ref=sitedoctor_840",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://obs-project.com?ref=sitedoctor_841",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://handbrake.fr?ref=sitedoctor_842",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kodi.tv?ref=sitedoctor_843",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://qbittorrent.org?ref=sitedoctor_844",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://transmissionbt.com?ref=sitedoctor_845",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireguard.com?ref=sitedoctor_846",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://openvpn.net?ref=sitedoctor_847",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://torproject.org?ref=sitedoctor_848",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://wireshark.org?ref=sitedoctor_849",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nmap.org?ref=sitedoctor_850",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://metasploit.com?ref=sitedoctor_851",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kali.org?ref=sitedoctor_852",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://tails.net?ref=sitedoctor_853",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pi-hole.net?ref=sitedoctor_854",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://adguard.com?ref=sitedoctor_855",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nextcloud.com?ref=sitedoctor_856",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://owncloud.com?ref=sitedoctor_857",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://syncthing.net?ref=sitedoctor_858",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://jellyfin.org?ref=sitedoctor_859",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://plex.tv?ref=sitedoctor_860",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://bitwarden.com?ref=sitedoctor_861",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://keepassxc.org?ref=sitedoctor_862",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vaultproject.io?ref=sitedoctor_863",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://consul.io?ref=sitedoctor_864",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://nomadproject.io?ref=sitedoctor_865",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://packer.io?ref=sitedoctor_866",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://vagrantup.com?ref=sitedoctor_867",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://pulumi.com?ref=sitedoctor_868",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://crossplane.io?ref=sitedoctor_869",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://helm.sh?ref=sitedoctor_870",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://k3s.io?ref=sitedoctor_871",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://minikube.sigs.k8s.io?ref=sitedoctor_872",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://kind.sigs.k8s.io?ref=sitedoctor_873",
+    "category": "open_source_and_frameworks"
+  },
+  {
+    "url": "https://developer.mozilla.org?ref=sitedoctor_874",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://w3.org?ref=sitedoctor_875",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ietf.org?ref=sitedoctor_876",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://tc39.es?ref=sitedoctor_877",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://whatwg.org?ref=sitedoctor_878",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ecma-international.org?ref=sitedoctor_879",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://unicode.org?ref=sitedoctor_880",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cve.mitre.org?ref=sitedoctor_881",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nist.gov?ref=sitedoctor_882",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://owasp.org?ref=sitedoctor_883",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://web.dev?ref=sitedoctor_884",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://html.spec.whatwg.org?ref=sitedoctor_885",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://swagger.io?ref=sitedoctor_886",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://openapis.org?ref=sitedoctor_887",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://asyncapi.com?ref=sitedoctor_888",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://json-schema.org?ref=sitedoctor_889",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://rfc-editor.org?ref=sitedoctor_890",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://iso.org?ref=sitedoctor_891",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ieee.org?ref=sitedoctor_892",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://acm.org?ref=sitedoctor_893",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kernelnewbies.org?ref=sitedoctor_894",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.archlinux.org?ref=sitedoctor_895",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://wiki.debian.org?ref=sitedoctor_896",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://help.ubuntu.com?ref=sitedoctor_897",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.docker.com?ref=sitedoctor_898",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://kubernetes.io/docs?ref=sitedoctor_899",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.aws.amazon.com?ref=sitedoctor_900",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://cloud.google.com/docs?ref=sitedoctor_901",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://learn.microsoft.com?ref=sitedoctor_902",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.github.com?ref=sitedoctor_903",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.gitlab.com?ref=sitedoctor_904",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://support.atlassian.com?ref=sitedoctor_905",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://stripe.com/docs?ref=sitedoctor_906",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://twiliocorp.com?ref=sitedoctor_907",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://sendgrid.com/docs?ref=sitedoctor_908",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.sentry.io?ref=sitedoctor_909",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.datadoghq.com?ref=sitedoctor_910",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.newrelic.com?ref=sitedoctor_911",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://grafana.com/docs?ref=sitedoctor_912",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://prometheus.io/docs?ref=sitedoctor_913",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.nginx.com?ref=sitedoctor_914",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://httpd.apache.org/docs?ref=sitedoctor_915",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://caddyserver.com/docs?ref=sitedoctor_916",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://traefik.io/docs?ref=sitedoctor_917",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.envoyproxy.io/docs?ref=sitedoctor_918",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.python.org?ref=sitedoctor_919",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://nodejs.org/docs?ref=sitedoctor_920",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://go.dev/doc?ref=sitedoctor_921",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://doc.rust-lang.org?ref=sitedoctor_922",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.oracle.com/en/java?ref=sitedoctor_923",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://www.php.net/docs.php?ref=sitedoctor_924",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://ruby-doc.org?ref=sitedoctor_925",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://docs.swift.org?ref=sitedoctor_926",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://dart.dev/guides?ref=sitedoctor_927",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://clojuredocs.org?ref=sitedoctor_928",
+    "category": "standards_and_docs"
+  },
+  {
+    "url": "https://github.com?ref=sitedoctor_929",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://gitlab.com?ref=sitedoctor_930",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://bitbucket.org?ref=sitedoctor_931",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sourceforge.net?ref=sitedoctor_932",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://npmjs.com?ref=sitedoctor_933",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pypi.org?ref=sitedoctor_934",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://crates.io?ref=sitedoctor_935",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pkg.go.dev?ref=sitedoctor_936",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rubygems.org?ref=sitedoctor_937",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://packagist.org?ref=sitedoctor_938",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://nuget.org?ref=sitedoctor_939",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://search.maven.org?ref=sitedoctor_940",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hub.docker.com?ref=sitedoctor_941",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://quay.io?ref=sitedoctor_942",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://postman.com?ref=sitedoctor_943",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://insomnia.rest?ref=sitedoctor_944",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://figma.com?ref=sitedoctor_945",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://linear.app?ref=sitedoctor_946",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://notion.so?ref=sitedoctor_947",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://slack.com?ref=sitedoctor_948",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://discord.com?ref=sitedoctor_949",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://datadoghq.com?ref=sitedoctor_950",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sentry.io?ref=sitedoctor_951",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://cloudflare.com?ref=sitedoctor_952",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fastly.com?ref=sitedoctor_953",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://akamai.com?ref=sitedoctor_954",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://vercel.com?ref=sitedoctor_955",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://netlify.com?ref=sitedoctor_956",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://fly.io?ref=sitedoctor_957",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://render.com?ref=sitedoctor_958",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://railway.app?ref=sitedoctor_959",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://supabase.com?ref=sitedoctor_960",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://firebase.google.com?ref=sitedoctor_961",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://auth0.com?ref=sitedoctor_962",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://clerk.com?ref=sitedoctor_963",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://stripe.com?ref=sitedoctor_964",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://twilio.com?ref=sitedoctor_965",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://sendgrid.com?ref=sitedoctor_966",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://resend.com?ref=sitedoctor_967",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://plausible.io?ref=sitedoctor_968",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://umami.is?ref=sitedoctor_969",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://posthog.com?ref=sitedoctor_970",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://mixpanel.com?ref=sitedoctor_971",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://amplitude.com?ref=sitedoctor_972",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://segment.com?ref=sitedoctor_973",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://launchdarkly.com?ref=sitedoctor_974",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://growthbook.io?ref=sitedoctor_975",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://unleash.run?ref=sitedoctor_976",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://flagsmith.com?ref=sitedoctor_977",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://hashicorp.com?ref=sitedoctor_978",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://pagerduty.com?ref=sitedoctor_979",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://opsgenie.com?ref=sitedoctor_980",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://betterstack.com?ref=sitedoctor_981",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://uptimerobot.com?ref=sitedoctor_982",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://statuspage.io?ref=sitedoctor_983",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://incident.io?ref=sitedoctor_984",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://rootly.com?ref=sitedoctor_985",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://honeycomb.io?ref=sitedoctor_986",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://lightstep.com?ref=sitedoctor_987",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://dynatrace.com?ref=sitedoctor_988",
+    "category": "dev_platforms_and_saas"
+  },
+  {
+    "url": "https://httpbin.org?ref=sitedoctor_989",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://jsonplaceholder.typicode.com?ref=sitedoctor_990",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://pokeapi.co?ref=sitedoctor_991",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://reqres.in?ref=sitedoctor_992",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://catfact.ninja?ref=sitedoctor_993",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://api.coindesk.com?ref=sitedoctor_994",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://open-meteo.com?ref=sitedoctor_995",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://restcountries.com?ref=sitedoctor_996",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://dog.ceo?ref=sitedoctor_997",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://agify.io?ref=sitedoctor_998",
+    "category": "public_apis_and_services"
+  },
+  {
+    "url": "https://genderize.io?ref=sitedoctor_999",
+    "category": "public_apis_and_services"
+  }
+]

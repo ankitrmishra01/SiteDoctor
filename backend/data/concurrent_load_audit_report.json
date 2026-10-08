@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-09-30T07:14:18.090Z",
+  "batches": [
+    {
+      "batchName": "10-Simultaneous-Users",
+      "concurrencyCount": 10,
+      "scanType": "backend",
+      "submitted": 10,
+      "completed": 10,
+      "failed": 0,
+      "totalWallTimeMs": 539,
+      "throughputPerSec": 18.55,
+      "avgDurationMs": 301,
+      "minDurationMs": 94,
+      "maxDurationMs": 495,
+      "memory": {
+        "before": {
+          "rssMb": 204.2,
+          "heapUsedMb": 92.2,
+          "heapTotalMb": 149,
+          "externalMb": 18.8
+        },
+        "peak": {
+          "rssMb": 247.5,
+          "heapUsedMb": 126.5,
+          "heapTotalMb": 247.1,
+          "externalMb": 18.8
+        },
+        "after": {
+          "rssMb": 220.4,
+          "heapUsedMb": 91,
+          "heapTotalMb": 219.6,
+          "externalMb": 18.8
+        }
+      },
+      "cpu": {
+        "userMs": 343,
+        "systemMs": 218
+      }
+    },
+    {
+      "batchName": "25-Simultaneous-Users",
+      "concurrencyCount": 25,
+      "scanType": "backend",
+      "submitted": 25,
+      "completed": 25,
+      "failed": 0,
+      "totalWallTimeMs": 1604,
+      "throughputPerSec": 15.59,
+      "avgDurationMs": 906,
+      "minDurationMs": 218,
+      "maxDurationMs": 1545,
+      "memory": {
+        "before": {
+          "rssMb": 220.4,
+          "heapUsedMb": 91.1,
+          "heapTotalMb": 219.6,
+          "externalMb": 18.8
+        },
+        "peak": {
+          "rssMb": 275.8,
+          "heapUsedMb": 147.9,
+          "heapTotalMb": 271.7,
+          "externalMb": 19.2
+        },
+        "after": {
+          "rssMb": 269.1,
+          "heapUsedMb": 137.9,
+          "heapTotalMb": 264.9,
+          "externalMb": 19.2
+        }
+      },
+      "cpu": {
+        "userMs": 1407,
+        "systemMs": 500
+      }
+    },
+    {
+      "batchName": "Mixed-5-Live-Domains",
+      "concurrencyCount": 5,
+      "submitted": 5,
+      "completed": 5,
+      "failed": 0,
+      "totalWallTimeMs": 5143,
+      "memory": {
+        "before": {
+          "rssMb": 269.1,
+          "heapUsedMb": 138,
+          "heapTotalMb": 264.9,
+          "externalMb": 19.2
+        },
+        "after": {
+          "rssMb": 253,
+          "heapUsedMb": 108.1,
+          "heapTotalMb": 239.2,
+          "externalMb": 20.4
+        }
+      }
+    }
+  ],
+  "productionSizing": {
+    "backendScanRssMb": 2.2,
+    "browserScanRssMb": 220,
+    "recommendedSmallTier": {
+      "vCpu": 2,
+      "ramGb": 4,
+      "maxFullConcurrency": 8,
+      "maxBackendConcurrency": 100
+    },
+    "recommendedStandardTier": {
+      "vCpu": 4,
+      "ramGb": 8,
+      "maxFullConcurrency": 20,
+      "maxBackendConcurrency": 300
+    },
+    "recommendedHighTier": {
+      "vCpu": 8,
+      "ramGb": 16,
+      "maxFullConcurrency": 50,
+      "maxBackendConcurrency": 800
+    }
+  }
+}

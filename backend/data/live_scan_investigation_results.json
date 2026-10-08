@@ -1,0 +1,859 @@
+{
+  "etsy": {
+    "url": "https://www.etsy.com",
+    "status": "failed_unreachable",
+    "healthScore": 0,
+    "errorReason": null,
+    "durationMs": 4094,
+    "startedAt": "2026-09-29T07:24:38.713Z",
+    "findingsCount": 0,
+    "summaryCounts": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0,
+      "pass": 0,
+      "total": 0
+    },
+    "rawMetricsSummary": {
+      "sslValid": true
+    },
+    "rawResult": {
+      "jobId": "direct_1790666678713_okg9a",
+      "targetUrl": "https://www.etsy.com",
+      "scanType": "both",
+      "status": "failed_unreachable",
+      "startedAt": "2026-09-29T07:24:38.713Z",
+      "healthScore": 0,
+      "scoreFormula": "Scan failed: Target URL is unreachable",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 0
+      },
+      "findings": [],
+      "rawMetrics": {
+        "ssl": {
+          "valid": true,
+          "issuer": "GlobalSign nv-sa",
+          "validFrom": "Nov  3 15:09:45 2025 GMT",
+          "validTo": "Dec  5 15:09:44 2026 GMT",
+          "daysRemaining": 67,
+          "protocol": "TLSv1.3"
+        },
+        "securityHeaders": {},
+        "cors": {
+          "configured": false,
+          "allowOrigin": null,
+          "allowMethods": null,
+          "allowHeaders": null,
+          "allowCredentials": null
+        },
+        "endpointsDiscovered": [
+          {
+            "path": "/",
+            "status": 403,
+            "latencyMs": 42,
+            "ok": false
+          },
+          {
+            "path": "/health",
+            "status": 200,
+            "latencyMs": 391,
+            "ok": true
+          },
+          {
+            "path": "/api",
+            "status": 404,
+            "latencyMs": 536,
+            "ok": false
+          },
+          {
+            "path": "/api/health",
+            "status": 404,
+            "latencyMs": 466,
+            "ok": false
+          },
+          {
+            "path": "/robots.txt",
+            "status": 200,
+            "latencyMs": 415,
+            "ok": true
+          },
+          {
+            "path": "/sitemap.xml",
+            "status": 404,
+            "latencyMs": 1231,
+            "ok": false
+          },
+          {
+            "path": "/.well-known/security.txt",
+            "status": 200,
+            "latencyMs": 373,
+            "ok": true
+          }
+        ],
+        "lightLoad": {
+          "concurrency": 10,
+          "totalRequests": 10,
+          "successfulRequests": 0,
+          "failedRequests": 10,
+          "avgLatencyMs": 94,
+          "minLatencyMs": 39,
+          "p95LatencyMs": 135,
+          "maxLatencyMs": 135,
+          "requestsPerSecond": 71,
+          "statusDistribution": {
+            "403": 10
+          }
+        }
+      },
+      "completedAt": "2026-09-29T07:24:42.806Z",
+      "durationMs": 4092,
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials."
+    }
+  },
+  "ebay": {
+    "url": "https://www.ebay.com",
+    "status": "failed_unreachable",
+    "healthScore": 0,
+    "errorReason": null,
+    "durationMs": 722,
+    "startedAt": "2026-09-29T07:24:42.807Z",
+    "findingsCount": 0,
+    "summaryCounts": {
+      "critical": 0,
+      "warning": 0,
+      "info": 0,
+      "pass": 0,
+      "total": 0
+    },
+    "rawMetricsSummary": {
+      "sslValid": true
+    },
+    "rawResult": {
+      "jobId": "direct_1790666682807_09cov",
+      "targetUrl": "https://www.ebay.com",
+      "scanType": "both",
+      "status": "failed_unreachable",
+      "startedAt": "2026-09-29T07:24:42.807Z",
+      "healthScore": 0,
+      "scoreFormula": "Scan failed: Target URL is unreachable",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 0
+      },
+      "findings": [],
+      "rawMetrics": {
+        "ssl": {
+          "valid": true,
+          "issuer": "Sectigo Limited",
+          "validFrom": "Jul 13 00:00:00 2026 GMT",
+          "validTo": "Jan 27 23:59:59 2027 GMT",
+          "daysRemaining": 120,
+          "protocol": "TLSv1.3"
+        },
+        "securityHeaders": {},
+        "cors": {
+          "configured": false,
+          "allowOrigin": null,
+          "allowMethods": null,
+          "allowHeaders": null,
+          "allowCredentials": null
+        },
+        "endpointsDiscovered": [
+          {
+            "path": "/",
+            "status": 403,
+            "latencyMs": 199,
+            "ok": false
+          },
+          {
+            "path": "/health",
+            "status": 0,
+            "latencyMs": 1360,
+            "ok": false
+          },
+          {
+            "path": "/api",
+            "status": 404,
+            "latencyMs": 1338,
+            "ok": false
+          },
+          {
+            "path": "/api/health",
+            "status": 404,
+            "latencyMs": 1552,
+            "ok": false
+          },
+          {
+            "path": "/robots.txt",
+            "status": 200,
+            "latencyMs": 616,
+            "ok": true
+          },
+          {
+            "path": "/sitemap.xml",
+            "status": 404,
+            "latencyMs": 1363,
+            "ok": false
+          },
+          {
+            "path": "/.well-known/security.txt",
+            "status": 404,
+            "latencyMs": 1336,
+            "ok": false
+          }
+        ],
+        "lightLoad": {
+          "concurrency": 10,
+          "totalRequests": 10,
+          "successfulRequests": 0,
+          "failedRequests": 10,
+          "avgLatencyMs": 150,
+          "minLatencyMs": 56,
+          "p95LatencyMs": 540,
+          "maxLatencyMs": 540,
+          "requestsPerSecond": 18,
+          "statusDistribution": {
+            "403": 10
+          }
+        }
+      },
+      "completedAt": "2026-09-29T07:24:43.529Z",
+      "durationMs": 722,
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials."
+    }
+  },
+  "bbc": {
+    "url": "https://www.bbc.com",
+    "status": "completed",
+    "healthScore": 85,
+    "errorReason": null,
+    "durationMs": 41352,
+    "startedAt": "2026-09-29T07:24:43.530Z",
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "nextjs",
+      "language": "node",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Next.js hydration payload / `_next` static routing detected"
+      ],
+      "summary": "NEXTJS on (node)"
+    },
+    "findingsCount": 3,
+    "summaryCounts": {
+      "critical": 0,
+      "warning": 3,
+      "info": 0,
+      "pass": 0,
+      "total": 3
+    },
+    "rawMetricsSummary": {
+      "sslValid": true,
+      "httpStatus": 200,
+      "a11yViolations": 0
+    },
+    "rawResult": {
+      "jobId": "direct_1790666683530_3t9wx",
+      "targetUrl": "https://www.bbc.com",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-29T07:24:43.530Z",
+      "healthScore": 85,
+      "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 15 pts (uncapped: 15 pts) => 85/100]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "findings": [
+        {
+          "id": "fnd_1790666724758_zinuty",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 1325ms (Threshold: 600ms)",
+          "metricValue": "1325ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790666724758_feetcj",
+          "ruleId": "AXE_IMAGE_ALT_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+          "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+          "technicalDetails": "Found 44 <img> element(s) without an alt attribute.",
+          "metricValue": "44 images",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+              "technology": "HTML",
+              "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+            }
+          ],
+          "repoSearchQuery": "<img",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790666724758_opy3ws",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Define your Content Security Policy inside next.config.js headers configuration.",
+              "technology": "Next.js",
+              "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};"
+            }
+          ],
+          "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};",
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Next.js (next.config.js)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NEXTJS on (node)"
+          }
+        }
+      ],
+      "rawMetrics": {
+        "ssl": {
+          "valid": true,
+          "issuer": "GlobalSign nv-sa",
+          "validFrom": "Aug 21 11:32:02 2026 GMT",
+          "validTo": "Jan 24 05:46:23 2027 GMT",
+          "daysRemaining": 116,
+          "protocol": "TLSv1.3"
+        },
+        "securityHeaders": {
+          "strict-transport-security": "max-age=31536000; preload",
+          "content-security-policy": null,
+          "x-frame-options": "SAMEORIGIN",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer-when-downgrade",
+          "permissions-policy": null,
+          "server": "BBC-GTM",
+          "x-powered-by": null
+        },
+        "cors": {
+          "configured": false,
+          "allowOrigin": null,
+          "allowMethods": null,
+          "allowHeaders": null,
+          "allowCredentials": null
+        },
+        "endpointsDiscovered": [
+          {
+            "path": "/",
+            "status": 200,
+            "latencyMs": 136,
+            "ok": true
+          },
+          {
+            "path": "/health",
+            "status": 200,
+            "latencyMs": 174,
+            "ok": true
+          },
+          {
+            "path": "/api",
+            "status": 404,
+            "latencyMs": 131,
+            "ok": false
+          },
+          {
+            "path": "/api/health",
+            "status": 404,
+            "latencyMs": 138,
+            "ok": false
+          },
+          {
+            "path": "/robots.txt",
+            "status": 200,
+            "latencyMs": 126,
+            "ok": true
+          },
+          {
+            "path": "/sitemap.xml",
+            "status": 200,
+            "latencyMs": 133,
+            "ok": true
+          },
+          {
+            "path": "/.well-known/security.txt",
+            "status": 200,
+            "latencyMs": 127,
+            "ok": true
+          }
+        ],
+        "lightLoad": {
+          "concurrency": 10,
+          "totalRequests": 10,
+          "successfulRequests": 10,
+          "failedRequests": 0,
+          "avgLatencyMs": 253,
+          "minLatencyMs": 39,
+          "p95LatencyMs": 379,
+          "maxLatencyMs": 379,
+          "requestsPerSecond": 26,
+          "statusDistribution": {
+            "200": 10
+          }
+        },
+        "pageLoad": {
+          "httpStatus": 200,
+          "ttfbMs": 36,
+          "domContentLoadedMs": 1535,
+          "loadTimeMs": 4258
+        },
+        "coreWebVitals": {
+          "lcpMs": 972,
+          "cls": 0,
+          "fcpMs": 372,
+          "tbtMs": 1325,
+          "ttfbMs": 36
+        },
+        "accessibility": {
+          "violationsCount": 0,
+          "passesCount": 27
+        },
+        "crawledLinks": [
+          {
+            "url": "https://www.bbc.com/health",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/business",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/sport",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/culture",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/arts",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/travel",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/technology",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/weather",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/video",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/audio",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/newsletters",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/live",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/future-planet",
+            "status": 200,
+            "ok": true
+          },
+          {
+            "url": "https://www.bbc.com/news",
+            "status": 200,
+            "ok": true
+          }
+        ]
+      },
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "nextjs",
+        "language": "node",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Next.js hydration payload / `_next` static routing detected"
+        ],
+        "summary": "NEXTJS on (node)"
+      },
+      "completedAt": "2026-09-29T07:25:24.758Z",
+      "durationMs": 41229
+    }
+  },
+  "berkshire": {
+    "url": "http://berkshirehathaway.com",
+    "status": "completed",
+    "healthScore": 63,
+    "errorReason": null,
+    "durationMs": 37523,
+    "startedAt": "2026-09-29T07:25:24.882Z",
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "none",
+      "detectedSignals": [],
+      "summary": "Stack not detected — generic server configuration"
+    },
+    "findingsCount": 7,
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 4,
+      "info": 2,
+      "pass": 0,
+      "total": 7
+    },
+    "rawMetricsSummary": {
+      "sslValid": false,
+      "httpStatus": 200,
+      "a11yViolations": 2
+    },
+    "rawResult": {
+      "jobId": "direct_1790666724882_tfc7v",
+      "targetUrl": "http://berkshirehathaway.com",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-29T07:25:24.882Z",
+      "healthScore": 63,
+      "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 37 pts (uncapped: 37 pts) => 63/100]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "findings": [
+        {
+          "id": "fnd_1790666762349_xaled8",
+          "ruleId": "SEC_HSTS_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Strict-Transport-Security (HSTS) Header",
+          "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+          "technicalDetails": "Protocol: http:",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic web server configuration shown, verify against your actual infrastructure] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+            }
+          ],
+          "repoSearchQuery": "Strict-Transport-Security",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "Stack not detected — generic server configuration"
+          }
+        },
+        {
+          "id": "fnd_1790666762349_zdivbi",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790666762349_u7o286",
+          "ruleId": "SEO_VIEWPORT_MISSING",
+          "category": "seo",
+          "severity": "critical",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Mobile Viewport Meta Tag",
+          "plainEnglishCause": "The document lacks a viewport meta tag. Mobile browsers will render the page at desktop width, breaking responsive mobile usability.",
+          "technicalDetails": "Missing mobile viewport meta tag <meta name=\"viewport\">.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the standard mobile viewport tag to the document <head>.",
+              "technology": "HTML",
+              "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+            }
+          ],
+          "repoSearchQuery": "name=\"viewport\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790666732233_lvoe9c",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+          "plainEnglishCause": "Ensure <dl> elements are structured correctly",
+          "technicalDetails": "Rule: definition-list (serious). HTML: <dl><p></p><p align=\"left\"><font size=\"2\"><a href=\"disclaimer.html\">Legal Disclaimer</a> \n</font></p><p align=\"left\"><font size=\"2\">Copyright © 1977-2026<b> Berkshire Hathaway Inc.</b></font><font size=\"2\"> \n</font></p></dl>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "dl",
+          "wcagRule": "definition-list",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790666732233_sipqrs",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790666762350_gllfsk",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790666762350_5xzghv",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {
+        "ssl": {
+          "valid": false
+        },
+        "securityHeaders": {
+          "strict-transport-security": null,
+          "content-security-policy": "upgrade-insecure-requests;",
+          "x-frame-options": "SAMEORIGIN",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": null,
+          "permissions-policy": null,
+          "server": "Sucuri/Cloudproxy",
+          "x-powered-by": null
+        },
+        "cors": {
+          "configured": false,
+          "allowOrigin": null,
+          "allowMethods": null,
+          "allowHeaders": null,
+          "allowCredentials": null
+        },
+        "endpointsDiscovered": [
+          {
+            "path": "/",
+            "status": 200,
+            "latencyMs": 1073,
+            "ok": true
+          },
+          {
+            "path": "/health",
+            "status": 404,
+            "latencyMs": 619,
+            "ok": false
+          },
+          {
+            "path": "/api",
+            "status": 404,
+            "latencyMs": 1394,
+            "ok": false
+          },
+          {
+            "path": "/api/health",
+            "status": 404,
+            "latencyMs": 1153,
+            "ok": false
+          },
+          {
+            "path": "/robots.txt",
+            "status": 404,
+            "latencyMs": 1414,
+            "ok": false
+          },
+          {
+            "path": "/sitemap.xml",
+            "status": 404,
+            "latencyMs": 1413,
+            "ok": false
+          },
+          {
+            "path": "/.well-known/security.txt",
+            "status": 404,
+            "latencyMs": 1378,
+            "ok": false
+          }
+        ],
+        "lightLoad": {
+          "concurrency": 10,
+          "totalRequests": 10,
+          "successfulRequests": 10,
+          "failedRequests": 0,
+          "avgLatencyMs": 785,
+          "minLatencyMs": 522,
+          "p95LatencyMs": 1334,
+          "maxLatencyMs": 1334,
+          "requestsPerSecond": 7,
+          "statusDistribution": {
+            "200": 10
+          }
+        },
+        "pageLoad": {
+          "httpStatus": 200,
+          "ttfbMs": 473,
+          "domContentLoadedMs": 3169,
+          "loadTimeMs": 4759
+        },
+        "coreWebVitals": {
+          "lcpMs": 3304,
+          "cls": 0,
+          "fcpMs": 3304,
+          "tbtMs": 96,
+          "ttfbMs": 473
+        },
+        "accessibility": {
+          "violationsCount": 2,
+          "passesCount": 11
+        },
+        "crawledLinks": []
+      },
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "none",
+        "detectedSignals": [],
+        "summary": "Stack not detected — generic server configuration"
+      },
+      "completedAt": "2026-09-29T07:26:02.350Z",
+      "durationMs": 37467
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "url": "https://www.gnu.org",
+  "detectedStack": {
+    "server": "unknown",
+    "framework": "unknown",
+    "language": "unknown",
+    "confidence": "none",
+    "detectedSignals": [],
+    "summary": "Stack not detected — generic server configuration"
+  },
+  "scoreResult": {
+    "score": 75,
+    "formula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 25 pts (uncapped: 25 pts) => 75/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 2,
+      "info": 0,
+      "pass": 0,
+      "total": 3
+    },
+    "categoryBreakdown": {
+      "frontend": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "penalty": 0,
+        "cappedPenalty": 0
+      },
+      "backend": {
+        "critical": 1,
+        "warning": 0,
+        "info": 0,
+        "penalty": 15,
+        "cappedPenalty": 15
+      },
+      "security": {
+        "critical": 0,
+        "warning": 1,
+        "info": 0,
+        "penalty": 5,
+        "cappedPenalty": 5
+      },
+      "performance": {
+        "critical": 0,
+        "warning": 1,
+        "info": 0,
+        "penalty": 5,
+        "cappedPenalty": 5
+      },
+      "accessibility": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "penalty": 0,
+        "cappedPenalty": 0
+      },
+      "seo": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "penalty": 0,
+        "cappedPenalty": 0
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "fnd_1790581385321_5dqt30",
+      "ruleId": "CUSTOM_ANOMALY",
+      "category": "security",
+      "severity": "warning",
+      "title": "TLS Connection Timeout",
+      "plainEnglishCause": "Connecting to the server for SSL certificate inspection timed out after 8 seconds.",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+          "technology": "General"
+        }
+      ],
+      "isVerified": false,
+      "isAiSuggested": true
+    },
+    {
+      "id": "fnd_1790581447693_2r2fum",
+      "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+      "category": "performance",
+      "severity": "warning",
+      "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+      "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+      "technicalDetails": "Avg latency: 6011ms (P95: 6015ms) under 10 concurrent requests.",
+      "metricValue": "6011ms avg",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+          "technology": "Backend Optimization"
+        }
+      ],
+      "isVerified": true,
+      "isAiSuggested": false
+    },
+    {
+      "id": "fnd_1790581447693_3w812z",
+      "ruleId": "LIGHT_LOAD_ERROR_RATE",
+      "category": "backend",
+      "severity": "critical",
+      "title": "Server Errors Under Light Concurrent Load",
+      "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+      "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"Network_Error\":10}",
+      "metricValue": "10/10 failed",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+          "technology": "Backend"
+        }
+      ],
+      "isVerified": true,
+      "isAiSuggested": false
+    }
+  ]
+}

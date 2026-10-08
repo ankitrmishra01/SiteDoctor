@@ -1,0 +1,38 @@
+{
+  "challenges": [
+    {
+      "domain": "test-site-verification.org",
+      "userId": "user_test_123",
+      "token": "sitedoctor-verify-4a2232344d28f65f97ebecaa6676fa25",
+      "createdAt": 1790672742373,
+      "expiresAt": 1791277542373,
+      "verified": false,
+      "instructions": {
+        "dns": {
+          "type": "TXT",
+          "host": "_sitedoctor-challenge.test-site-verification.org",
+          "value": "sitedoctor-verify-4a2232344d28f65f97ebecaa6676fa25"
+        },
+        "file": {
+          "url": "https://test-site-verification.org/.well-known/sitedoctor-verification.txt",
+          "expectedContent": "sitedoctor-verify-4a2232344d28f65f97ebecaa6676fa25"
+        },
+        "meta": {
+          "tag": "<meta name=\"sitedoctor-verification\" content=\"sitedoctor-verify-4a2232344d28f65f97ebecaa6676fa25\">",
+          "placement": "Inside <head> of your homepage HTML"
+        }
+      }
+    }
+  ],
+  "abuseReports": [
+    {
+      "id": "abuse_1790672742375_95375351",
+      "targetUrl": "https://test-site-verification.org",
+      "reporterEmail": "security-contact@test-site-verification.org",
+      "reason": "Unconsented scan attempt detected from automated crawler.",
+      "ipAddress": "192.168.1.50",
+      "timestamp": "2026-09-29T09:05:42.375Z",
+      "status": "received"
+    }
+  ]
+}

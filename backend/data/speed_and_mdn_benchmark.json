@@ -1,0 +1,237 @@
+[
+  {
+    "target": "https://developer.mozilla.org",
+    "name": "MDN Docs (Complex SSR + Static)",
+    "isolatedTimings": {
+      "sslMs": 116,
+      "frontendMs": 35138,
+      "backendMs": 1403,
+      "sequentialSumMs": 36657
+    },
+    "parallelEngineTimingMs": 34895,
+    "speedupFactor": "1.05x",
+    "scanResult": {
+      "targetUrl": "https://developer.mozilla.org",
+      "healthScore": 100,
+      "findingsCount": 0,
+      "findings": []
+    }
+  },
+  {
+    "target": "https://vite.dev",
+    "name": "Vite Docs (Fast SPA / Static)",
+    "isolatedTimings": {
+      "sslMs": 129,
+      "frontendMs": 5634,
+      "backendMs": 1642,
+      "sequentialSumMs": 7405
+    },
+    "parallelEngineTimingMs": 5235,
+    "speedupFactor": "1.41x",
+    "scanResult": {
+      "targetUrl": "https://vite.dev",
+      "healthScore": 69,
+      "findingsCount": 7,
+      "findings": [
+        {
+          "id": "fnd_1790595422051_ystzde",
+          "ruleId": "AXE_IMAGE_ALT_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+          "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+          "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+          "metricValue": "1 images",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+              "technology": "HTML",
+              "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+            }
+          ],
+          "repoSearchQuery": "<img",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790595422051_onl9kc",
+          "ruleId": "AXE_IMAGE_ALT_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+          "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+          "technicalDetails": "Rule: image-alt (critical). HTML: <img data-v-755ff878=\"\" src=\"https://avatars.githubusercontent.com/u/327003943?v=4\" class=\"spsr-logo object-contain h-8 w-[120px]\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+              "technology": "HTML",
+              "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+            }
+          ],
+          "repoSearchQuery": "<img",
+          "elementSelector": ".py-7.opacity-85.hover\\:opacity-100:nth-child(14) > .h-8.w-\\[120px\\].spsr-logo",
+          "wcagRule": "image-alt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790595421039_wf64mp",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Links must have discernible text",
+          "plainEnglishCause": "Ensure links have discernible text",
+          "technicalDetails": "Rule: link-name (serious). HTML: <a data-v-755ff878=\"\" href=\"https://github.com/sbai-finance\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"spsr-link flex items-center justify-center px-8 transition-opacity opacity-85 hover:opacity-100 py-7\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".py-7.opacity-85.hover\\:opacity-100:nth-child(14)",
+          "wcagRule": "link-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790595422051_oudrxc",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+            }
+          ],
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "VUE on NETLIFY [Verified]"
+          }
+        },
+        {
+          "id": "fnd_1790595422051_twr2h7",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Frame-Options: SAMEORIGIN or DENY on all HTML responses.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "X-Frame-Options: SAMEORIGIN"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "VUE on NETLIFY [Verified]"
+          }
+        },
+        {
+          "id": "fnd_1790595422051_kg3xs7",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "X-Content-Type-Options: nosniff"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "VUE on NETLIFY [Verified]"
+          }
+        },
+        {
+          "id": "fnd_1790595422051_tb1jpb",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    }
+  },
+  {
+    "target": "https://github.com",
+    "name": "GitHub (High Security / Large DOM)",
+    "isolatedTimings": {
+      "sslMs": 89,
+      "frontendMs": 42266,
+      "backendMs": 1205,
+      "sequentialSumMs": 43560
+    },
+    "parallelEngineTimingMs": 38690,
+    "speedupFactor": "1.13x",
+    "scanResult": {
+      "targetUrl": "https://github.com",
+      "healthScore": 95,
+      "findingsCount": 1,
+      "findings": [
+        {
+          "id": "fnd_1790595504309_fe1l3b",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 1575ms (Threshold: 600ms)",
+          "metricValue": "1575ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    }
+  }
+]

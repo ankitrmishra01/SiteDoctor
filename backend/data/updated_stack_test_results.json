@@ -1,0 +1,210 @@
+{
+  "https://fsf.org": {
+    "url": "https://fsf.org",
+    "healthScore": 30,
+    "detectedStack": {
+      "server": "nginx",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Nginx web server header detected: `nginx`"
+      ],
+      "summary": "NGINX"
+    },
+    "findingsCount": 13,
+    "sampleCspFinding": {
+      "id": "fnd_1790599537015_6xim3i",
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Content-Security-Policy (CSP) Header",
+      "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+      "technicalDetails": "Content-Security-Policy header is absent.",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add the Content-Security-Policy header directive in your Nginx server block.",
+          "technology": "Nginx",
+          "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;"
+        }
+      ],
+      "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;",
+      "repoSearchQuery": "add_header Content-Security-Policy",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Nginx Server Block",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NGINX"
+      }
+    },
+    "sampleHstsFinding": {
+      "id": "fnd_1790599537014_8chmid",
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Strict-Transport-Security (HSTS) Header",
+      "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+      "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add the Strict-Transport-Security header to your HTTPS server block in Nginx.",
+          "technology": "Nginx",
+          "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}"
+        }
+      ],
+      "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}",
+      "repoSearchQuery": "add_header Strict-Transport-Security",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Nginx Server Block",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NGINX"
+      }
+    }
+  },
+  "https://nextjs.org": {
+    "url": "https://nextjs.org",
+    "healthScore": 94,
+    "detectedStack": {
+      "server": "vercel",
+      "framework": "nextjs",
+      "language": "node",
+      "cdn": "vercel",
+      "confidence": "high",
+      "detectedSignals": [
+        "Vercel Edge Network / Serverless hosting detected",
+        "Next.js hydration payload / `_next` static routing detected"
+      ],
+      "summary": "NEXTJS on VERCEL on (node) [Verified]"
+    },
+    "findingsCount": 2,
+    "sampleCspFinding": {
+      "id": "fnd_1790599570542_xfqq1u",
+      "ruleId": "AXE_COLOR_CONTRAST",
+      "category": "accessibility",
+      "severity": "warning",
+      "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+      "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+      "technicalDetails": "Rule: color-contrast (serious). HTML: <button class=\"cV3TuW_search\" data-variant=\"large\" type=\"button\">Search documentation...<kbd>CtrlK</kbd><script type=\"text/javascript\">{var s=document.currentScript,n=s&&s.previousElementSibling;if(n)n.textContent=/^Mac/.test(navigator.platform)?\"⌘K\":\"CtrlK\"}</script></button>",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+          "technology": "CSS",
+          "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+        }
+      ],
+      "repoSearchQuery": "color:",
+      "elementSelector": ".cV3TuW_headerButtons > .cV3TuW_search[data-variant=\"large\"][type=\"button\"]",
+      "wcagRule": "color-contrast",
+      "isVerified": true,
+      "isAiSuggested": false
+    }
+  },
+  "https://httpbin.org": {
+    "url": "https://httpbin.org",
+    "healthScore": 39,
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "python",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Python WSGI/ASGI server header detected: `gunicorn/19.9.0`"
+      ],
+      "summary": "(python)"
+    },
+    "findingsCount": 9,
+    "sampleCspFinding": {
+      "id": "fnd_1790599606883_krf6wa",
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Content-Security-Policy (CSP) Header",
+      "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+      "technicalDetails": "Content-Security-Policy header is absent.",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "[Runtime (python) detected without server header plugin — configure on your web server / reverse proxy] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+          "technology": "Universal HTTP Header",
+          "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+        }
+      ],
+      "repoSearchQuery": "Content-Security-Policy",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Generic / Universal",
+        "isGenericFallback": true,
+        "detectedStackSummary": "(python)"
+      }
+    },
+    "sampleHstsFinding": {
+      "id": "fnd_1790599606883_4f1p80",
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Strict-Transport-Security (HSTS) Header",
+      "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+      "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "[Runtime (python) detected without server header plugin — configure on your web server / reverse proxy] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+          "technology": "Universal HTTP Header",
+          "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+        }
+      ],
+      "repoSearchQuery": "Strict-Transport-Security",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Generic / Universal",
+        "isGenericFallback": true,
+        "detectedStackSummary": "(python)"
+      }
+    }
+  },
+  "https://datadoghq.com": {
+    "url": "https://datadoghq.com",
+    "healthScore": 90,
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "cdn": "cloudfront",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Edge CDN: AWS CloudFront detected"
+      ],
+      "summary": "via CLOUDFRONT CDN"
+    },
+    "findingsCount": 2,
+    "sampleCspFinding": {
+      "id": "fnd_1790599615539_4imcot",
+      "ruleId": "AXE_IMAGE_ALT_MISSING",
+      "category": "accessibility",
+      "severity": "warning",
+      "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+      "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+      "technicalDetails": "Found 2 <img> element(s) without an alt attribute.",
+      "metricValue": "2 images",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+          "technology": "HTML",
+          "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+        }
+      ],
+      "repoSearchQuery": "<img",
+      "isVerified": true,
+      "isAiSuggested": false
+    }
+  }
+}

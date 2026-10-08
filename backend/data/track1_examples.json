@@ -1,0 +1,1067 @@
+{
+  "fsf": {
+    "url": "https://www.fsf.org",
+    "detectedStack": {
+      "server": "nginx",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Nginx web server header detected: `nginx`"
+      ],
+      "summary": "NGINX"
+    },
+    "scoreResult": {
+      "score": 10,
+      "formula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 90 pts (uncapped: 91 pts) => 10/100]",
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 12,
+        "info": 1,
+        "pass": 0,
+        "total": 15
+      },
+      "categoryBreakdown": {
+        "frontend": {
+          "critical": 0,
+          "warning": 1,
+          "info": 0,
+          "penalty": 5,
+          "cappedPenalty": 5
+        },
+        "backend": {
+          "critical": 1,
+          "warning": 0,
+          "info": 0,
+          "penalty": 15,
+          "cappedPenalty": 15
+        },
+        "security": {
+          "critical": 0,
+          "warning": 4,
+          "info": 0,
+          "penalty": 20,
+          "cappedPenalty": 20
+        },
+        "performance": {
+          "critical": 1,
+          "warning": 1,
+          "info": 0,
+          "penalty": 20,
+          "cappedPenalty": 20
+        },
+        "accessibility": {
+          "critical": 0,
+          "warning": 5,
+          "info": 1,
+          "penalty": 26,
+          "cappedPenalty": 25
+        },
+        "seo": {
+          "critical": 0,
+          "warning": 1,
+          "info": 0,
+          "penalty": 5,
+          "cappedPenalty": 5
+        }
+      }
+    },
+    "findings": [
+      {
+        "id": "fnd_1790581377150_ugargt",
+        "ruleId": "SSL_EXPIRING_SOON",
+        "category": "security",
+        "severity": "warning",
+        "title": "SSL Certificate Expiring in < 30 Days",
+        "plainEnglishCause": "The TLS certificate is valid but expires in less than 30 days. Auto-renewal may be misconfigured or failing.",
+        "technicalDetails": "Expires in 11 days (Oct  9 19:23:54 2026 GMT)",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Verify automated renewal cron and DNS verification hooks.",
+            "technology": "SSL Monitoring",
+            "codeSnippet": "sudo certbot renew --dry-run"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_idoi85",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 4904ms (Poor > 4000ms)",
+        "metricValue": "4904ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_32vs55",
+        "ruleId": "SEO_META_DESCRIPTION_MISSING",
+        "category": "seo",
+        "severity": "warning",
+        "title": "Missing Meta Description Tag",
+        "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+        "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+            "technology": "HTML / Next.js",
+            "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+          }
+        ],
+        "repoSearchQuery": "name=\"description\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_acee4d",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+        "metricValue": "1 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_qezwvq",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"/free-software-supporter/\">Free Software\n                Supporter</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "a[href$=\"free-software-supporter/\"]",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_ll5j9s",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img id=\"fsf-logo\" style=\"position: absolute; bottom: 0px;\" src=\"//static.fsf.org/common/img/logo-new.png\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": "#fsf-logo",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581343725_qcp5gx",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"/\">\n\t\t\t\t<img id=\"fsf-logo\" style=\"position: absolute; bottom: 0px;\" src=\"//static.fsf.org/common/img/logo-new.png\">\n\t\t\t</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href=\"/\"]",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581343725_kj4el6",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "plainEnglishCause": "Ensure that lists are structured correctly",
+        "technicalDetails": "Rule: list (serious). HTML: <ul>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "#parent-fieldname-text-c113d51f-cb84-4567-9c6e-008c38ddd5ae > ul",
+        "wcagRule": "list",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581343725_9vrsq6",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "info",
+        "title": "WCAG Violation: Zooming and scaling must not be disabled",
+        "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width; initial-scale=0.6666; maximum-scale=1.0; minimum-scale=0.6666\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "meta[name=\"viewport\"]:nth-child(6)",
+        "wcagRule": "meta-viewport",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581377150_epbu6y",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://www.fsf.org/search_form#content",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://www.fsf.org/search_form#content",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_12sr3t",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add the Strict-Transport-Security header to your HTTPS server block in Nginx.",
+            "technology": "Nginx",
+            "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}"
+          }
+        ],
+        "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}",
+        "repoSearchQuery": "add_header Strict-Transport-Security",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Nginx Server Block",
+          "isGenericFallback": false,
+          "detectedStackSummary": "NGINX"
+        }
+      },
+      {
+        "id": "fnd_1790581377150_ya9oos",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add the Content-Security-Policy header directive in your Nginx server block.",
+            "technology": "Nginx",
+            "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;"
+          }
+        ],
+        "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;",
+        "repoSearchQuery": "add_header Content-Security-Policy",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Nginx Server Block",
+          "isGenericFallback": false,
+          "detectedStackSummary": "NGINX"
+        }
+      },
+      {
+        "id": "fnd_1790581377150_segl0a",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add X-Frame-Options in your Nginx configuration.",
+            "technology": "Nginx",
+            "codeSnippet": "add_header X-Frame-Options \"SAMEORIGIN\" always;"
+          }
+        ],
+        "codeSnippet": "add_header X-Frame-Options \"SAMEORIGIN\" always;",
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Nginx Server Block",
+          "isGenericFallback": false,
+          "detectedStackSummary": "NGINX"
+        }
+      },
+      {
+        "id": "fnd_1790581377150_8w211f",
+        "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+        "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+        "technicalDetails": "Avg latency: 3269ms (P95: 6003ms) under 10 concurrent requests.",
+        "metricValue": "3269ms avg",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+            "technology": "Backend Optimization"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581377150_g079ct",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"200\":6,\"Network_Error\":4}",
+        "metricValue": "4/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  "siteA": {
+    "url": "https://vite.dev",
+    "detectedStack": {
+      "server": "netlify",
+      "framework": "vue",
+      "language": "unknown",
+      "confidence": "high",
+      "detectedSignals": [
+        "Vue component scope attributes detected",
+        "Netlify Application Gateway headers detected"
+      ],
+      "summary": "VUE on NETLIFY [Verified]"
+    },
+    "scoreResult": {
+      "score": 69,
+      "formula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 31 pts (uncapped: 31 pts) => 69/100]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 6,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "categoryBreakdown": {
+        "frontend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "backend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "security": {
+          "critical": 0,
+          "warning": 3,
+          "info": 0,
+          "penalty": 15,
+          "cappedPenalty": 15
+        },
+        "performance": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "accessibility": {
+          "critical": 0,
+          "warning": 3,
+          "info": 0,
+          "penalty": 15,
+          "cappedPenalty": 15
+        },
+        "seo": {
+          "critical": 0,
+          "warning": 0,
+          "info": 1,
+          "penalty": 1,
+          "cappedPenalty": 1
+        }
+      }
+    },
+    "findings": [
+      {
+        "id": "fnd_1790581452188_poeyy2",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+        "metricValue": "1 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581452188_ubbxfw",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img data-v-755ff878=\"\" src=\"https://avatars.githubusercontent.com/u/327003943?v=4\" class=\"spsr-logo object-contain h-8 w-[120px]\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": ".py-7.opacity-85.hover\\:opacity-100:nth-child(14) > .h-8.w-\\[120px\\].spsr-logo",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581450597_lrss5u",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a data-v-755ff878=\"\" href=\"https://github.com/sbai-finance\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"spsr-link flex items-center justify-center px-8 transition-opacity opacity-85 hover:opacity-100 py-7\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".py-7.opacity-85.hover\\:opacity-100:nth-child(14)",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581452188_loi0oc",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+          }
+        ],
+        "repoSearchQuery": "Content-Security-Policy",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "VUE on NETLIFY [Verified]"
+        }
+      },
+      {
+        "id": "fnd_1790581452188_wztfea",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Frame-Options: SAMEORIGIN or DENY on all HTML responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Frame-Options: SAMEORIGIN"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "VUE on NETLIFY [Verified]"
+        }
+      },
+      {
+        "id": "fnd_1790581452188_firg6l",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Content-Type-Options: nosniff"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "VUE on NETLIFY [Verified]"
+        }
+      },
+      {
+        "id": "fnd_1790581452188_lvzi1n",
+        "ruleId": "SEO_ROBOTS_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing robots.txt File",
+        "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+        "technicalDetails": "HTTP 404 on /robots.txt",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Create a public/robots.txt file at the root of your web server.",
+            "technology": "Robots.txt",
+            "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+          }
+        ],
+        "repoSearchQuery": "robots.txt",
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  "siteB": {
+    "url": "https://fastapi.tiangolo.com",
+    "detectedStack": {
+      "server": "cloudflare",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Cloudflare Reverse Proxy / CDN edge (`cf-ray`) detected"
+      ],
+      "summary": "CLOUDFLARE"
+    },
+    "scoreResult": {
+      "score": 55,
+      "formula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 45 pts (uncapped: 70 pts) => 55/100]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 14,
+        "info": 0,
+        "pass": 0,
+        "total": 14
+      },
+      "categoryBreakdown": {
+        "frontend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "backend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "security": {
+          "critical": 0,
+          "warning": 3,
+          "info": 0,
+          "penalty": 15,
+          "cappedPenalty": 15
+        },
+        "performance": {
+          "critical": 0,
+          "warning": 1,
+          "info": 0,
+          "penalty": 5,
+          "cappedPenalty": 5
+        },
+        "accessibility": {
+          "critical": 0,
+          "warning": 10,
+          "info": 0,
+          "penalty": 50,
+          "cappedPenalty": 25
+        },
+        "seo": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        }
+      }
+    },
+    "findings": [
+      {
+        "id": "fnd_1790581457850_j3182t",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 659ms (Threshold: 600ms)",
+        "metricValue": "659ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581457850_laow84",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+        "metricValue": "1 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581456977_slixb7",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: ARIA progressbar nodes must have an accessible name",
+        "plainEnglishCause": "Ensure every ARIA progressbar node has an accessible name",
+        "technicalDetails": "Rule: aria-progressbar-name (serious). HTML: <div class=\"md-progress\" data-md-component=\"progress\" role=\"progressbar\"></div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".md-progress",
+        "wcagRule": "aria-progressbar-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581456977_luu5dt",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Elements must only use permitted ARIA attributes",
+        "plainEnglishCause": "Ensure ARIA attributes are not prohibited for an element's role",
+        "technicalDetails": "Rule: aria-prohibited-attr (serious). HTML: <label class=\"md-overlay\" for=\"__drawer\" aria-label=\"Navigation\"></label>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".md-overlay",
+        "wcagRule": "aria-prohibited-attr",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581456977_cah7zl",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Required ARIA attributes must be provided",
+        "plainEnglishCause": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "technicalDetails": "Rule: aria-required-attr (critical). HTML: <input type=\"text\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"on\" placeholder=\"Search\" spellcheck=\"false\" role=\"combobox\" dir=\"auto\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "div:nth-child(12),input[type=\"text\"]",
+        "wcagRule": "aria-required-attr",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581457850_jf70r5",
+        "ruleId": "AXE_BUTTON_NAME_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Button Missing Accessible Name (WCAG 4.1.2)",
+        "plainEnglishCause": "An icon-only <button> element does not have inner text or an aria-label attribute, so screen readers only announce 'button' without indicating its function.",
+        "technicalDetails": "Rule: button-name (critical). HTML: <button class=\"r\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add an aria-label attribute or a visually-hidden text span inside the button.",
+            "technology": "HTML / React",
+            "codeSnippet": "<button type=\"button\" aria-label=\"Close dialog\">\n  <CloseIcon />\n</button>"
+          }
+        ],
+        "repoSearchQuery": "<button",
+        "elementSelector": "div:nth-child(12),.r:nth-child(1)",
+        "wcagRule": "button-name",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581457850_e1a8ac",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"https://fastapi.tiangolo.com/#performance\">One of the fastest Python frameworks available</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "ul:nth-child(13) > li:nth-child(1) > a",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581457850_t2a07d",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": "a[href$=\"typer.tiangolo.com\"] > img",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790581456977_jhhhpg",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must be distinguishable without relying on color",
+        "plainEnglishCause": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+        "technicalDetails": "Rule: link-in-text-block (serious). HTML: <a href=\"https://zensical.org\" target=\"_blank\" rel=\"noopener\">\n        Zensical\n    </a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href$=\"zensical.org\"]",
+        "wcagRule": "link-in-text-block",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581456977_geg5qw",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"https://typer.tiangolo.com\" target=\"_blank\" rel=\"noopener\" data-external-link=\"\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href$=\"typer.tiangolo.com\"]",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581456977_2v2713",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Scrollable region must have keyboard access",
+        "plainEnglishCause": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+        "technicalDetails": "Rule: scrollable-region-focusable (serious). HTML: <div class=\"a d\"><div class=\"X\"><h3 class=\"I\">Filters</h3><h4 class=\"R\">Tags</h4><ol class=\"F\"></ol></div></div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "div:nth-child(12),.a",
+        "wcagRule": "scrollable-region-focusable",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790581457850_gsmqdl",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+          }
+        ],
+        "repoSearchQuery": "Strict-Transport-Security",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "CLOUDFLARE"
+        }
+      },
+      {
+        "id": "fnd_1790581457850_kw76jo",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+          }
+        ],
+        "repoSearchQuery": "Content-Security-Policy",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "CLOUDFLARE"
+        }
+      },
+      {
+        "id": "fnd_1790581457850_834txh",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Frame-Options: SAMEORIGIN or DENY on all HTML responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Frame-Options: SAMEORIGIN"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "CLOUDFLARE"
+        }
+      }
+    ]
+  },
+  "siteC": {
+    "url": "https://developer.mozilla.org",
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "none",
+      "detectedSignals": [],
+      "summary": "Stack not detected — generic server configuration"
+    },
+    "scoreResult": {
+      "score": 100,
+      "formula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 0 pts (uncapped: 0 pts) => 100/100]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 0
+      },
+      "categoryBreakdown": {
+        "frontend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "backend": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "security": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "performance": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "accessibility": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        },
+        "seo": {
+          "critical": 0,
+          "warning": 0,
+          "info": 0,
+          "penalty": 0,
+          "cappedPenalty": 0
+        }
+      }
+    },
+    "findings": []
+  }
+}

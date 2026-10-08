@@ -1,0 +1,2166 @@
+[
+  {
+    "jobId": "direct_1790596998101_pmxil",
+    "targetUrl": "https://slack.com",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:03:18.101Z",
+    "healthScore": 15,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 85 pts (uncapped: 120 pts) => 15/100]",
+    "summaryCounts": {
+      "critical": 3,
+      "warning": 15,
+      "info": 0,
+      "pass": 0,
+      "total": 18
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597044738_v7zz8t",
+        "ruleId": "PAGE_TTFB_SLOW",
+        "category": "performance",
+        "severity": "warning",
+        "title": "Slow Time to First Byte (TTFB > 800ms)",
+        "plainEnglishCause": "The server took over 800ms before sending the first byte of HTML. This is typically caused by un-cached database queries, slow SSR rendering, or distant server regions.",
+        "technicalDetails": "Time to First Byte: 855ms (Recommended: < 800ms)",
+        "metricValue": "855ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Implement HTTP edge caching (Cloudflare / Vercel Edge / Fastly) and optimize backend database queries.",
+            "technology": "Caching / CDN",
+            "codeSnippet": "// Cache-Control header\nres.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_htl7lr",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Failed to load resource: the server responded with a status of 404 ()",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_07vjn0",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://reveal.clearbit.com/v1/companies/reveal?variable=reveal&authorization=pk_7144fadb90a8fdd9c89e1395ff4171a3",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_hgk2dr",
+        "ruleId": "NETWORK_BROKEN_IMAGE",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Image Asset (404 Not Found)",
+        "plainEnglishCause": "An <img> tag or CSS background referenced an image URL that returned a 404 HTTP status code, displaying a broken image icon to users.",
+        "technicalDetails": "Broken image (HTTP 404): https://slack.com/dev-cdn/v/marketing/img/homepage/revamped-25/dark-component/uis/video-slackbot-voicecommands-16x9.IN@2x.jpg",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Verify the image path in your static assets folder or public CDN bucket, or add a fallback image handler.",
+            "technology": "HTML / React",
+            "codeSnippet": "<img \n  src=\"/assets/image.png\" \n  alt=\"Descriptive label\" \n  onError={(e) => { e.currentTarget.src = '/assets/fallback.png'; }} \n/>"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_9ylsfh",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/c3991c0/marketing/img/homepage/revamped-25/dark-component/uis/video-slackbot-voicecommands-16x9.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_m37riq",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/61d31f7/marketing/img/homepage/revamped-25/dark-component/uis/github.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_las737",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/326ec33/marketing/img/homepage/revamped-25/dark-component/uis/summary-AI.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_ur3ctz",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/326ec33/marketing/img/homepage/revamped-25/dark-component/uis/agentforce.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_g5wdmm",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/326ec33/marketing/img/homepage/revamped-25/dark-component/uis/huddlesAI.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_avlf6n",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://a.slack-edge.com/61d31f7/marketing/img/homepage/revamped-25/dark-component/uis/claude-AI.IN.webm",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_pa36t8",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 5584ms (Poor > 4000ms)",
+        "metricValue": "5584ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_w75ozt",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 1307ms (Threshold: 600ms)",
+        "metricValue": "1307ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_7nqxy1",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+          }
+        ],
+        "repoSearchQuery": "Strict-Transport-Security",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "Stack not detected — generic server configuration"
+        }
+      },
+      {
+        "id": "fnd_1790597044738_uwjefq",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+          }
+        ],
+        "repoSearchQuery": "Content-Security-Policy",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "Stack not detected — generic server configuration"
+        }
+      },
+      {
+        "id": "fnd_1790597044738_c1cszp",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Frame-Options: SAMEORIGIN or DENY on all HTML responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Frame-Options: SAMEORIGIN"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "Stack not detected — generic server configuration"
+        }
+      },
+      {
+        "id": "fnd_1790597044738_nlccxw",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Content-Type-Options: nosniff"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "Stack not detected — generic server configuration"
+        }
+      },
+      {
+        "id": "fnd_1790597044738_ydzazv",
+        "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+        "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+        "technicalDetails": "Avg latency: 5726ms (P95: 6014ms) under 10 concurrent requests.",
+        "metricValue": "5726ms avg",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+            "technology": "Backend Optimization"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597044738_ap688q",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"429\":4,\"Network_Error\":6}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "Let's Encrypt",
+        "validFrom": "Aug  6 09:33:39 2026 GMT",
+        "validTo": "Nov  4 09:33:38 2026 GMT",
+        "daysRemaining": 36,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": null,
+        "content-security-policy": null,
+        "x-frame-options": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "server": "envoy",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 0,
+          "latencyMs": 2511,
+          "ok": false
+        },
+        {
+          "path": "/health",
+          "status": 0,
+          "latencyMs": 2508,
+          "ok": false
+        },
+        {
+          "path": "/api",
+          "status": 0,
+          "latencyMs": 2507,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 0,
+          "latencyMs": 2505,
+          "ok": false
+        },
+        {
+          "path": "/robots.txt",
+          "status": 0,
+          "latencyMs": 2512,
+          "ok": false
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 0,
+          "latencyMs": 2511,
+          "ok": false
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 0,
+          "latencyMs": 2509,
+          "ok": false
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 0,
+        "failedRequests": 10,
+        "avgLatencyMs": 5726,
+        "minLatencyMs": 5166,
+        "p95LatencyMs": 6014,
+        "maxLatencyMs": 6014,
+        "requestsPerSecond": 2,
+        "statusDistribution": {
+          "429": 4,
+          "Network_Error": 6
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 855,
+        "domContentLoadedMs": 4541,
+        "loadTimeMs": 7258
+      },
+      "coreWebVitals": {
+        "lcpMs": 5584,
+        "cls": 0.071,
+        "fcpMs": 3884,
+        "tbtMs": 1307,
+        "ttfbMs": 855
+      },
+      "accessibility": {
+        "violationsCount": 0,
+        "passesCount": 24
+      },
+      "crawledLinks": [
+        {
+          "url": "https://slack.com/intl/en-in/features/canvas",
+          "status": 429,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/channels",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/connect",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/team-chat",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/huddles",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/clips",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/crm",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/templates",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/task-list",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/document-sharing",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/agentic-platform",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/integrations",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/workflow-automation",
+          "status": 0,
+          "ok": false
+        },
+        {
+          "url": "https://slack.com/intl/en-in/features/ai",
+          "status": 0,
+          "ok": false
+        }
+      ]
+    },
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "none",
+      "detectedSignals": [],
+      "summary": "Stack not detected — generic server configuration"
+    },
+    "completedAt": "2026-09-28T12:04:04.739Z",
+    "durationMs": 46636
+  },
+  {
+    "jobId": "direct_1790597044845_tu7kh",
+    "targetUrl": "https://sentry.io",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:04:04.845Z",
+    "healthScore": 70,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 30 pts (uncapped: 30 pts) => 70/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 3,
+      "info": 0,
+      "pass": 0,
+      "total": 4
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597088999_g1wm2j",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 4448ms (Poor > 4000ms)",
+        "metricValue": "4448ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597058164_3xyny6",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: ARIA commands must have an accessible name",
+        "plainEnglishCause": "Ensure every ARIA button, link and menuitem has an accessible name",
+        "technicalDetails": "Rule: aria-command-name (serious). HTML: <div class=\"toggle-track\" role=\"button\" data-astro-cid-q2zwrryp=\"\"> <div class=\"toggle-thumb\" data-astro-cid-q2zwrryp=\"\"></div> </div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".toggle-track",
+        "wcagRule": "aria-command-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790597088999_bh2tgh",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+          }
+        ],
+        "repoSearchQuery": "Strict-Transport-Security",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "VERCEL"
+        }
+      },
+      {
+        "id": "fnd_1790597088999_fc2g8g",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "X-Content-Type-Options: nosniff"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "VERCEL"
+        }
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "DigiCert Inc",
+        "validFrom": "Aug  6 00:00:00 2026 GMT",
+        "validTo": "Feb 20 23:59:59 2027 GMT",
+        "daysRemaining": 145,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": null,
+        "content-security-policy": "upgrade-insecure-requests; default-src 'none'; script-src 'strict-dynamic' 'nonce-Ydp5PWKdFH8lBktrRbIrpma9JzgGeegR' 'report-sample' 'self' 'unsafe-inline' 'unsafe-eval' *.sentry.dev www.googletagmanager.com plausible.io player.vimeo.com prod-assets.sequelvideo.com; connect-src 'self' sentry.io *.sentry.io *.sentry.dev reload.getsentry.net www.google.com unpkg.com vimeo.com plausible.io *.sequelvideo.com *.sequel.io; img-src 'self' sentry.io *.sentry.io data: *.sentry.dev storage.googleapis.com sentry-blog.storage.googleapis.com www.googletagmanager.com i.vimeocdn.com images.ctfassets.net images.lumacdn.com *.sequelvideo.com *.cloudinary.com; style-src 'self' 'unsafe-inline' *.sentry.dev; media-src 'self' videos.ctfassets.net; font-src 'self' *.sentry.dev data: fonts.gstatic.com; frame-src player.vimeo.com demo.arcade.software recaptcha.google.com www.google.com *.sequel.io *.sequelvideo.com; manifest-src 'self' *.sentry.dev; base-uri 'none'; frame-ancestors *.sentry.io; report-uri https://o1.ingest.sentry.io/api/1297627/security/?sentry_key=e811b9077ef64dcf8a279ec18a61b222",
+        "x-frame-options": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "server": "nginx",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": true,
+        "allowOrigin": "*",
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 200,
+          "latencyMs": 564,
+          "ok": true
+        },
+        {
+          "path": "/health",
+          "status": 200,
+          "latencyMs": 1032,
+          "ok": true
+        },
+        {
+          "path": "/api",
+          "status": 0,
+          "latencyMs": 2508,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 200,
+          "latencyMs": 1326,
+          "ok": true
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "latencyMs": 415,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 200,
+          "latencyMs": 1019,
+          "ok": true
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 200,
+          "latencyMs": 416,
+          "ok": true
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "avgLatencyMs": 826,
+        "minLatencyMs": 645,
+        "p95LatencyMs": 1399,
+        "maxLatencyMs": 1399,
+        "requestsPerSecond": 7,
+        "statusDistribution": {
+          "200": 10
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 275,
+        "domContentLoadedMs": 4771,
+        "loadTimeMs": 7330
+      },
+      "coreWebVitals": {
+        "lcpMs": 4448,
+        "cls": 0.003,
+        "fcpMs": 3168,
+        "tbtMs": 453,
+        "ttfbMs": 275
+      },
+      "accessibility": {
+        "violationsCount": 1,
+        "passesCount": 31
+      },
+      "crawledLinks": [
+        {
+          "url": "https://sentry.io/welcome/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/profiling/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/seer/agent/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/logs/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/seer/ai-code-review/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/uptime-monitoring/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/session-replay/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/seer/autofix/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/tracing/ai-agent/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/error-monitoring/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/tracing/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/size-analysis/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/metrics/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/seer/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://sentry.io/product/cron-monitoring/",
+          "status": 200,
+          "ok": true
+        }
+      ]
+    },
+    "detectedStack": {
+      "server": "vercel",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Vercel Edge Network edge gateway headers detected"
+      ],
+      "summary": "VERCEL"
+    },
+    "completedAt": "2026-09-28T12:04:48.999Z",
+    "durationMs": 44148
+  },
+  {
+    "jobId": "direct_1790597089043_v148p",
+    "targetUrl": "https://datadoghq.com",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:04:49.043Z",
+    "healthScore": 65,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 35 pts (uncapped: 35 pts) => 65/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 4,
+      "info": 0,
+      "pass": 0,
+      "total": 5
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597103816_23ugnm",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 6024ms (Poor > 4000ms)",
+        "metricValue": "6024ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597103816_jz8sdg",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 915ms (Threshold: 600ms)",
+        "metricValue": "915ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597103816_pemd5o",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 2 <img> element(s) without an alt attribute.",
+        "metricValue": "2 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597103585_qk50lz",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"https://www.datadoghq.com/product/infrastructure-monitoring/\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "details[open=\"\"] > .desktop\\:tw-absolute.desktop\\:tw-inset-\\[0\\%_auto_0\\%_calc\\(100\\%_\\+_92px\\)\\] > .tw-static > a",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790597103816_y8tglp",
+        "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+        "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+        "technicalDetails": "Avg latency: 1861ms (P95: 3676ms) under 10 concurrent requests.",
+        "metricValue": "1861ms avg",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+            "technology": "Backend Optimization"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "DigiCert Inc",
+        "validFrom": "Sep  8 00:00:00 2026 GMT",
+        "validTo": "Mar 25 23:59:59 2027 GMT",
+        "daysRemaining": 178,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "frame-ancestors 'self' https://onlinexperiences.com https://next.brella.io https://pheedloop.com https://gather.town https://datadog.docebosaas.com/",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "permissions-policy": null,
+        "server": "AmazonS3",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": true,
+        "allowOrigin": "*",
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 0,
+          "latencyMs": 2513,
+          "ok": false
+        },
+        {
+          "path": "/health",
+          "status": 0,
+          "latencyMs": 2513,
+          "ok": false
+        },
+        {
+          "path": "/api",
+          "status": 0,
+          "latencyMs": 2513,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 0,
+          "latencyMs": 2511,
+          "ok": false
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "latencyMs": 2241,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 200,
+          "latencyMs": 2416,
+          "ok": true
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 404,
+          "latencyMs": 1752,
+          "ok": false
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "avgLatencyMs": 1861,
+        "minLatencyMs": 683,
+        "p95LatencyMs": 3676,
+        "maxLatencyMs": 3676,
+        "requestsPerSecond": 3,
+        "statusDistribution": {
+          "200": 10
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 331,
+        "domContentLoadedMs": 7069,
+        "loadTimeMs": 9958
+      },
+      "coreWebVitals": {
+        "lcpMs": 6024,
+        "cls": 0.043,
+        "fcpMs": 5916,
+        "tbtMs": 915,
+        "ttfbMs": 331
+      },
+      "accessibility": {
+        "violationsCount": 1,
+        "passesCount": 29
+      },
+      "crawledLinks": []
+    },
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "none",
+      "detectedSignals": [],
+      "summary": "Stack not detected — generic server configuration"
+    },
+    "completedAt": "2026-09-28T12:05:03.816Z",
+    "durationMs": 14773
+  },
+  {
+    "jobId": "direct_1790597103858_n6rik",
+    "targetUrl": "https://discord.com",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:05:03.858Z",
+    "healthScore": 54,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 46 pts (uncapped: 86 pts) => 54/100]",
+    "summaryCounts": {
+      "critical": 4,
+      "warning": 5,
+      "info": 1,
+      "pass": 0,
+      "total": 10
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597146708_2891hh",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' 'unsafe-inline' 'nonce-MjEwLDUwLDMzLDIxOSw1LDE4NiwxMzIsNzk=' https://discord.com https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com https://ssl.google-analytics.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/ https://hcaptcha.com https://*.hcaptcha.com https://challenges.cloudflare.com https://s.ytimg.com/yts/jsbin/ https://www.youtube.com/iframe_api https://www.youtube.com/s/player/ https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location https://script.crazyegg.com https://*.website-files.com https://uploads-ssl.webflow.com https://global.localizecdn.com https://cdn.localizeapi.com https://d3e54v103j8qbb.cloudfront.net https://gist.github.com https://unpkg.com/@splinetool/runtime/build/runtime.js https://*.twitter.com https://platform.x.com https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js https://boards-api.greenhouse.io https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js https://cdn.finsweet.com/files/fscalendar/calendar-invite-v1.0.min.js https://www.redditstatic.com https://ads.reddit.com https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1.7.2/selectcustom.js https://embed.bsky.app/static/embed.js https://hubspotonwebflow.com/assets/js/form-124.js 'sha256-mjdgHR9aXy-6OwAGlNS_XgNcYG1Uhd2U4pl8vi7-XCY=' 'sha256-gqG2LEZaHDwOL3S_CXJTuk_f3LimTEyruhOc_U0_QUY=' 'sha256-y0oGiuXZdmX7xRABTnY5cbHkfghDqbfX6JoerXLgVJc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F_qF7Qt8TYwY=' 'sha256-TrY3AqlyKfZdsI3LYsy6u8GAhckLEXeyLcFK2gOe18U=' 'sha256-lVOL-gH47X0Li5QriWNZ69Hcr-71DsXFvGmQxN9TpBw=' 'sha256-j11ZNhk91nmUjPCBAIRcvJeEgnkbdJ9qNqoEMekilec=' 'sha256-1sQ9sTbc6Lumd2Frwf7IBwGG02gPTreTI8QBBW5kibM=' 'sha256-uh1p-Vy3_Cn66Ugk4Hak-gGr2Udg7yiI_5u5E_BdCRM=' 'sha256-7JHgDILwD7i_kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-KvstP_RIj6GGaE25Mqo-kIO0_WVEls1n5tnNhm8zmPA=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r_ZP5EDPY=' 'sha256-jY_7jWrddtNUb-Y4CFKWaH-R2lrqgm_LAX72E8SLqKw=' 'sha256-MdICB9cW7ILT3ZeSxhN2YlpFxEsn5WHr03Ix-WVpHsw=' 'sha256-fUfByJGhChEFu7PE5HJfFwiYKySnP1H0iXvAxkauLNU=' 'sha256-xjkCDxBOM2TlIn5DpGQM4aJldb4AiHMKlRjfW46l-x0=' 'sha256-VOPfGBY-XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY=' 'sha256-tVeTMYknRG_IAdCHRGlDd9S2bX2_rX0e4HpaP9lgKWY=' 'sha256-kprfDg8ElCpUCFQAX5shnAPf3i59vVTSy02AjZXV3k0=' 'sha256-9zwpTkjhuy41nnRU74rj1TlYykoqAUntsoPtJ20cQAk=' 'sha256-llLws8TR-U3nNRCIvJNVc-SGscqwyeO1IPgpbnWuZdc=' 'sha256-h9lm4cvrD7egZu1GTAE1h2IDy1K4fXgD-q_O7aEosuw=' 'sha256-_cdQbTQzcfSt2_aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-U0jHWhsvIpjnwYKeJS_-2pe9ROsYnck5ZB2aXNyKWq8=' 'sha256-rB4G_-e_bAPU7rKI_9HC1lBZ0XEa_nHDH6hXFz4GIh4=' 'sha256-N02bP-slnHB-OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-QHiY6i8ql9SJTaFXzUhm08ZWuNz0QarKruf0Omd9-OQ=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG/j/hFOUnE=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG_j_hFOUnE=' 'sha256-mjdgHR9aXy+6OwAGlNS/XgNcYG1Uhd2U4pl8vi7+XCY=' 'sha256-jY/7jWrddtNUb+Y4CFKWaH+R2lrqgm/LAX72E8SLqKw=' 'sha256-lVOL+gH47X0Li5QriWNZ69Hcr+71DsXFvGmQxN9TpBw=' 'sha256-/cdQbTQzcfSt2/aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-N02bP+slnHB+OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-gqG2LEZaHDwOL3S/CXJTuk/f3LimTEyruhOc/U0/QUY=' 'sha256-llLws8TR+U3nNRCIvJNVc+SGscqwyeO1IPgpbnWuZdc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F/qF7Qt8TYwY=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r/ZP5EDPY=' 'sha256-7JHgDILwD7i/kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-VOPfGBY+XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY=''. Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list. The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_7eu95l",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Loading the font 'data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAO...MAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==' violates the following Content Security Policy directive: \"font-src 'self' https://fonts.gstatic.com https://fonts.gstatic.com https://*.website-files.com https://uploads-ssl.webflow.com https://www.redditstatic.com\". The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_9mzypu",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' 'unsafe-inline' 'nonce-MjEwLDUwLDMzLDIxOSw1LDE4NiwxMzIsNzk=' https://discord.com https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com https://ssl.google-analytics.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/ https://hcaptcha.com https://*.hcaptcha.com https://challenges.cloudflare.com https://s.ytimg.com/yts/jsbin/ https://www.youtube.com/iframe_api https://www.youtube.com/s/player/ https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location https://script.crazyegg.com https://*.website-files.com https://uploads-ssl.webflow.com https://global.localizecdn.com https://cdn.localizeapi.com https://d3e54v103j8qbb.cloudfront.net https://gist.github.com https://unpkg.com/@splinetool/runtime/build/runtime.js https://*.twitter.com https://platform.x.com https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js https://boards-api.greenhouse.io https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js https://cdn.finsweet.com/files/fscalendar/calendar-invite-v1.0.min.js https://www.redditstatic.com https://ads.reddit.com https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1.7.2/selectcustom.js https://embed.bsky.app/static/embed.js https://hubspotonwebflow.com/assets/js/form-124.js 'sha256-mjdgHR9aXy-6OwAGlNS_XgNcYG1Uhd2U4pl8vi7-XCY=' 'sha256-gqG2LEZaHDwOL3S_CXJTuk_f3LimTEyruhOc_U0_QUY=' 'sha256-y0oGiuXZdmX7xRABTnY5cbHkfghDqbfX6JoerXLgVJc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F_qF7Qt8TYwY=' 'sha256-TrY3AqlyKfZdsI3LYsy6u8GAhckLEXeyLcFK2gOe18U=' 'sha256-lVOL-gH47X0Li5QriWNZ69Hcr-71DsXFvGmQxN9TpBw=' 'sha256-j11ZNhk91nmUjPCBAIRcvJeEgnkbdJ9qNqoEMekilec=' 'sha256-1sQ9sTbc6Lumd2Frwf7IBwGG02gPTreTI8QBBW5kibM=' 'sha256-uh1p-Vy3_Cn66Ugk4Hak-gGr2Udg7yiI_5u5E_BdCRM=' 'sha256-7JHgDILwD7i_kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-KvstP_RIj6GGaE25Mqo-kIO0_WVEls1n5tnNhm8zmPA=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r_ZP5EDPY=' 'sha256-jY_7jWrddtNUb-Y4CFKWaH-R2lrqgm_LAX72E8SLqKw=' 'sha256-MdICB9cW7ILT3ZeSxhN2YlpFxEsn5WHr03Ix-WVpHsw=' 'sha256-fUfByJGhChEFu7PE5HJfFwiYKySnP1H0iXvAxkauLNU=' 'sha256-xjkCDxBOM2TlIn5DpGQM4aJldb4AiHMKlRjfW46l-x0=' 'sha256-VOPfGBY-XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY=' 'sha256-tVeTMYknRG_IAdCHRGlDd9S2bX2_rX0e4HpaP9lgKWY=' 'sha256-kprfDg8ElCpUCFQAX5shnAPf3i59vVTSy02AjZXV3k0=' 'sha256-9zwpTkjhuy41nnRU74rj1TlYykoqAUntsoPtJ20cQAk=' 'sha256-llLws8TR-U3nNRCIvJNVc-SGscqwyeO1IPgpbnWuZdc=' 'sha256-h9lm4cvrD7egZu1GTAE1h2IDy1K4fXgD-q_O7aEosuw=' 'sha256-_cdQbTQzcfSt2_aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-U0jHWhsvIpjnwYKeJS_-2pe9ROsYnck5ZB2aXNyKWq8=' 'sha256-rB4G_-e_bAPU7rKI_9HC1lBZ0XEa_nHDH6hXFz4GIh4=' 'sha256-N02bP-slnHB-OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-QHiY6i8ql9SJTaFXzUhm08ZWuNz0QarKruf0Omd9-OQ=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG/j/hFOUnE=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG_j_hFOUnE=' 'sha256-mjdgHR9aXy+6OwAGlNS/XgNcYG1Uhd2U4pl8vi7+XCY=' 'sha256-jY/7jWrddtNUb+Y4CFKWaH+R2lrqgm/LAX72E8SLqKw=' 'sha256-lVOL+gH47X0Li5QriWNZ69Hcr+71DsXFvGmQxN9TpBw=' 'sha256-/cdQbTQzcfSt2/aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-N02bP+slnHB+OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-gqG2LEZaHDwOL3S/CXJTuk/f3LimTEyruhOc/U0/QUY=' 'sha256-llLws8TR+U3nNRCIvJNVc+SGscqwyeO1IPgpbnWuZdc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F/qF7Qt8TYwY=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r/ZP5EDPY=' 'sha256-7JHgDILwD7i/kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-VOPfGBY+XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY=''. Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list. The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_7hj3u1",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://cdn.prod.website-files.com/6257adef93867e50d84d30e2%2F6787b62a9742f59453ba8919_Discord_Websote_Refresh_Emojis2_EN-transcode.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_jh8802",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://cdn.prod.website-files.com/6257adef93867e50d84d30e2%2F683a317f73a44ea577535c09_Homepage_Hop-In_EN-transcode.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_i7buk8",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://cdn.prod.website-files.com/6257adef93867e50d84d30e2%2F683a3195524ad05044d126c9_Homepage_AroundToChill_EN-transcode.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_gs0ply",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://cdn.prod.website-files.com/6257adef93867e50d84d30e2%2F6763b9f56c9bf69e5e914cd5_Discord_Refresh_Activities_EN-transcode.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_80sa35",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 5684ms (Poor > 4000ms)",
+        "metricValue": "5684ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_uc3ant",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 1264ms (Threshold: 600ms)",
+        "metricValue": "1264ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597146708_zpl2la",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "Google Trust Services",
+        "validFrom": "Aug 28 23:39:00 2026 GMT",
+        "validTo": "Nov 27 00:38:58 2026 GMT",
+        "daysRemaining": 59,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'nonce-MTkwLDI3LDMwLDE3OCw5OSwyMjAsNjksMTAw' https://discord.com https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com https://ssl.google-analytics.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/ https://hcaptcha.com https://*.hcaptcha.com https://challenges.cloudflare.com https://s.ytimg.com/yts/jsbin/ https://www.youtube.com/iframe_api https://www.youtube.com/s/player/ https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location https://script.crazyegg.com https://*.website-files.com https://uploads-ssl.webflow.com https://global.localizecdn.com https://cdn.localizeapi.com https://d3e54v103j8qbb.cloudfront.net https://gist.github.com https://unpkg.com/@splinetool/runtime/build/runtime.js https://*.twitter.com https://platform.x.com https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js https://boards-api.greenhouse.io https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js https://cdn.finsweet.com/files/fscalendar/calendar-invite-v1.0.min.js https://www.redditstatic.com https://ads.reddit.com https://cdn.jsdelivr.net/npm/@finsweet/attributes-selectcustom@1.7.2/selectcustom.js https://embed.bsky.app/static/embed.js https://hubspotonwebflow.com/assets/js/form-124.js 'sha256-mjdgHR9aXy-6OwAGlNS_XgNcYG1Uhd2U4pl8vi7-XCY=' 'sha256-gqG2LEZaHDwOL3S_CXJTuk_f3LimTEyruhOc_U0_QUY=' 'sha256-y0oGiuXZdmX7xRABTnY5cbHkfghDqbfX6JoerXLgVJc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F_qF7Qt8TYwY=' 'sha256-TrY3AqlyKfZdsI3LYsy6u8GAhckLEXeyLcFK2gOe18U=' 'sha256-lVOL-gH47X0Li5QriWNZ69Hcr-71DsXFvGmQxN9TpBw=' 'sha256-j11ZNhk91nmUjPCBAIRcvJeEgnkbdJ9qNqoEMekilec=' 'sha256-1sQ9sTbc6Lumd2Frwf7IBwGG02gPTreTI8QBBW5kibM=' 'sha256-uh1p-Vy3_Cn66Ugk4Hak-gGr2Udg7yiI_5u5E_BdCRM=' 'sha256-7JHgDILwD7i_kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-KvstP_RIj6GGaE25Mqo-kIO0_WVEls1n5tnNhm8zmPA=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r_ZP5EDPY=' 'sha256-jY_7jWrddtNUb-Y4CFKWaH-R2lrqgm_LAX72E8SLqKw=' 'sha256-MdICB9cW7ILT3ZeSxhN2YlpFxEsn5WHr03Ix-WVpHsw=' 'sha256-fUfByJGhChEFu7PE5HJfFwiYKySnP1H0iXvAxkauLNU=' 'sha256-xjkCDxBOM2TlIn5DpGQM4aJldb4AiHMKlRjfW46l-x0=' 'sha256-VOPfGBY-XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY=' 'sha256-tVeTMYknRG_IAdCHRGlDd9S2bX2_rX0e4HpaP9lgKWY=' 'sha256-kprfDg8ElCpUCFQAX5shnAPf3i59vVTSy02AjZXV3k0=' 'sha256-9zwpTkjhuy41nnRU74rj1TlYykoqAUntsoPtJ20cQAk=' 'sha256-llLws8TR-U3nNRCIvJNVc-SGscqwyeO1IPgpbnWuZdc=' 'sha256-h9lm4cvrD7egZu1GTAE1h2IDy1K4fXgD-q_O7aEosuw=' 'sha256-_cdQbTQzcfSt2_aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-U0jHWhsvIpjnwYKeJS_-2pe9ROsYnck5ZB2aXNyKWq8=' 'sha256-rB4G_-e_bAPU7rKI_9HC1lBZ0XEa_nHDH6hXFz4GIh4=' 'sha256-N02bP-slnHB-OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-QHiY6i8ql9SJTaFXzUhm08ZWuNz0QarKruf0Omd9-OQ=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG/j/hFOUnE=' 'sha256-s4OBHcHJnkGxjEyNJhU5BQt4qlt6MH07rG_j_hFOUnE=' 'sha256-mjdgHR9aXy+6OwAGlNS/XgNcYG1Uhd2U4pl8vi7+XCY=' 'sha256-jY/7jWrddtNUb+Y4CFKWaH+R2lrqgm/LAX72E8SLqKw=' 'sha256-lVOL+gH47X0Li5QriWNZ69Hcr+71DsXFvGmQxN9TpBw=' 'sha256-/cdQbTQzcfSt2/aCceUvkUmLh1WMdvlKbi1BBG7u8Jg=' 'sha256-N02bP+slnHB+OYEN6imRqCHcHLN5DvBouRmyO2qcQYU=' 'sha256-gqG2LEZaHDwOL3S/CXJTuk/f3LimTEyruhOc/U0/QUY=' 'sha256-llLws8TR+U3nNRCIvJNVc+SGscqwyeO1IPgpbnWuZdc=' 'sha256-gBzDBwsujjXjXk6GLgdSlLIrvt5h0s3F/qF7Qt8TYwY=' 'sha256-6xIDOlx5P0LKHv8fkot5ULOnB8ySdhjJi5r/ZP5EDPY=' 'sha256-7JHgDILwD7i/kvnHwJFF5WsHHmIc98tkBqDqbv47iFE=' 'sha256-VOPfGBY+XgTDMwhG41S5eZyMKlu3gN60suwCPDWZ8MY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hcaptcha.com https://hcaptcha.com https://*.website-files.com https://uploads-ssl.webflow.com https://*.githubassets.com https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css; img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://cdn.discordapp.com https://safety.discord.com https://discordmoderatoracademy.zendesk.com https://assets-global.website-files.com data: https://*.website-files.com https://uploads-ssl.webflow.com https://global.localizecdn.com https://cdn.localizeapi.com https://*.ytimg.com https://uploads-ssl.webflow.com https://alb.reddit.com; font-src 'self' https://fonts.gstatic.com https://fonts.gstatic.com https://*.website-files.com https://uploads-ssl.webflow.com https://www.redditstatic.com; connect-src 'self' https://discordapp.com https://discord.com https://connect.facebook.net https://api.greenhouse.io https://api.github.com https://*.sentry.io https://www.google-analytics.com https://*.hcaptcha.com https://hcaptcha.com https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location ws://127.0.0.1:* http://127.0.0.1:* https://global.localizecdn.com https://cdn.localizeapi.com https://*.website-files.com https://uploads-ssl.webflow.com https://webflow.com/api/ https://script.crazyegg.com https://assets-tracking.crazyegg.com https://pagestates-tracking.crazyegg.com https://tracking.crazyegg.com https://www.redditstatic.com https://pixel-config.reddit.com https://conversions-config.reddit.com https://redditstatic.com https://ads.reddit.com https://hubspotonwebflow.com/api/forms/blockList https://hubspotonwebflow.com/assets/js/blockedDomains.json https://hubspotonwebflow.com/api/forms/cf7f8234-dcdf-4b6e-b0e4-371878d5286e https://hubspotonwebflow.com/api/forms/28f33b0d-28c9-4d17-91ae-999b4388dd2d; media-src 'self' https://cdn.discordapp.com/assets/ https://cdn.discordapp.com/promotions/premium-marketing/ https://*.website-files.com https://uploads-ssl.webflow.com; frame-src https://discordapp.com/domain-migration https://www.google.com/recaptcha/ https://recaptcha.net/recaptcha/ https://*.hcaptcha.com https://hcaptcha.com https://challenges.cloudflare.com https://www.youtube.com/embed/ https://10851314.fls.doubleclick.net/ https://*.twitter.com https://platform.x.com https://syndication.x.com https://*.vimeo.com https://embed.bsky.app;",
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": null,
+        "permissions-policy": "interest-cohort=()",
+        "server": "cloudflare",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 200,
+          "latencyMs": 245,
+          "ok": true
+        },
+        {
+          "path": "/health",
+          "status": 404,
+          "latencyMs": 459,
+          "ok": false
+        },
+        {
+          "path": "/api",
+          "status": 403,
+          "latencyMs": 227,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 404,
+          "latencyMs": 488,
+          "ok": false
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "latencyMs": 220,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 404,
+          "latencyMs": 438,
+          "ok": false
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 200,
+          "latencyMs": 217,
+          "ok": true
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "avgLatencyMs": 412,
+        "minLatencyMs": 112,
+        "p95LatencyMs": 1599,
+        "maxLatencyMs": 1599,
+        "requestsPerSecond": 6,
+        "statusDistribution": {
+          "200": 10
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 56,
+        "domContentLoadedMs": 5609,
+        "loadTimeMs": 8123
+      },
+      "coreWebVitals": {
+        "lcpMs": 5684,
+        "cls": 0.004,
+        "fcpMs": 3944,
+        "tbtMs": 1264,
+        "ttfbMs": 56
+      },
+      "accessibility": {
+        "violationsCount": 0,
+        "passesCount": 23
+      },
+      "crawledLinks": [
+        {
+          "url": "https://discord.com/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/download",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/nitro",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-family-center",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-news",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-library",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-privacy",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-parents",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-policies",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-transparency",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-teen-charter",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/safety-players-guide",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/servers",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://discord.com/trending-games",
+          "status": 200,
+          "ok": true
+        }
+      ]
+    },
+    "detectedStack": {
+      "server": "cloudflare",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Cloudflare Reverse Proxy / CDN edge (`cf-ray`) detected"
+      ],
+      "summary": "CLOUDFLARE"
+    },
+    "completedAt": "2026-09-28T12:05:46.708Z",
+    "durationMs": 42849
+  },
+  {
+    "jobId": "direct_1790597146748_3dl4y",
+    "targetUrl": "https://cloudflare.com",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:05:46.748Z",
+    "healthScore": 75,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 25 pts (uncapped: 25 pts) => 75/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 2,
+      "info": 0,
+      "pass": 0,
+      "total": 3
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597160072_70rk85",
+        "ruleId": "PAGE_TTFB_SLOW",
+        "category": "performance",
+        "severity": "warning",
+        "title": "Slow Time to First Byte (TTFB > 800ms)",
+        "plainEnglishCause": "The server took over 800ms before sending the first byte of HTML. This is typically caused by un-cached database queries, slow SSR rendering, or distant server regions.",
+        "technicalDetails": "Time to First Byte: 922ms (Recommended: < 800ms)",
+        "metricValue": "922ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Implement HTTP edge caching (Cloudflare / Vercel Edge / Fastly) and optimize backend database queries.",
+            "technology": "Caching / CDN",
+            "codeSnippet": "// Cache-Control header\nres.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597160072_vaqwl1",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 5148ms (Poor > 4000ms)",
+        "metricValue": "5148ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597160072_7sb1at",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <span>Under attack?</span>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": ".lg\\:inline-flex > span:nth-child(2)",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "Google Trust Services",
+        "validFrom": "Sep  5 22:29:39 2026 GMT",
+        "validTo": "Dec  4 23:29:33 2026 GMT",
+        "daysRemaining": 67,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://static-staging.cloudflareinsights.com https://challenges.cloudflare.com https://*.onetrust.com https://cdn.cookielaw.org https://ot.www.cloudflare.com https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://adservice.google.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://platform.twitter.com https://static.ads-twitter.com https://scripts.demandbase.com https://tag.demandbase.com https://*.6sc.co https://*.qualified.com https://snap.licdn.com https://bat.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.doubleclick.net https://www.googleadservices.com https://translate.googleapis.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://ads-twitter.com https://analytics.twitter.com https://*.twimg.com https://api.demandbase.com https://scripts.demandbase.com https://tag.demandbase.com https://tag-logger.demandbase.com https://api.company-target.com https://*.6sc.co https://epsilon.6sense.com https://*.qualified.com https://*.ads.linkedin.com https://www.linkedin.com https://bat.bing.com https: wss://*.qualified.com wss://*.registrar.cloudflare.com; frame-src https://*.adsrvr.org https://*.cloudflare.com https://*.videodelivery.net https://*.cloudflarestream.com https://www.googletagmanager.com https://*.qualified.com https://td.doubleclick.net https://bid.g.doubleclick.net https://9309168.fls.doubleclick.net https://9973066.fls.doubleclick.net https://s.company-target.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self' blob:; child-src 'self' blob:; upgrade-insecure-requests",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "geolocation=(), camera=(), microphone=()",
+        "server": "cloudflare",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 200,
+          "latencyMs": 338,
+          "ok": true
+        },
+        {
+          "path": "/health",
+          "status": 404,
+          "latencyMs": 1665,
+          "ok": false
+        },
+        {
+          "path": "/api",
+          "status": 404,
+          "latencyMs": 1673,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 404,
+          "latencyMs": 953,
+          "ok": false
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "latencyMs": 584,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 200,
+          "latencyMs": 1052,
+          "ok": true
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 200,
+          "latencyMs": 662,
+          "ok": true
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "avgLatencyMs": 340,
+        "minLatencyMs": 263,
+        "p95LatencyMs": 446,
+        "maxLatencyMs": 446,
+        "requestsPerSecond": 22,
+        "statusDistribution": {
+          "200": 10
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 922,
+        "domContentLoadedMs": 5629,
+        "loadTimeMs": 7862
+      },
+      "coreWebVitals": {
+        "lcpMs": 5148,
+        "cls": 0,
+        "fcpMs": 4988,
+        "tbtMs": 495,
+        "ttfbMs": 922
+      },
+      "accessibility": {
+        "violationsCount": 1,
+        "passesCount": 26
+      },
+      "crawledLinks": []
+    },
+    "detectedStack": {
+      "server": "cloudflare",
+      "framework": "astro",
+      "language": "node",
+      "confidence": "high",
+      "detectedSignals": [
+        "Astro island component architecture detected",
+        "Cloudflare Reverse Proxy / CDN edge (`cf-ray`) detected"
+      ],
+      "summary": "ASTRO on CLOUDFLARE on (node) [Verified]"
+    },
+    "completedAt": "2026-09-28T12:06:00.072Z",
+    "durationMs": 13324
+  },
+  {
+    "jobId": "direct_1790597160107_qzzku",
+    "targetUrl": "https://fastly.com",
+    "scanType": "both",
+    "status": "completed",
+    "startedAt": "2026-09-28T12:06:00.107Z",
+    "healthScore": 60,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 40 pts (uncapped: 120 pts) => 60/100]",
+    "summaryCounts": {
+      "critical": 5,
+      "warning": 9,
+      "info": 0,
+      "pass": 0,
+      "total": 14
+    },
+    "findings": [
+      {
+        "id": "fnd_1790597197793_4thdo0",
+        "ruleId": "SSL_EXPIRING_SOON",
+        "category": "security",
+        "severity": "warning",
+        "title": "SSL Certificate Expiring in < 30 Days",
+        "plainEnglishCause": "The TLS certificate is valid but expires in less than 30 days. Auto-renewal may be misconfigured or failing.",
+        "technicalDetails": "Expires in 16 days (Oct 14 18:37:49 2026 GMT)",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Verify automated renewal cron and DNS verification hooks.",
+            "technology": "SSL Monitoring",
+            "codeSnippet": "sudo certbot renew --dry-run"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_vqbdy0",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Refused to apply style from 'https://www.fastly.com/_astro/SectionResourceCardGrid.Bnfugv_f.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_ov3ao5",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Refused to apply style from 'https://www.fastly.com/_astro/TableOfContents.NgFUGXEP.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_y60rhg",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Refused to apply style from 'https://www.fastly.com/_astro/HeroWithForm.B2SDg7aY.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_86ulvu",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Refused to apply style from 'https://www.fastly.com/_astro/TileCard.CegaZEGZ.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_o4d76z",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+        "technicalDetails": "Refused to apply style from 'https://www.fastly.com/_astro/SectionTestimonials.DA6EhxgE.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+            "technology": "React / JavaScript",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_siu510",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/SectionResourceCardGrid.Bnfugv_f.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_tqvva6",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/TableOfContents.NgFUGXEP.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_t921n1",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/HeroWithForm.B2SDg7aY.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_3kd6no",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/TileCard.CegaZEGZ.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_etysu7",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/SectionTestimonials.DA6EhxgE.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_lotiq9",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.fastly.com/_astro/use-password-validation.CH0i_T2z.css",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_trseou",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"_text_1j7p1_76\">USA Today Co.</span>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "#tab-2LJh9iCgchk1ZbYDHIzyxn > ._text_1j7p1_76",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790597197793_ic8y9h",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+            "technology": "Universal HTTP Header",
+            "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+          }
+        ],
+        "repoSearchQuery": "Content-Security-Policy",
+        "isVerified": true,
+        "isAiSuggested": false,
+        "stackContext": {
+          "matchedTechnology": "Generic / Universal",
+          "isGenericFallback": true,
+          "detectedStackSummary": "Stack not detected — generic server configuration"
+        }
+      }
+    ],
+    "rawMetrics": {
+      "ssl": {
+        "valid": true,
+        "issuer": "Certainly",
+        "validFrom": "Sep 14 18:37:50 2026 GMT",
+        "validTo": "Oct 14 18:37:49 2026 GMT",
+        "daysRemaining": 16,
+        "protocol": "TLSv1.3"
+      },
+      "securityHeaders": {
+        "strict-transport-security": "max-age=31536000",
+        "content-security-policy": null,
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "server": "Artisanal bits",
+        "x-powered-by": null
+      },
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "endpointsDiscovered": [
+        {
+          "path": "/",
+          "status": 200,
+          "latencyMs": 207,
+          "ok": true
+        },
+        {
+          "path": "/health",
+          "status": 404,
+          "latencyMs": 1017,
+          "ok": false
+        },
+        {
+          "path": "/api",
+          "status": 404,
+          "latencyMs": 1353,
+          "ok": false
+        },
+        {
+          "path": "/api/health",
+          "status": 404,
+          "latencyMs": 1499,
+          "ok": false
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "latencyMs": 200,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 503,
+          "latencyMs": 1658,
+          "ok": false
+        },
+        {
+          "path": "/.well-known/security.txt",
+          "status": 404,
+          "latencyMs": 931,
+          "ok": false
+        }
+      ],
+      "lightLoad": {
+        "concurrency": 10,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "avgLatencyMs": 294,
+        "minLatencyMs": 207,
+        "p95LatencyMs": 320,
+        "maxLatencyMs": 320,
+        "requestsPerSecond": 29,
+        "statusDistribution": {
+          "200": 10
+        }
+      },
+      "pageLoad": {
+        "httpStatus": 200,
+        "ttfbMs": 28,
+        "domContentLoadedMs": 1064,
+        "loadTimeMs": 1606
+      },
+      "coreWebVitals": {
+        "lcpMs": 700,
+        "cls": 0,
+        "fcpMs": 508,
+        "tbtMs": 583,
+        "ttfbMs": 28
+      },
+      "accessibility": {
+        "violationsCount": 1,
+        "passesCount": 29
+      },
+      "crawledLinks": [
+        {
+          "url": "https://fastly.com/documentation",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "url": "https://fastly.com/documentation/developers/community",
+          "status": 200,
+          "ok": true
+        }
+      ]
+    },
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "none",
+      "detectedSignals": [],
+      "summary": "Stack not detected — generic server configuration"
+    },
+    "completedAt": "2026-09-28T12:06:37.793Z",
+    "durationMs": 37685
+  }
+]

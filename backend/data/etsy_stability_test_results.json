@@ -1,0 +1,182 @@
+{
+  "runsSummary": {
+    "scores": [
+      85,
+      84,
+      84
+    ],
+    "completeness": [
+      "partial_backend_only",
+      "partial_backend_only",
+      "partial_backend_only"
+    ],
+    "findingsCounts": [
+      1,
+      2,
+      2
+    ],
+    "isStable": false
+  },
+  "run1": {
+    "runNumber": 1,
+    "jobId": "direct_1790668848236_gjq2p",
+    "status": "completed",
+    "scanCompleteness": "partial_backend_only",
+    "completenessNotice": "Partial scan — Frontend browser unreachable/blocked (Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.). Only HTTP/TLS and API probes executed. Core Web Vitals & DOM accessibility audits were skipped.",
+    "healthScore": 85,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 15 pts (uncapped: 15 pts) => 85/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 0,
+      "info": 0,
+      "pass": 0,
+      "total": 1
+    },
+    "findings": [
+      {
+        "id": "fnd_1790668853287_beun97",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "effort": "medium",
+        "priorityBucket": "plan_next",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"403\":10}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "durationMs": 5132
+  },
+  "run2": {
+    "runNumber": 2,
+    "jobId": "direct_1790668853369_prou2",
+    "status": "completed",
+    "scanCompleteness": "partial_backend_only",
+    "completenessNotice": "Partial scan — Frontend browser unreachable/blocked (Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.). Only HTTP/TLS and API probes executed. Core Web Vitals & DOM accessibility audits were skipped.",
+    "healthScore": 84,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 16 pts (uncapped: 16 pts) => 84/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 0,
+      "info": 1,
+      "pass": 0,
+      "total": 2
+    },
+    "findings": [
+      {
+        "id": "fnd_1790668855445_9afwac",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "effort": "low",
+        "priorityBucket": "nice_to_have",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790668855445_sqgt6b",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "effort": "medium",
+        "priorityBucket": "plan_next",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"403\":10}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "durationMs": 2117
+  },
+  "run3": {
+    "runNumber": 3,
+    "jobId": "direct_1790668855486_uwoga",
+    "status": "completed",
+    "scanCompleteness": "partial_backend_only",
+    "completenessNotice": "Partial scan — Frontend browser unreachable/blocked (Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.). Only HTTP/TLS and API probes executed. Core Web Vitals & DOM accessibility audits were skipped.",
+    "healthScore": 84,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 16 pts (uncapped: 16 pts) => 84/100]",
+    "summaryCounts": {
+      "critical": 1,
+      "warning": 0,
+      "info": 1,
+      "pass": 0,
+      "total": 2
+    },
+    "findings": [
+      {
+        "id": "fnd_1790668856658_98yss4",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "effort": "low",
+        "priorityBucket": "nice_to_have",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790668856658_cbjzdb",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "effort": "medium",
+        "priorityBucket": "plan_next",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"403\":10}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ],
+    "durationMs": 1231
+  }
+}

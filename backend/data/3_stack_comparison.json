@@ -1,0 +1,274 @@
+{
+  "example1_nginx": {
+    "url": "https://www.fsf.org",
+    "detectedStack": {
+      "server": "nginx",
+      "framework": "unknown",
+      "language": "unknown",
+      "confidence": "medium",
+      "detectedSignals": [
+        "Nginx web server header detected: `nginx`"
+      ],
+      "summary": "NGINX"
+    },
+    "cspFinding": {
+      "id": "fnd_1790581619032_2enrfh",
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Content-Security-Policy (CSP) Header",
+      "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+      "technicalDetails": "Content-Security-Policy header is absent on https://www.fsf.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add the Content-Security-Policy header directive in your Nginx server block.",
+          "technology": "Nginx",
+          "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;"
+        }
+      ],
+      "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;",
+      "repoSearchQuery": "add_header Content-Security-Policy",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Nginx Server Block",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NGINX"
+      }
+    },
+    "hstsFinding": {
+      "id": "fnd_1790581619032_iqdbfh",
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Strict-Transport-Security (HSTS) Header",
+      "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+      "technicalDetails": "Strict-Transport-Security header is absent on https://www.fsf.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add the Strict-Transport-Security header to your HTTPS server block in Nginx.",
+          "technology": "Nginx",
+          "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}"
+        }
+      ],
+      "codeSnippet": "server {\n    listen 443 ssl http2;\n    server_name yourdomain.com;\n    \n    add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\n}",
+      "repoSearchQuery": "add_header Strict-Transport-Security",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Nginx Server Block",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NGINX"
+      }
+    },
+    "serverLeakFinding": {
+      "id": "fnd_1790581619032_ccv3tn",
+      "ruleId": "SEC_SERVER_HEADER_LEAK",
+      "category": "security",
+      "severity": "info",
+      "title": "Server Identity Information Leaked",
+      "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+      "technicalDetails": "Server header leaked on https://www.fsf.org: nginx",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Disable server version numbers in the http block of /etc/nginx/nginx.conf.",
+          "technology": "Nginx",
+          "codeSnippet": "# /etc/nginx/nginx.conf\nhttp {\n    server_tokens off;\n    more_clear_headers Server; # If using headers-more module\n}"
+        }
+      ],
+      "codeSnippet": "# /etc/nginx/nginx.conf\nhttp {\n    server_tokens off;\n    more_clear_headers Server; # If using headers-more module\n}",
+      "repoSearchQuery": "server_tokens off;",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Nginx (nginx.conf)",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NGINX"
+      }
+    }
+  },
+  "example2_nextjs_vercel": {
+    "url": "https://nextjs.org",
+    "detectedStack": {
+      "server": "vercel",
+      "framework": "nextjs",
+      "language": "node",
+      "confidence": "high",
+      "detectedSignals": [
+        "Next.js hydration payload / `_next` static routing detected",
+        "Vercel Edge Network edge gateway headers detected"
+      ],
+      "summary": "NEXTJS on VERCEL on (node) [Verified]"
+    },
+    "cspFinding": {
+      "id": "fnd_1790581654661_bnepiy",
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Content-Security-Policy (CSP) Header",
+      "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+      "technicalDetails": "Content-Security-Policy header is absent on https://nextjs.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Define your Content Security Policy inside next.config.js headers configuration.",
+          "technology": "Next.js",
+          "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};"
+        }
+      ],
+      "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};",
+      "repoSearchQuery": "Content-Security-Policy",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Next.js (next.config.js)",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NEXTJS on VERCEL on (node) [Verified]"
+      }
+    },
+    "hstsFinding": {
+      "id": "fnd_1790581654661_qscyav",
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Strict-Transport-Security (HSTS) Header",
+      "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+      "technicalDetails": "Strict-Transport-Security header is absent on https://nextjs.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Add Strict-Transport-Security to headers list in next.config.js.",
+          "technology": "Next.js",
+          "codeSnippet": "// next.config.js\nmodule.exports = {\n  async headers() {\n    return [{\n      source: '/(.*)',\n      headers: [\n        { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains; preload' }\n      ]\n    }];\n  }\n};"
+        }
+      ],
+      "codeSnippet": "// next.config.js\nmodule.exports = {\n  async headers() {\n    return [{\n      source: '/(.*)',\n      headers: [\n        { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains; preload' }\n      ]\n    }];\n  }\n};",
+      "repoSearchQuery": "Strict-Transport-Security",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Next.js (next.config.js)",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NEXTJS on VERCEL on (node) [Verified]"
+      }
+    },
+    "serverLeakFinding": {
+      "id": "fnd_1790581654661_495b8z",
+      "ruleId": "SEC_SERVER_HEADER_LEAK",
+      "category": "security",
+      "severity": "info",
+      "title": "Server Identity Information Leaked",
+      "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+      "technicalDetails": "Server header leaked on https://nextjs.org: Vercel",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "Set poweredByHeader: false in next.config.js.",
+          "technology": "Next.js",
+          "codeSnippet": "// next.config.js\nmodule.exports = {\n  poweredByHeader: false,\n};"
+        }
+      ],
+      "codeSnippet": "// next.config.js\nmodule.exports = {\n  poweredByHeader: false,\n};",
+      "repoSearchQuery": "poweredByHeader: false",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Next.js (next.config.js)",
+        "isGenericFallback": false,
+        "detectedStackSummary": "NEXTJS on VERCEL on (node) [Verified]"
+      }
+    }
+  },
+  "example3_generic": {
+    "url": "https://httpbin.org",
+    "detectedStack": {
+      "server": "unknown",
+      "framework": "react",
+      "language": "python",
+      "confidence": "high",
+      "detectedSignals": [
+        "React DOM client container marker detected",
+        "Python ASGI/WSGI server header detected: `gunicorn/19.9.0`"
+      ],
+      "summary": "REACT on (python) [Verified]"
+    },
+    "cspFinding": {
+      "id": "fnd_1790581701676_yznixv",
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Content-Security-Policy (CSP) Header",
+      "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+      "technicalDetails": "Content-Security-Policy header is absent on https://httpbin.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+          "technology": "Universal HTTP Header",
+          "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+        }
+      ],
+      "repoSearchQuery": "Content-Security-Policy",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Generic / Universal",
+        "isGenericFallback": true,
+        "detectedStackSummary": "REACT on (python) [Verified]"
+      }
+    },
+    "hstsFinding": {
+      "id": "fnd_1790581701677_e1yzms",
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "security",
+      "severity": "warning",
+      "title": "Missing Strict-Transport-Security (HSTS) Header",
+      "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+      "technicalDetails": "Strict-Transport-Security header is absent on https://httpbin.org",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+          "technology": "Universal HTTP Header",
+          "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+        }
+      ],
+      "repoSearchQuery": "Strict-Transport-Security",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Generic / Universal",
+        "isGenericFallback": true,
+        "detectedStackSummary": "REACT on (python) [Verified]"
+      }
+    },
+    "serverLeakFinding": {
+      "id": "fnd_1790581701677_0u7dh4",
+      "ruleId": "SEC_SERVER_HEADER_LEAK",
+      "category": "security",
+      "severity": "info",
+      "title": "Server Identity Information Leaked",
+      "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+      "technicalDetails": "Server header leaked on https://httpbin.org: gunicorn/19.9.0",
+      "fixSteps": [
+        {
+          "step": 1,
+          "instruction": "[Stack not detected — generic fix shown, verify against your actual server] Suppress or sanitize Server and X-Powered-By response headers in your web server configuration.",
+          "technology": "Universal Server Hardening",
+          "codeSnippet": "# Remove Server and X-Powered-By response headers"
+        }
+      ],
+      "repoSearchQuery": "ServerTokens",
+      "isVerified": true,
+      "isAiSuggested": false,
+      "stackContext": {
+        "matchedTechnology": "Generic / Universal",
+        "isGenericFallback": true,
+        "detectedStackSummary": "REACT on (python) [Verified]"
+      }
+    }
+  }
+}

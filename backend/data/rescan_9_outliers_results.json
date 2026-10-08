@@ -1,0 +1,2669 @@
+[
+  {
+    "url": "https://fastapi.tiangolo.com",
+    "oldScore": 0,
+    "newScore": 40,
+    "oldCritical": 2,
+    "newCritical": 1,
+    "oldWarning": 16,
+    "newWarning": 14,
+    "oldDurationSec": "34.4",
+    "newDurationSec": "11.0",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579011461_dpdcjf",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 4620ms (Poor > 4000ms)",
+        "metricValue": "4620ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure your server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579011461_6w8l66",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 1088ms (Threshold: 600ms)",
+        "metricValue": "1088ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with React.lazy, defer third-party analytics scripts, and break up heavy computations with requestIdleCallback.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579011464_lthqxp",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+        "metricValue": "1 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579013621_budc8i",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: ARIA progressbar nodes must have an accessible name",
+        "plainEnglishCause": "Ensure every ARIA progressbar node has an accessible name",
+        "technicalDetails": "Rule: aria-progressbar-name (serious). HTML: <div class=\"md-progress\" data-md-component=\"progress\" role=\"progressbar\"></div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".md-progress",
+        "wcagRule": "aria-progressbar-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579013621_xyc96f",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Elements must only use permitted ARIA attributes",
+        "plainEnglishCause": "Ensure ARIA attributes are not prohibited for an element's role",
+        "technicalDetails": "Rule: aria-prohibited-attr (serious). HTML: <label class=\"md-overlay\" for=\"__drawer\" aria-label=\"Navigation\"></label>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".md-overlay",
+        "wcagRule": "aria-prohibited-attr",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579013621_zqyp29",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Required ARIA attributes must be provided",
+        "plainEnglishCause": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "technicalDetails": "Rule: aria-required-attr (critical). HTML: <input type=\"text\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"on\" placeholder=\"Search\" spellcheck=\"false\" role=\"combobox\" dir=\"auto\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "div:nth-child(12),input[type=\"text\"]",
+        "wcagRule": "aria-required-attr",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579013621_noduhh",
+        "ruleId": "AXE_BUTTON_NAME_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Button Missing Accessible Name (WCAG 4.1.2)",
+        "plainEnglishCause": "An icon-only <button> element does not have inner text or an aria-label attribute, so screen readers only announce 'button' without indicating its function.",
+        "technicalDetails": "Rule: button-name (critical). HTML: <button class=\"r\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add an aria-label attribute or an visually-hidden text span inside the button.",
+            "technology": "HTML / React",
+            "codeSnippet": "<button type=\"button\" aria-label=\"Close dialog\">\n  <CloseIcon />\n</button>"
+          }
+        ],
+        "repoSearchQuery": "<button",
+        "elementSelector": "div:nth-child(12),.r:nth-child(1)",
+        "wcagRule": "button-name",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579013621_yspgud",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"https://fastapi.tiangolo.com/#performance\">One of the fastest Python frameworks available</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "ul:nth-child(13) > li:nth-child(1) > a",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579013621_5jp4lj",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": "a[href$=\"typer.tiangolo.com\"] > img",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579013621_zvcwuo",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must be distinguishable without relying on color",
+        "plainEnglishCause": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+        "technicalDetails": "Rule: link-in-text-block (serious). HTML: <a href=\"https://zensical.org\" target=\"_blank\" rel=\"noopener\">\n        Zensical\n    </a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href$=\"zensical.org\"]",
+        "wcagRule": "link-in-text-block",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579013621_aby5ef",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"https://typer.tiangolo.com\" target=\"_blank\" rel=\"noopener\" data-external-link=\"\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href$=\"typer.tiangolo.com\"]",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579013621_5o6863",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Scrollable region must have keyboard access",
+        "plainEnglishCause": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+        "technicalDetails": "Rule: scrollable-region-focusable (serious). HTML: <div class=\"a d\"><div class=\"X\"><h3 class=\"I\">Filters</h3><h4 class=\"R\">Tags</h4><ol class=\"F\"></ol></div></div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "div:nth-child(12),.a",
+        "wcagRule": "scrollable-region-focusable",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579014191_jiobi6",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks could be vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add the Strict-Transport-Security header in Helmet or your web server configuration.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "// npm install helmet\nimport helmet from 'helmet';\n\napp.use(helmet.hsts({\n  maxAge: 31536000, // 1 year in seconds\n  includeSubDomains: true,\n  preload: true\n}));"
+          },
+          {
+            "step": 2,
+            "instruction": "If using Nginx as a reverse proxy, add the header in your server block.",
+            "technology": "Nginx",
+            "codeSnippet": "add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;"
+          }
+        ],
+        "repoSearchQuery": "helmet",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579014191_w4qras",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+          }
+        ],
+        "repoSearchQuery": "contentSecurityPolicy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579014191_ch1iti",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://laravel.com",
+    "oldScore": 0,
+    "newScore": 34,
+    "oldCritical": 2,
+    "newCritical": 0,
+    "oldWarning": 16,
+    "newWarning": 13,
+    "oldDurationSec": "33.5",
+    "newDurationSec": "16.5",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579019730_gri5x3",
+        "ruleId": "PAGE_TTFB_SLOW",
+        "category": "performance",
+        "severity": "warning",
+        "title": "Slow Time to First Byte (TTFB > 800ms)",
+        "plainEnglishCause": "The server took over 800ms before sending the first byte of HTML. This is typically caused by un-cached database queries, slow SSR rendering, or distant server regions.",
+        "technicalDetails": "Time to First Byte: 932ms (Recommended: < 800ms)",
+        "metricValue": "932ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Implement HTTP edge caching (Cloudflare / Vercel Edge / Fastly) and optimize backend database queries.",
+            "technology": "Caching / CDN",
+            "codeSnippet": "// Cache-Control header\nres.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579019730_em6le5",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.google.com/rmkt/collect/17262358458/?random=1790579017944&cv=11&fst=1790579017944&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69n1v9223864245z89260512903za20gzb9260512903zd9260512903xecxf1&gcd=13l3l3R3l5l1&dma=0&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412527~120469145~120469153~121246026~121246034&u_w=1280&u_h=800&url=https%3A%2F%2Flaravel.com%2F&rcb=11&frm=0&tiba=Laravel%20-%20The%20clean%20stack%20for%20Artisans%20and%20agents&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1424289476.1790579017&uaa=x86&uab=64&uafvl=HeadlessChrome%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.12&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579019730_mw7cau",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579019730_kbzug1",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 401): https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a420e3afca547a80/1790579018638/8ac96099aaabe2142d19955149617f4bf36f656245e96f96749759ea394a0550/UxlfcbcLRd847Ebc1yimyLbepGkCQNthLyMYKMMAhCY-1790579018-1.3.1.1-pKIFcXWj3kKbYQeL5pKWRCKGiRt7unC9PHzttE.sP8mNo8LbP69sAljGas9OpSsi83UaMewjnKf4KLLd0N7LtghV2TCrIjUjKn3wzQ88EECWJUMi2kNvW7uNvTydd7SfFCURJWUzukF3SlLtmbM0nPVaRBsfBmE.3Ya9.KE5ZklnJFwTd6V_L3xmsutBr7qGmlbS6cjcvK8RW5IH_S6ytjjuq.9xr.8CCjuCf2bxddEWV.iRLRCE1AfVyX5seJwKCkychnfIDEK.gYEPQ3B9IisLkfKTj6ZWSo8hZ22tTUTc9gN.IzxbYGJc118Euz41TnuKWQY03uUBYAnHTfA5HK4whJu5BhLBbnISEgPUdxIddt9pOJOYJNyHZ8bsmpANffV8j63Ye5EGngnrQr34C7ImUkc8Qsok4e0VivJGYkIEc8MStP6uFnRUzFIOwlfySZqDEEtw_657d9yh8mXBWwoLfKfoGtt7o2ISVuYVx4cIwzfgGF69yqMd7qluuHyqus_HJpl3jPLFRbhoqHIC27qvHcv76t.hpkpFDu87xeuuiDPJa5ucwVrASoSIOLOK9muKckv2nYY6fO7OeYfYbSBIsRq17v0kkZKm75h8rReWiPM7H3NAzoQhJIVSPwViLOzJbhMpzdGEEl05da6PoF4MS0Ry3n.cbNn0ELhLGdUa1NxM7H0vZAGjQls_PUjaPiZUudMgVQ7edk_G.WvIy.i1X3AK5DfQ8.7hZb7Q3yIpVHqOWgM0JuEuSLqHiWWJ1l6JmKHfByARxujmnyI_9UfLqiJ8kqkJJnrjwgLJ35fHQ7HJ3dEQus4bgdKlQSsT",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579019730_m4simp",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://hagen.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a420e3afca547a80/jf7Vh3RTPoeO3epr6bbpu1PyWpRqiLzBQi2KVmnYppM-1790579018-1.2.1.1-.qGc_8xMp.LtBnOM9nkMCNjpRMJOHdXlE2jldq1S1.IGBtqLniNMgQNfNZhD5Wnn",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579019730_fcfgks",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://bzr.openai.com/v1/sdk/events?pid=GJp2Ez6EheeXxtPeSqnxiT&st=oaiq-web&sv=0.1.41&t=1790579019098&ec=2",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579020741_2cg10f",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 2 <img> element(s) without an alt attribute.",
+        "metricValue": "2 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579022457_qqo5il",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a class=\"group/button relativ...\" href=\"/cloud\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": ".mt-12 > .ring-laravel-red\\/40.hover\\:bg-laravel-red-darkened[href$=\"cloud\"]",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579022457_l2a4g3",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "plainEnglishCause": "Ensure that lists are structured correctly",
+        "technicalDetails": "Rule: list (serious). HTML: <ul data-orientation=\"horizontal\" class=\"hidden pt-px lg:block\" dir=\"ltr\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".pt-px",
+        "wcagRule": "list",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579022457_6oarut",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <li> elements must be contained in a <ul> or <ol>",
+        "plainEnglishCause": "Ensure <li> elements are used semantically",
+        "technicalDetails": "Rule: listitem (serious). HTML: <li class=\"relative\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".pt-px > .items-center.flex > .relative:nth-child(1)",
+        "wcagRule": "listitem",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579022457_0dtg53",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Interactive controls must not be nested",
+        "plainEnglishCause": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+        "technicalDetails": "Rule: nested-interactive (serious). HTML: <button type=\"button\" class=\"relative hidden h-8 min-w-40 items-center gap-2 rounded-lg border border-neutral-200 bg-white px-2 shadow-xs hover:bg-neutral-50 lg:flex dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-700\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".min-w-40",
+        "wcagRule": "nested-interactive",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579026460_rhaqve",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks could be vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add the Strict-Transport-Security header in Helmet or your web server configuration.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "// npm install helmet\nimport helmet from 'helmet';\n\napp.use(helmet.hsts({\n  maxAge: 31536000, // 1 year in seconds\n  includeSubDomains: true,\n  preload: true\n}));"
+          },
+          {
+            "step": 2,
+            "instruction": "If using Nginx as a reverse proxy, add the header in your server block.",
+            "technology": "Nginx",
+            "codeSnippet": "add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;"
+          }
+        ],
+        "repoSearchQuery": "helmet",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579026460_qz2o58",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+          }
+        ],
+        "repoSearchQuery": "contentSecurityPolicy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579026460_761p97",
+        "ruleId": "SEC_SERVER_HEADER_LEAK",
+        "category": "security",
+        "severity": "info",
+        "title": "Server Identity Information Leaked",
+        "plainEnglishCause": "The server is returning an 'X-Powered-By' or detailed 'Server' header. This discloses backend software and framework versions to potential attackers.",
+        "technicalDetails": "Server signature leaked: X-Powered-By='Statamic', Server='cloudflare'",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Disable the X-Powered-By header in your application framework.",
+            "technology": "Express.js",
+            "codeSnippet": "// Disable in Express\napp.disable('x-powered-by');"
+          }
+        ],
+        "repoSearchQuery": "app.disable('x-powered-by')",
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://go.dev",
+    "oldScore": 0,
+    "newScore": 49,
+    "oldCritical": 6,
+    "newCritical": 4,
+    "oldWarning": 7,
+    "newWarning": 5,
+    "oldDurationSec": "28.3",
+    "newDurationSec": "16.6",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579035656_rp36j2",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Connecting to 'https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=1&ae=g&auid=1188576172.1790579035&dt=The%20Go%20Programming%20Language&en=page_view&dl=https%3A%2F%2Fgo.dev%2F&scrsrc=www.googletagmanager.com&rnd=927025661.1790579035&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69n1v830425926za200zd830425926xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118897920~118897930~120385422~120412528~120469145~120469153&tft=1790579034578&tfd=2954&fmt=8' violates the following Content Security Policy directive: \"connect-src 'self' www.google-analytics.com stats.g.doubleclick.net\". The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579035656_2mx8bw",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Fetch API cannot load https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=1&ae=g&auid=1188576172.1790579035&dt=The%20Go%20Programming%20Language&en=page_view&dl=https%3A%2F%2Fgo.dev%2F&scrsrc=www.googletagmanager.com&rnd=927025661.1790579035&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69n1v830425926za200zd830425926xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118897920~118897930~120385422~120412528~120469145~120469153&tft=1790579034578&tfd=2954&fmt=8. Refused to connect because it violates the document's Content Security Policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579035656_ut4lgb",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Connecting to 'https://ad.doubleclick.net/ccm/s/collect?auid=1188576172.1790579035&gtm=45He69n1v830425926za200zd830425926xeaxf1&fmt=8' violates the following Content Security Policy directive: \"connect-src 'self' www.google-analytics.com stats.g.doubleclick.net\". The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579035656_z2ifvy",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Fetch API cannot load https://ad.doubleclick.net/ccm/s/collect?auid=1188576172.1790579035&gtm=45He69n1v830425926za200zd830425926xeaxf1&fmt=8. Refused to connect because it violates the document's Content Security Policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579036666_dnxqj4",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 16 <img> element(s) without an alt attribute.",
+        "metricValue": "16 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579037944_1n15ej",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"/solutions/cloud/\" aria-describedby=\"newwindow-description\">Learn More \n              <i class=\"material-icons WhyGo-forwardArrowIcon\" aria-hidden=\"true\">arrow_forward</i></a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "a[href$=\"cloud/\"]",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579037944_s82pjw",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img src=\"/images/logos/social/google-groups.svg\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": ".NavigationDrawer-listItem:nth-child(6) > .Header-socialIcons > .Header-socialIcon:nth-child(1) > img",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579037944_dbasq9",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a class=\"Header-socialIcon\" href=\"https://groups.google.com/g/golang-nuts\" tabindex=\"-1\"><img src=\"/images/logos/social/google-groups.svg\"></a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".NavigationDrawer-listItem:nth-child(6) > .Header-socialIcons > .Header-socialIcon:nth-child(1)",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579044564_3j5arl",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579046934_jar33m",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://crates.io",
+    "oldScore": 0,
+    "newScore": 34,
+    "oldCritical": 2,
+    "newCritical": 1,
+    "oldWarning": 25,
+    "newWarning": 20,
+    "oldDurationSec": "26.2",
+    "newDurationSec": "9.8",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579049866_anq7oe",
+        "ruleId": "SEO_META_DESCRIPTION_MISSING",
+        "category": "seo",
+        "severity": "warning",
+        "title": "Missing Meta Description Tag",
+        "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+        "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+            "technology": "HTML / Next.js",
+            "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+          }
+        ],
+        "repoSearchQuery": "name=\"description\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051224_xhk9n2",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <div class=\"subtitle svelte-124xg1a\" id=\"c5-subtitle\">Grafana-compatible read API for logstream — thin SELECT layer over ClickHouse. <span class=\"anchor svelte-11extwn\"></span> <!----><!----></div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "#c5-subtitle",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051519_ssdqzo",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051916_g2nchn",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/logstream-query",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/logstream-query",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051917_kii2xc",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/logstream-ingest",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/logstream-ingest",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051921_xmvv70",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates?sort=new",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates?sort=new",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579051935_gfxwgr",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/logstream-core",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/logstream-core",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052602_b3wzxp",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/styra",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/styra",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052604_bjgus6",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/antag",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/antag",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052606_26nl6r",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/incident-io",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/incident-io",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052607_4txnjm",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/hyprforge-shortcuts",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/hyprforge-shortcuts",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052613_l69i63",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/iana-cert-rr-types",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/iana-cert-rr-types",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579052886_x21llh",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/hyprforge-session",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/hyprforge-session",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579053281_hplr2h",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/pricka",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/pricka",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579053282_uw1ssd",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/hashbrown",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/hashbrown",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579053289_09wvmd",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates/syn",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates/syn",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579053318_whe0dk",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://crates.io/crates?sort=downloads",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://crates.io/crates?sort=downloads",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579054038_b5bnra",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+          }
+        ],
+        "repoSearchQuery": "contentSecurityPolicy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579054038_oiyr9f",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579054038_01c2xf",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579056802_p0gono",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579057498_dzyl0m",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"404\":10}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://render.com",
+    "oldScore": 0,
+    "newScore": 53,
+    "oldCritical": 4,
+    "newCritical": 2,
+    "oldWarning": 12,
+    "newWarning": 8,
+    "oldDurationSec": "29.6",
+    "newDurationSec": "11.8",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579061838_cx83c8",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Loading the script 'https://static.ads-twitter.com/uwt.js' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com https://*.i.posthog.com https://assets.calendly.com https://scout-cdn.salesloft.com https://snap.licdn.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579061838_96obup",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Loading the script 'https://bzrcdn.openai.com/sdk/oaiq.min.js' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com https://*.i.posthog.com https://assets.calendly.com https://scout-cdn.salesloft.com https://snap.licdn.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579061838_j9awc1",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://static.ads-twitter.com/uwt.js",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579061838_ucou1f",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://bzrcdn.openai.com/sdk/oaiq.min.js",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579061838_5bckzw",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579061838_b165i4",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://pagead2.googlesyndication.com/measurement/conversion?random=1790579059775&cv=11&tid=G-QK9L9QJC5N&fst=1790579059775&fmt=8&en=page_view&gtm=45je69n1v872590080z89185326835za20gzb9185326835zd9185326835xecxf1&gcs=G100&gcd=13p3p3p3p5l1&dma_cps=-&dma=0&tag_exp=115616985~115938466~115938469~118012007~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1280&u_h=800&url=https%3A%2F%2Frender.com&gacid=252585446.1790579060&hn=www.googleadservices.com&frm=0&tiba=Render%20%7C%20The%20cloud%20for%20builders&npa=1&us_privacy=1-N-&pscdl=denied&uaa=x86&uab=64&uafvl=HeadlessChrome%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.12&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&rcb=9",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579064516_xs8cbl",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: ARIA hidden element must not be focusable or contain focusable elements",
+        "plainEnglishCause": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "technicalDetails": "Rule: aria-hidden-focus (serious). HTML: <div class=\"ease pointer-events-none absolute top-full hidden origin-top-left gap-40 border-1 border-border bg-background opacity-0 transition duration-150 lg:flex lg:flex-col w-[45vw] min-w-[600px]\" aria-hidden=\"true\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".group\\/dropdown.relative:nth-child(1) > .w-\\[45vw\\].min-w-\\[600px\\].top-full",
+        "wcagRule": "aria-hidden-focus",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579064516_qm3yp6",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"text-gray-400\">Compute Plan:</span>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": ".text-gray-400",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579064516_civ397",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "plainEnglishCause": "Ensure that lists are structured correctly",
+        "technicalDetails": "Rule: list (serious). HTML: <ul class=\"flex items-center\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "nav > ul",
+        "wcagRule": "list",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579064516_v8sq70",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "info",
+        "title": "WCAG Violation: Zooming and scaling must not be disabled",
+        "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "meta[name=\"viewport\"]",
+        "wcagRule": "meta-viewport",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579064516_56xxzk",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <svg> elements with an img or image role must have alternative text",
+        "plainEnglishCause": "Ensure <svg> elements with an img, image, graphics-document or graphics-symbol role have accessible text",
+        "technicalDetails": "Rule: svg-img-alt (serious). HTML: <svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" role=\"img\" viewBox=\"0 0 24 24\" class=\"h-[calc(500%/9)] w-[calc(200%/3)]\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".rfm-marquee-container.w-full:nth-child(1) > .rfm-marquee:nth-child(1) > .rfm-initial-child-container > .rfm-child:nth-child(1) > .mr-30.aspect-square.w-60 > svg[stroke-width=\"0\"][height=\"1em\"][width=\"1em\"]",
+        "wcagRule": "svg-img-alt",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579068426_8lxnlh",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://www.mozilla.org",
+    "oldScore": 0,
+    "newScore": 69,
+    "oldCritical": 6,
+    "newCritical": 4,
+    "oldWarning": 2,
+    "newWarning": 1,
+    "oldDurationSec": "25.8",
+    "newDurationSec": "10.5",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579071070_4fqwb8",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579071070_24cofw",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579071070_w1t1qq",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579071070_nom2ji",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579072877_f45atk",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <blink> elements are deprecated and must not be used",
+        "plainEnglishCause": "Ensure <blink> elements are not used",
+        "technicalDetails": "Rule: blink (serious). HTML: <blink class=\"spacer-gif\"></blink>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "blink",
+        "wcagRule": "blink",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579079368_qhadqx",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://www.fsf.org",
+    "oldScore": 0,
+    "newScore": 25,
+    "oldCritical": 4,
+    "newCritical": 1,
+    "oldWarning": 11,
+    "newWarning": 12,
+    "oldDurationSec": "97.8",
+    "newDurationSec": "39.8",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579081478_csk7q5",
+        "ruleId": "SSL_EXPIRING_SOON",
+        "category": "security",
+        "severity": "warning",
+        "title": "SSL Certificate Expiring in < 30 Days",
+        "plainEnglishCause": "The TLS certificate is valid but expires in less than 30 days. Auto-renewal may be misconfigured or failing.",
+        "technicalDetails": "Expires in 11 days (Oct  9 19:23:54 2026 GMT)",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Verify your automated renewal cron or DNS verification hooks to ensure seamless certificate renewal.",
+            "technology": "SSL Monitoring",
+            "codeSnippet": "# Test renewal dry run\nsudo certbot renew --dry-run"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579089112_ake6d8",
+        "ruleId": "SEO_META_DESCRIPTION_MISSING",
+        "category": "seo",
+        "severity": "warning",
+        "title": "Missing Meta Description Tag",
+        "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+        "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+            "technology": "HTML / Next.js",
+            "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+          }
+        ],
+        "repoSearchQuery": "name=\"description\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579089112_52qtrk",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 1 <img> element(s) without an alt attribute.",
+        "metricValue": "1 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579090010_l1cv8v",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"/free-software-supporter/\">Free Software\n                Supporter</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "a[href$=\"free-software-supporter/\"]",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579090010_6qh9d2",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img id=\"fsf-logo\" style=\"position: absolute; bottom: 0px;\" src=\"//static.fsf.org/common/img/logo-new.png\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": "#fsf-logo",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579090010_kntdhl",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"/\">\n\t\t\t\t<img id=\"fsf-logo\" style=\"position: absolute; bottom: 0px;\" src=\"//static.fsf.org/common/img/logo-new.png\">\n\t\t\t</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href=\"/\"]",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579090010_fel17p",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: <ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "plainEnglishCause": "Ensure that lists are structured correctly",
+        "technicalDetails": "Rule: list (serious). HTML: <ul>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "#parent-fieldname-text-c113d51f-cb84-4567-9c6e-008c38ddd5ae > ul",
+        "wcagRule": "list",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579090010_u98be3",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "info",
+        "title": "WCAG Violation: Zooming and scaling must not be disabled",
+        "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width; initial-scale=0.6666; maximum-scale=1.0; minimum-scale=0.6666\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "meta[name=\"viewport\"]:nth-child(6)",
+        "wcagRule": "meta-viewport",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579091726_16ahyi",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://www.fsf.org/search_form#content",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://www.fsf.org/search_form#content",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579099279_6r9jz3",
+        "ruleId": "SEC_HSTS_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Strict-Transport-Security (HSTS) Header",
+        "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks could be vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+        "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add the Strict-Transport-Security header in Helmet or your web server configuration.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "// npm install helmet\nimport helmet from 'helmet';\n\napp.use(helmet.hsts({\n  maxAge: 31536000, // 1 year in seconds\n  includeSubDomains: true,\n  preload: true\n}));"
+          },
+          {
+            "step": 2,
+            "instruction": "If using Nginx as a reverse proxy, add the header in your server block.",
+            "technology": "Nginx",
+            "codeSnippet": "add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;"
+          }
+        ],
+        "repoSearchQuery": "helmet",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579099279_0nku43",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+          }
+        ],
+        "repoSearchQuery": "contentSecurityPolicy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579099279_rmy8ja",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579119543_4k17qx",
+        "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+        "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+        "technicalDetails": "Avg latency: 4201ms (P95: 6014ms) under 10 concurrent requests.",
+        "metricValue": "4201ms avg",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+            "technology": "Node.js / Database"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579119543_hdm3lo",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"200\":4,\"Network_Error\":6}",
+        "metricValue": "6/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://www.videolan.org",
+    "oldScore": 0,
+    "newScore": 19,
+    "oldCritical": 4,
+    "newCritical": 2,
+    "oldWarning": 14,
+    "newWarning": 13,
+    "oldDurationSec": "45.5",
+    "newDurationSec": "19.6",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579128462_o5oe7x",
+        "ruleId": "PAGE_TTFB_SLOW",
+        "category": "performance",
+        "severity": "warning",
+        "title": "Slow Time to First Byte (TTFB > 800ms)",
+        "plainEnglishCause": "The server took over 800ms before sending the first byte of HTML. This is typically caused by un-cached database queries, slow SSR rendering, or distant server regions.",
+        "technicalDetails": "Time to First Byte: 1191ms (Recommended: < 800ms)",
+        "metricValue": "1191ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Implement HTTP edge caching (Cloudflare / Vercel Edge / Fastly) and optimize backend database queries.",
+            "technology": "Caching / CDN",
+            "codeSnippet": "// Cache-Control header\nres.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579129474_0l9q99",
+        "ruleId": "CWV_LCP_POOR",
+        "category": "performance",
+        "severity": "critical",
+        "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+        "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+        "technicalDetails": "Largest Contentful Paint: 4112ms (Poor > 4000ms)",
+        "metricValue": "4112ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+            "technology": "HTML",
+            "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+          },
+          {
+            "step": 2,
+            "instruction": "Ensure your server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+            "technology": "Performance"
+          }
+        ],
+        "repoSearchQuery": "<link rel=\"preload\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579129476_d9ibks",
+        "ruleId": "SEO_META_DESCRIPTION_MISSING",
+        "category": "seo",
+        "severity": "warning",
+        "title": "Missing Meta Description Tag",
+        "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+        "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+            "technology": "HTML / Next.js",
+            "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+          }
+        ],
+        "repoSearchQuery": "name=\"description\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579129476_2hsf3u",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Found 7 <img> element(s) without an alt attribute.",
+        "metricValue": "7 images",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579130383_b6bnad",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: ARIA input fields must have an accessible name",
+        "plainEnglishCause": "Ensure every ARIA input field has an accessible name",
+        "technicalDetails": "Rule: aria-input-field-name (serious). HTML: <div class=\"slick-track\" role=\"listbox\" style=\"opacity: 1; width: 875px; left: -250px;\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "#sponsors-carousel > .slick-list.draggable[aria-live=\"polite\"] > .slick-track[role=\"listbox\"]",
+        "wcagRule": "aria-input-field-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579130383_gjhmh7",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <div id=\"nonprofitOrganizationDiv2\" class=\"center-block\">\n                VideoLAN, a project and a <a href=\"//www.videolan.org/videolan/\" class=\"noUnderline\">non-profit organization.</a>         </div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "#nonprofitOrganizationDiv2",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579130383_eiiq20",
+        "ruleId": "AXE_IMAGE_ALT_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+        "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+        "technicalDetails": "Rule: image-alt (critical). HTML: <img src=\"//images.videolan.org/images/partners/mux.png\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+            "technology": "HTML",
+            "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+          }
+        ],
+        "repoSearchQuery": "<img",
+        "elementSelector": "a[href$=\"mux.com/\"] > img",
+        "wcagRule": "image-alt",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579130383_sgl8n3",
+        "ruleId": "AXE_FORM_LABEL_MISSING",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Form Input Missing Associated Label (WCAG 4.1.2)",
+        "plainEnglishCause": "An <input>, <select>, or <textarea> element does not have an associated <label> or aria-label, leaving assistive technologies unable to announce the field's purpose.",
+        "technicalDetails": "Rule: label (critical). HTML: <input class=\"euros\" type=\"text\" name=\"amount\" value=\"4.00\" inputmode=\"decimal\" pattern=\"[0-9]+([.,][0-9]{1,2})?\" required=\"\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Associate an explicit <label for=\"id\"> with the input or add an aria-label attribute.",
+            "technology": "HTML",
+            "codeSnippet": "<label htmlFor=\"user-email\">Email Address</label>\n<input id=\"user-email\" type=\"email\" name=\"email\" />"
+          }
+        ],
+        "repoSearchQuery": "<input",
+        "elementSelector": ".hidden-sm:nth-child(1) > form > fieldset > .euros[value=\"4.00\"][type=\"text\"]",
+        "wcagRule": "label",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579130383_7xxn2p",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must be distinguishable without relying on color",
+        "plainEnglishCause": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+        "technicalDetails": "Rule: link-in-text-block (serious). HTML: <a href=\"//www.videolan.org/videolan/\" class=\"noUnderline\">non-profit organization.</a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": ".noUnderline[href$=\"videolan/\"]",
+        "wcagRule": "link-in-text-block",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579130383_vqnvof",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Links must have discernible text",
+        "plainEnglishCause": "Ensure links have discernible text",
+        "technicalDetails": "Rule: link-name (serious). HTML: <a target=\"_blank\" rel=\"noopener\" href=\"https://mux.com/\" class=\"slick-slide slick-current slick-active\" data-slick-index=\"1\" aria-hidden=\"false\" tabindex=\"-1\" role=\"option\" aria-describedby=\"slick-slide11\" style=\"width: 125px;\"><img src=\"//images.videolan.org/images/partners/mux.png\"></a>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "a[href$=\"mux.com/\"]",
+        "wcagRule": "link-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579130383_o0c7io",
+        "ruleId": "CUSTOM_ANOMALY",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "WCAG Violation: Select element must have an accessible name",
+        "plainEnglishCause": "Ensure select element has an accessible name",
+        "technicalDetails": "Rule: select-name (critical). HTML: <select onchange=\"location = this.options[this.selectedIndex].value;\">",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+            "technology": "General"
+          }
+        ],
+        "elementSelector": "select",
+        "wcagRule": "select-name",
+        "isVerified": false,
+        "isAiSuggested": true
+      },
+      {
+        "id": "fnd_1790579135551_1nbgk2",
+        "ruleId": "SEC_CSP_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing Content-Security-Policy (CSP) Header",
+        "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+        "technicalDetails": "Content-Security-Policy header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+            "technology": "Express (Helmet)",
+            "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+          }
+        ],
+        "repoSearchQuery": "contentSecurityPolicy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579135551_hcbqd5",
+        "ruleId": "SEC_XFO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+        "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+        "technicalDetails": "X-Frame-Options header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Frame-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579135551_6l8c1h",
+        "ruleId": "SEC_XCTO_MISSING",
+        "category": "security",
+        "severity": "warning",
+        "title": "Missing X-Content-Type-Options: nosniff",
+        "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+        "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+            "technology": "Express",
+            "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+          }
+        ],
+        "repoSearchQuery": "X-Content-Type-Options",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579135551_mqlajr",
+        "ruleId": "SEC_SERVER_HEADER_LEAK",
+        "category": "security",
+        "severity": "info",
+        "title": "Server Identity Information Leaked",
+        "plainEnglishCause": "The server is returning an 'X-Powered-By' or detailed 'Server' header. This discloses backend software and framework versions to potential attackers.",
+        "technicalDetails": "Server signature leaked: X-Powered-By='', Server='nginx/1.31.4'",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Disable the X-Powered-By header in your application framework.",
+            "technology": "Express.js",
+            "codeSnippet": "// Disable in Express\napp.disable('x-powered-by');"
+          }
+        ],
+        "repoSearchQuery": "app.disable('x-powered-by')",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579139130_cx72cu",
+        "ruleId": "LIGHT_LOAD_ERROR_RATE",
+        "category": "backend",
+        "severity": "critical",
+        "title": "Server Errors Under Light Concurrent Load",
+        "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+        "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"418\":10}",
+        "metricValue": "10/10 failed",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+            "technology": "Backend"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  },
+  {
+    "url": "https://bitbucket.org",
+    "oldScore": 0,
+    "newScore": 54,
+    "oldCritical": 6,
+    "newCritical": 5,
+    "oldWarning": 13,
+    "newWarning": 10,
+    "oldDurationSec": "37.7",
+    "newDurationSec": "16.4",
+    "status": "completed",
+    "findings": [
+      {
+        "id": "fnd_1790579146203_ybz22h",
+        "ruleId": "PAGE_TTFB_SLOW",
+        "category": "performance",
+        "severity": "warning",
+        "title": "Slow Time to First Byte (TTFB > 800ms)",
+        "plainEnglishCause": "The server took over 800ms before sending the first byte of HTML. This is typically caused by un-cached database queries, slow SSR rendering, or distant server regions.",
+        "technicalDetails": "Time to First Byte: 825ms (Recommended: < 800ms)",
+        "metricValue": "825ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Implement HTTP edge caching (Cloudflare / Vercel Edge / Fastly) and optimize backend database queries.",
+            "technology": "Caching / CDN",
+            "codeSnippet": "// Cache-Control header\nres.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_caf0ac",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Framing 'https://xxid.atlassian.com/' violates the following Content Security Policy directive: \"frame-src 'self' *.1mind.com *.loom.com *.youtube.com *.google.com *.doubleclick.net *.recaptcha.net *.atl-paas.net pages.eml.atlassian.com app-ab35.marketo.com *.marketo.com *.mktoresp.com *.company-target.com *.googletagmanager.com *.atlassian.net *.facebook.com atlassian931.outgrow.us atlassian.wvc-test.ecosystems.io https://support-forms-ui.atlassian.com analytics.o11.tech *.adsrvr.org\". The request has been blocked.\n",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_k8ublr",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Access to fetch at 'https://www.atlassian.com/gateway/api/preferencesV2/consent-config' from origin 'https://bitbucket.org' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_6accuc",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Failed to load resource: net::ERR_FAILED",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_3q040r",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Failed to fetch consent config",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_7r0082",
+        "ruleId": "CONSOLE_JS_ERROR",
+        "category": "frontend",
+        "severity": "critical",
+        "title": "Uncaught JavaScript Console Error",
+        "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+        "technicalDetails": "Access to fetch at 'https://www.atlassian.com/gateway/api/ais/available-products' from origin 'https://bitbucket.org' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+            "technology": "React",
+            "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+          }
+        ],
+        "repoSearchQuery": "ErrorBoundary",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_0b59qa",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.atlassian.com/gateway/api/preferencesV2/consent-config",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_qm0i2u",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://www.atlassian.com/gateway/api/ais/available-products",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_2m0ppd",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 401): https://www.atlassian.com/gateway/api/me",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_wymi6e",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://dam-cdn.atl.orangelogic.com/AssetLink/f30fkxyc8plj5qlqr61qcu671g46etr8.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579146203_oplr10",
+        "ruleId": "NETWORK_FAILED_REQUEST",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Failed Network Request (4xx / 5xx)",
+        "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+        "technicalDetails": "Failed asset/request (HTTP 0): https://dam-cdn.atl.orangelogic.com/AssetLink/f30fkxyc8plj5qlqr61qcu671g46etr8.mp4",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+            "technology": "API Client"
+          }
+        ],
+        "repoSearchQuery": "fetch(",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579147206_ixmlb1",
+        "ruleId": "CWV_TBT_POOR",
+        "category": "performance",
+        "severity": "warning",
+        "title": "High Total Blocking Time (TBT > 600ms)",
+        "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+        "technicalDetails": "Total Blocking Time: 761ms (Threshold: 600ms)",
+        "metricValue": "761ms",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Code-split heavy bundles with React.lazy, defer third-party analytics scripts, and break up heavy computations with requestIdleCallback.",
+            "technology": "JavaScript",
+            "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+          }
+        ],
+        "repoSearchQuery": "React.lazy",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579147207_9xqgzy",
+        "ruleId": "SEO_META_DESCRIPTION_MISSING",
+        "category": "seo",
+        "severity": "warning",
+        "title": "Missing Meta Description Tag",
+        "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+        "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+            "technology": "HTML / Next.js",
+            "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+          }
+        ],
+        "repoSearchQuery": "name=\"description\"",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579148569_fai0f0",
+        "ruleId": "AXE_COLOR_CONTRAST",
+        "category": "accessibility",
+        "severity": "warning",
+        "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+        "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+        "technicalDetails": "Rule: color-contrast (serious). HTML: <div class=\"rc-anchor-center-item rc-anchor-error-message\">ERROR for site owner:<br>Invalid domain for site key</div>",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+            "technology": "CSS",
+            "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+          }
+        ],
+        "repoSearchQuery": "color:",
+        "elementSelector": "iframe[title=\"reCAPTCHA\"], .rc-anchor-center-item",
+        "wcagRule": "color-contrast",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579149345_g58jvp",
+        "ruleId": "CRAWLER_BROKEN_LINK",
+        "category": "frontend",
+        "severity": "warning",
+        "title": "Broken Internal Link (404 Not Found)",
+        "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+        "technicalDetails": "Internal link returned HTTP 404: https://bitbucket.org/software/bitbucket",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+            "technology": "Routing"
+          }
+        ],
+        "repoSearchQuery": "href=",
+        "url": "https://bitbucket.org/software/bitbucket",
+        "isVerified": true,
+        "isAiSuggested": false
+      },
+      {
+        "id": "fnd_1790579155251_msc3ge",
+        "ruleId": "SEO_SITEMAP_MISSING",
+        "category": "seo",
+        "severity": "info",
+        "title": "Missing sitemap.xml File",
+        "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+        "technicalDetails": "HTTP 404 on /sitemap.xml",
+        "fixSteps": [
+          {
+            "step": 1,
+            "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+            "technology": "Sitemap",
+            "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+          }
+        ],
+        "isVerified": true,
+        "isAiSuggested": false
+      }
+    ]
+  }
+]

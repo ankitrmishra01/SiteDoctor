@@ -1,0 +1,136 @@
+{
+  "target": "https://developer.mozilla.org",
+  "rawHeaders": {
+    "accept-ranges": "bytes",
+    "age": "2851",
+    "cache-control": "public, max-age=3600",
+    "connection": "keep-alive",
+    "content-encoding": "br",
+    "content-length": "14070",
+    "content-security-policy": "default-src 'self'; script-src 'report-sample' 'self' 'wasm-unsafe-eval' assets.codepen.io production-assets.codepen.io https://js.stripe.com transcend-cdn.com 'sha256-XNBp89FG76amD8BqrJzyflxOF9PaWPqPqvJfKZPCv7M=' 'sha256-YCNoU9DNiinACbd8n6UPyB/8vj0kXvhkOni9/06SuYw=' 'sha256-PZjP7OR6mBEtnvXIZfCZ5PuOlxoDF1LDZL8aj8c42rw='; script-src-elem 'report-sample' 'self' 'wasm-unsafe-eval' assets.codepen.io production-assets.codepen.io https://js.stripe.com transcend-cdn.com 'sha256-XNBp89FG76amD8BqrJzyflxOF9PaWPqPqvJfKZPCv7M=' 'sha256-YCNoU9DNiinACbd8n6UPyB/8vj0kXvhkOni9/06SuYw=' 'sha256-PZjP7OR6mBEtnvXIZfCZ5PuOlxoDF1LDZL8aj8c42rw='; style-src 'report-sample' 'self' 'unsafe-inline' transcend-cdn.com; object-src 'none'; base-uri 'self'; connect-src 'self' developer.allizom.org bcd.developer.allizom.org bcd.developer.mozilla.org updates.developer.allizom.org updates.developer.mozilla.org https://incoming.telemetry.mozilla.org https://observatory-api.mdn.allizom.net https://observatory-api.mdn.mozilla.net telemetry.transcend.io telemetry.us.transcend.io transcend-cdn.com https://api.github.com/search/issues https://api.stripe.com; font-src 'self'; frame-src 'self' mdn.github.io *.mdnplay.dev *.mdnyalp.dev *.play.test.mdn.allizom.net https://v2.scrimba.com https://scrimba.com jsfiddle.net www.youtube-nocookie.com codepen.io survey.alchemer.com https://js.stripe.com; img-src 'self' data: *.githubusercontent.com *.gravatar.com mozillausercontent.com firefoxusercontent.com profile.stage.mozaws.net profile.accounts.firefox.com developer.mozilla.org mdn.dev wikipedia.org upload.wikimedia.org https://mdn.github.io/shared-assets/ https://mdn.dev/; manifest-src 'self'; media-src 'self' archive.org videos.cdn.mozilla.net https://mdn.github.io/shared-assets/; child-src 'self'; worker-src 'self';",
+    "content-type": "text/html",
+    "date": "Mon, 28 Sep 2026 11:45:01 GMT",
+    "etag": "\"bd6da245c01791f19e11628002ba39bc\"",
+    "expires": "Mon, 28 Sep 2026 03:11:30 GMT",
+    "last-modified": "Mon, 28 Sep 2026 01:11:36 GMT",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "server": "Google Frontend",
+    "strict-transport-security": "max-age=63072000",
+    "vary": "Accept-Encoding",
+    "via": "1.1 google, 1.1 varnish, 1.1 varnish, 1.1 varnish",
+    "x-cache": "MISS, HIT, HIT",
+    "x-cache-hits": "0, 63, 0",
+    "x-cloud-trace-context": "bd6dbc7c96c8ce4d8ef5f44db5906684",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "x-goog-generation": "1790557896035011",
+    "x-goog-hash": "crc32c=C60JWA==, md5=vW2iRcAXkfGeEWKAAro5vA==",
+    "x-goog-meta-goog-reserved-file-mtime": "1790556900",
+    "x-goog-metageneration": "1",
+    "x-goog-storage-class": "STANDARD",
+    "x-goog-stored-content-encoding": "identity",
+    "x-goog-stored-content-length": "119772",
+    "x-guploader-uploadid": "AP6rU81tX81ZNqH5Hcg8GQv-WJcvAkCkpjbI343f5NjjzlvmPsFm5xJDP5EMK9rpvM7qr54TftL2PC0",
+    "x-served-by": "cache-sin-wsss1830041-SIN, cache-sin-wsss1830041-SIN, cache-sin-wsss1830041-SIN, cache-bom-vanm7210045-BOM",
+    "x-timer": "S1790595901.060548,VS0,VE1"
+  },
+  "robotsStatus": 200,
+  "sitemapStatus": 200,
+  "sslDetails": {
+    "valid": true,
+    "issuer": "Let's Encrypt",
+    "daysRemaining": 85,
+    "protocol": "TLSv1.3"
+  },
+  "feMetrics": {
+    "ttfbMs": 47,
+    "lcpMs": 2176,
+    "cls": 0.047,
+    "tbtMs": 332,
+    "violationsCount": 0,
+    "passesCount": 30
+  },
+  "ruleChecks": [
+    {
+      "ruleId": "SEC_HSTS_MISSING",
+      "category": "Security",
+      "headerOrProperty": "strict-transport-security",
+      "groundTruthValue": "max-age=63072000",
+      "ruleExpectation": "Header must be present and non-empty",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEC_CSP_MISSING",
+      "category": "Security",
+      "headerOrProperty": "content-security-policy",
+      "groundTruthValue": "default-src 'self'; script-src 'report-sample' 'self' 'wasm-unsafe-eval' assets....",
+      "ruleExpectation": "Header must be present and non-empty",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEC_XFO_MISSING",
+      "category": "Security",
+      "headerOrProperty": "x-frame-options",
+      "groundTruthValue": "DENY",
+      "ruleExpectation": "Header must be present (e.g. DENY / SAMEORIGIN)",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEC_XCTO_MISSING",
+      "category": "Security",
+      "headerOrProperty": "x-content-type-options",
+      "groundTruthValue": "nosniff",
+      "ruleExpectation": "Header must equal 'nosniff'",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEC_REFERRER_POLICY_MISSING",
+      "category": "Security",
+      "headerOrProperty": "referrer-policy",
+      "groundTruthValue": "strict-origin-when-cross-origin",
+      "ruleExpectation": "Header must specify safe referrer policy",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEO_ROBOTS_MISSING",
+      "category": "SEO",
+      "headerOrProperty": "/robots.txt HTTP status",
+      "groundTruthValue": "HTTP 200",
+      "ruleExpectation": "Must return 200 OK",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SEO_SITEMAP_MISSING",
+      "category": "SEO",
+      "headerOrProperty": "/sitemap.xml HTTP status",
+      "groundTruthValue": "HTTP 200",
+      "ruleExpectation": "Must return 200 OK or be listed in robots.txt",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "SSL_VALIDITY",
+      "category": "Security",
+      "headerOrProperty": "TLS Handshake & Expiry",
+      "groundTruthValue": "Valid: true, Issuer: Let's Encrypt, Days left: 85",
+      "ruleExpectation": "Cert must be valid and trusted",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    },
+    {
+      "ruleId": "AXE_COLOR_CONTRAST",
+      "category": "Accessibility",
+      "headerOrProperty": "WCAG 2.1 AA Contrast Ratios",
+      "groundTruthValue": "Violations: 0, Passes: 30",
+      "ruleExpectation": "All text elements satisfy 4.5:1 ratio",
+      "groundTruthStatus": "PASS",
+      "sitedoctorFlagged": false
+    }
+  ]
+}

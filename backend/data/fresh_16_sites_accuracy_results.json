@@ -1,0 +1,2562 @@
+{
+  "totalAttempted": 16,
+  "completedCount": 14,
+  "failedCount": 2,
+  "completionRate": "87.5%",
+  "averageScore": "68.5/100",
+  "totalTimeSeconds": 294,
+  "results": [
+    {
+      "index": 1,
+      "url": "https://www.etsy.com",
+      "category": "E-Commerce",
+      "status": "failed_unreachable",
+      "healthScore": 0,
+      "durationMs": 1702,
+      "findingsCount": 0,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 0
+      },
+      "rawFindings": []
+    },
+    {
+      "index": 2,
+      "url": "https://www.ebay.com",
+      "category": "E-Commerce",
+      "status": "failed_unreachable",
+      "healthScore": 0,
+      "durationMs": 1244,
+      "findingsCount": 0,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 0
+      },
+      "rawFindings": []
+    },
+    {
+      "index": 3,
+      "url": "https://www.bbc.com",
+      "category": "News / Media",
+      "status": "completed",
+      "healthScore": 85,
+      "durationMs": 45912,
+      "findingsCount": 3,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "nextjs",
+        "language": "node",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Next.js hydration payload / `_next` static routing detected"
+        ],
+        "summary": "NEXTJS on (node)"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663885446_rt8csb",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 1892ms (Threshold: 600ms)",
+          "metricValue": "1892ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663885446_g4j696",
+          "ruleId": "AXE_IMAGE_ALT_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Image Missing Alternative Text (WCAG 1.1.1)",
+          "plainEnglishCause": "An <img> element does not have an 'alt' attribute. Screen readers cannot describe the image to visually impaired users.",
+          "technicalDetails": "Found 36 <img> element(s) without an alt attribute.",
+          "metricValue": "36 images",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a descriptive 'alt' attribute to the <img> tag, or alt=\"\" if the image is purely decorative.",
+              "technology": "HTML",
+              "codeSnippet": "<img src=\"/avatar.jpg\" alt=\"User profile photo\" />\n<!-- If decorative -->\n<img src=\"/divider.svg\" alt=\"\" role=\"presentation\" />"
+            }
+          ],
+          "repoSearchQuery": "<img",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663885446_yclt18",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Define your Content Security Policy inside next.config.js headers configuration.",
+              "technology": "Next.js",
+              "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};"
+            }
+          ],
+          "codeSnippet": "// next.config.js\nconst cspHeader = `\n    default-src 'self';\n    script-src 'self' 'unsafe-eval' 'unsafe-inline' https:;\n    style-src 'self' 'unsafe-inline' https:;\n    img-src 'self' blob: data: https:;\n    font-src 'self' https: data:;\n    object-src 'none';\n    base-uri 'self';\n    form-action 'self';\n    frame-ancestors 'none';\n    upgrade-insecure-requests;\n`.replace(/\\s{2,}/g, ' ').trim();\n\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          { key: 'Content-Security-Policy', value: cspHeader },\n        ],\n      },\n    ];\n  },\n};",
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Next.js (next.config.js)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NEXTJS on (node)"
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "url": "https://www.theverge.com",
+      "category": "News / Media",
+      "status": "completed",
+      "healthScore": 38,
+      "durationMs": 54866,
+      "findingsCount": 13,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "nextjs",
+        "language": "node",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Next.js hydration payload / `_next` static routing detected"
+        ],
+        "summary": "NEXTJS on (node)"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 10,
+        "info": 2,
+        "pass": 0,
+        "total": 13
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663894472_s8d0wm",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 401 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663894472_jvtjvh",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://pagead2.googlesyndication.com/pagead/ping?e=1",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663894472_p0xspv",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 401): https://www.theverge.com/blaize/datalayer",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663894472_6z9lw6",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://www.theverge.com/blaize/datalayer",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663894472_crs8nf",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 3017ms (Threshold: 600ms)",
+          "metricValue": "3017ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663863392_jqoer1",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: ARIA commands must have an accessible name",
+          "plainEnglishCause": "Ensure every ARIA button, link and menuitem has an accessible name",
+          "technicalDetails": "Rule: aria-command-name (serious). HTML: <div id=\"cbb\" class=\"cbb\" tabindex=\"0\" role=\"button\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "#google_ads_iframe_\\/172968584\\/verge\\/theverge\\.com\\/front_page_22, #cbb",
+          "wcagRule": "aria-command-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663894472_a2jfyx",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span>Hands-on</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".up4voo6 > div > div > div:nth-child(1) > .jelpep7.jelpep4.jelpep0 > .j7r3y3.j7r3y0 > span",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663863392_c52vgh",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Links must be distinguishable without relying on color",
+          "plainEnglishCause": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+          "technicalDetails": "Rule: link-in-text-block (serious). HTML: <a href=\"/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review\">the full review</a>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "#latest-dmcyOnF1aWNrUG9zdDoxMDAxMzcz > .rj2ep81 > .rj2ep87 > ._4ine551._4ine550 > ._1y5ugvbf:nth-child(3) > .duet--article--standard-paragraph._18mzr4b1._18mzr4b0 > a",
+          "wcagRule": "link-in-text-block",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663863392_e72s3q",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Links must have discernible text",
+          "plainEnglishCause": "Ensure links have discernible text",
+          "technicalDetails": "Rule: link-name (serious). HTML: <a class=\"xnv72h2\" href=\"https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/oOIGNN.gif?quality=90&strip=all\" data-pswp-height=\"499\" data-pswp-width=\"800\" target=\"_blank\" rel=\"noreferrer\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "a[data-pswp-height=\"499\"]",
+          "wcagRule": "link-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663863392_woiiij",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+          "plainEnglishCause": "Ensure that lists are structured correctly",
+          "technicalDetails": "Rule: list (serious). HTML: <ul class=\"tc3v1r1 tc3v1r0\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".tc3v1r1",
+          "wcagRule": "list",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663894472_n4yuin",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Content-Type-Options to next.config.js headers.",
+              "technology": "Next.js",
+              "codeSnippet": "{ key: 'X-Content-Type-Options', value: 'nosniff' }"
+            }
+          ],
+          "codeSnippet": "{ key: 'X-Content-Type-Options', value: 'nosniff' }",
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Next.js (next.config.js)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NEXTJS on (node)"
+          }
+        },
+        {
+          "id": "fnd_1790663894472_pzr6ah",
+          "ruleId": "SEC_SERVER_HEADER_LEAK",
+          "category": "security",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Server Identity Information Leaked",
+          "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+          "technicalDetails": "Server signature leaked: X-Powered-By='Next.js', Server=''",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set poweredByHeader: false in next.config.js.",
+              "technology": "Next.js",
+              "codeSnippet": "// next.config.js\nmodule.exports = {\n  poweredByHeader: false,\n};"
+            }
+          ],
+          "codeSnippet": "// next.config.js\nmodule.exports = {\n  poweredByHeader: false,\n};",
+          "repoSearchQuery": "poweredByHeader: false",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Next.js (next.config.js)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NEXTJS on (node)"
+          }
+        },
+        {
+          "id": "fnd_1790663894472_v21ufr",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "url": "http://berkshirehathaway.com",
+      "category": "Minimal / Legacy",
+      "status": "completed",
+      "healthScore": 63,
+      "durationMs": 36139,
+      "findingsCount": 7,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "none",
+        "detectedSignals": [],
+        "summary": "Stack not detected — generic server configuration"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663930605_7ffshd",
+          "ruleId": "SEC_HSTS_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Strict-Transport-Security (HSTS) Header",
+          "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+          "technicalDetails": "Protocol: http:",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic web server configuration shown, verify against your actual infrastructure] Configure the Strict-Transport-Security HTTP header to require HTTPS connections for at least 1 year.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+            }
+          ],
+          "repoSearchQuery": "Strict-Transport-Security",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "Stack not detected — generic server configuration"
+          }
+        },
+        {
+          "id": "fnd_1790663930605_5tjrla",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663930605_p6v0is",
+          "ruleId": "SEO_VIEWPORT_MISSING",
+          "category": "seo",
+          "severity": "critical",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Mobile Viewport Meta Tag",
+          "plainEnglishCause": "The document lacks a viewport meta tag. Mobile browsers will render the page at desktop width, breaking responsive mobile usability.",
+          "technicalDetails": "Missing mobile viewport meta tag <meta name=\"viewport\">.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the standard mobile viewport tag to the document <head>.",
+              "technology": "HTML",
+              "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+            }
+          ],
+          "repoSearchQuery": "name=\"viewport\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663900496_mls9ke",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+          "plainEnglishCause": "Ensure <dl> elements are structured correctly",
+          "technicalDetails": "Rule: definition-list (serious). HTML: <dl><p></p><p align=\"left\"><font size=\"2\"><a href=\"disclaimer.html\">Legal Disclaimer</a> \n</font></p><p align=\"left\"><font size=\"2\">Copyright © 1977-2026<b> Berkshire Hathaway Inc.</b></font><font size=\"2\"> \n</font></p></dl>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "dl",
+          "wcagRule": "definition-list",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663900496_lyxpkz",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663930605_cnzbo5",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663930605_hg76df",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "url": "http://info.cern.ch",
+      "category": "Minimal / Historical",
+      "status": "completed",
+      "healthScore": 53,
+      "durationMs": 33623,
+      "findingsCount": 9,
+      "detectedStack": {
+        "server": "apache",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Apache HTTP server header detected: `Apache`"
+        ],
+        "summary": "APACHE"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 6,
+        "info": 2,
+        "pass": 0,
+        "total": 9
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663928092_upzvg3",
+          "ruleId": "SEC_HSTS_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Strict-Transport-Security (HSTS) Header",
+          "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks are vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+          "technicalDetails": "Protocol: http:",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the HSTS header via mod_headers in Apache.",
+              "technology": "Apache",
+              "codeSnippet": "<IfModule mod_headers.c>\n    Header always set Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\"\n</IfModule>"
+            }
+          ],
+          "codeSnippet": "<IfModule mod_headers.c>\n    Header always set Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\"\n</IfModule>",
+          "repoSearchQuery": "Header always set Strict-Transport-Security",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Apache (.htaccess)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "APACHE"
+          }
+        },
+        {
+          "id": "fnd_1790663928092_vm27v7",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663928092_gznnj0",
+          "ruleId": "SEO_VIEWPORT_MISSING",
+          "category": "seo",
+          "severity": "critical",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Mobile Viewport Meta Tag",
+          "plainEnglishCause": "The document lacks a viewport meta tag. Mobile browsers will render the page at desktop width, breaking responsive mobile usability.",
+          "technicalDetails": "Missing mobile viewport meta tag <meta name=\"viewport\">.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the standard mobile viewport tag to the document <head>.",
+              "technology": "HTML",
+              "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+            }
+          ],
+          "repoSearchQuery": "name=\"viewport\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663897531_x3i469",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663928092_cc2tvu",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set Content-Security-Policy in .htaccess or virtual host definition.",
+              "technology": "Apache",
+              "codeSnippet": "<IfModule mod_headers.c>\n    Header always set Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;\"\n</IfModule>"
+            }
+          ],
+          "codeSnippet": "<IfModule mod_headers.c>\n    Header always set Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;\"\n</IfModule>",
+          "repoSearchQuery": "Header always set Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Apache HTTP Server (.htaccess)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "APACHE"
+          }
+        },
+        {
+          "id": "fnd_1790663928092_gkqc4o",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Frame-Options in Apache configuration.",
+              "technology": "Apache",
+              "codeSnippet": "Header always set X-Frame-Options \"SAMEORIGIN\""
+            }
+          ],
+          "codeSnippet": "Header always set X-Frame-Options \"SAMEORIGIN\"",
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Apache (.htaccess)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "APACHE"
+          }
+        },
+        {
+          "id": "fnd_1790663928092_y2d2de",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Content-Type-Options in Apache .htaccess.",
+              "technology": "Apache",
+              "codeSnippet": "Header always set X-Content-Type-Options \"nosniff\""
+            }
+          ],
+          "codeSnippet": "Header always set X-Content-Type-Options \"nosniff\"",
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Apache (.htaccess)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "APACHE"
+          }
+        },
+        {
+          "id": "fnd_1790663928092_ktoknb",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663928092_fg6qej",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "url": "https://deno.land",
+      "category": "Developer Tools",
+      "status": "completed",
+      "healthScore": 60,
+      "durationMs": 42056,
+      "findingsCount": 6,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "none",
+        "detectedSignals": [],
+        "summary": "Stack not detected — generic server configuration"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 5,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663972672_lj6xir",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: net::ERR_CONTENT_DECODING_FAILED",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663972672_1yz6vq",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://deno.com/i/static/array.js",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663972672_pc0rr6",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <kbd id=\"search-key\" class=\"hidden xs:flex point...\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".max-w-64 > .relative > .font-sans.top-1.right-1",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663942525_fvwjz0",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+          "plainEnglishCause": "Ensure <dl> elements are structured correctly",
+          "technicalDetails": "Rule: definition-list (serious). HTML: <dl class=\"grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto w-full\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".sm\\:gap-6",
+          "wcagRule": "definition-list",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663942525_agbjg8",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <dt> and <dd> elements must be contained by a <dl>",
+          "plainEnglishCause": "Ensure <dt> and <dd> elements are contained by a <dl>",
+          "technicalDetails": "Rule: dlitem (serious). HTML: <dt class=\"text-heading-md leading-none text-offblack\">100k+</dt>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "div[data-frsh-key=\"GitHub stars\"] > div > .text-heading-md",
+          "wcagRule": "dlitem",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663972672_wn5c0e",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Stack not detected — generic web server configuration shown, verify against your actual infrastructure] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+            }
+          ],
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "Stack not detected — generic server configuration"
+          }
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "url": "https://bun.sh",
+      "category": "Developer Tools",
+      "status": "completed",
+      "healthScore": 70,
+      "durationMs": 39152,
+      "findingsCount": 6,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "unknown",
+        "cdn": "cloudflare",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Edge CDN / Reverse Proxy: Cloudflare (`cf-ray`) detected"
+        ],
+        "summary": "via CLOUDFLARE CDN"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 6,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663969776_ilh4jg",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"bg-accent px-1.5 py-[3px] text-[10px] leading-none text-white\">NEW</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".leading-none.px-1\\.5.py-\\[3px\\]",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663938672_ddxfdw",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Interactive controls must not be nested",
+          "plainEnglishCause": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "technicalDetails": "Rule: nested-interactive (serious). HTML: <button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-expanded=\"true\" aria-controls=\"tour-terminal\" class=\"group/step relative grid w-full grid-cols-[2.25rem_1fr] gap-3 px-1 py-3.5 text-left transition-colors lg:rounded-xl lg:px-3 lg:py-3 lg:bg-subtle\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".lg\\:bg-subtle",
+          "wcagRule": "nested-interactive",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663938672_kks7ew",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Scrollable region must have keyboard access",
+          "plainEnglishCause": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "technicalDetails": "Rule: scrollable-region-focusable (serious). HTML: <pre class=\"m-0 overflow-x-auto px-4 py-3.5 text-[12.5px] leading-[1.7] text-[var(--sk-text)]\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".leading-\\[1\\.7\\].px-4.py-3\\.5",
+          "wcagRule": "scrollable-region-focusable",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663969776_876ya6",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFLARE) detected — configure headers in CDN Edge Transform Rules or on origin web server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+            }
+          ],
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "via CLOUDFLARE CDN"
+          }
+        },
+        {
+          "id": "fnd_1790663969776_ckzjq3",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFLARE) detected — configure headers in CDN Edge Transform Rules or on origin web server] Send X-Frame-Options: SAMEORIGIN or DENY on all HTML responses.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "X-Frame-Options: SAMEORIGIN"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "via CLOUDFLARE CDN"
+          }
+        },
+        {
+          "id": "fnd_1790663969776_8xyow8",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFLARE) detected — configure headers in CDN Edge Transform Rules or on origin web server] Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "X-Content-Type-Options: nosniff"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "via CLOUDFLARE CDN"
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "url": "https://redis.io",
+      "category": "Databases & Tools",
+      "status": "completed",
+      "healthScore": 55,
+      "durationMs": 12666,
+      "findingsCount": 16,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "nextjs",
+        "language": "node",
+        "cdn": "cloudflare",
+        "confidence": "high",
+        "detectedSignals": [
+          "Edge CDN / Reverse Proxy: Cloudflare (`cf-ray`) detected",
+          "Next.js hydration payload / `_next` static routing detected"
+        ],
+        "summary": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]"
+      },
+      "summaryCounts": {
+        "critical": 5,
+        "warning": 11,
+        "info": 0,
+        "pass": 0,
+        "total": 16
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790663985308_ip96ns",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 404 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_uhio6x",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 404 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_5f4vxj",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 404 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_dflptm",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 401 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_bbccuv",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Mixed Content: The page at 'https://redis.io/' was loaded over HTTPS, but requested an insecure resource 'http://redis.io/resources/state-of-context-engineering-2026/?_rsc=ry-B8umWgNEV4JR9'. This request has been blocked; the content must be served over HTTPS.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_be9xzi",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 404): https://redis.io/monitoring/?o=1111372&p=4511056586473472&r=us",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_y0nhao",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 404): https://redis.io/monitoring/?o=1111372&p=4511056586473472&r=us",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_apgd4i",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 404): https://redis.io/monitoring/?o=1111372&p=4511056586473472&r=us",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_nd50zw",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://redis.io/securemetrics/ag/g/c?v=2&tid=G-8BKGRQKRPV&gtm=45M92e69p1v9186540657z878394893za20kzb78394893zd78394893xf4&_p=1790663975194&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dY2E1Nz.dNTIxZG&ecid=1798133027&_eu=AAAAAGAC&_uip=%3A%3A&cid=498577235.1790663976&fp=1&frm=0&pscdl=noapi&rcb=0&sr=1280x800&uaa=x86&uab=64&uafvl=HeadlessChrome%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.12&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&ur=IN-GJ&_gsid=cs9CiL9BwNNVvh7TP9Hsrme3j_RaiLEXUA&gaf=2&_s=1&tag_exp=115938466~115938468~118897920~118897930~119404696~120213116~120385423~120469145~120469153&sid=1790663975&sct=1&seg=0&dl=https%3A%2F%2Fredis.io%2F&dt=Redis%20-%20Real-time%20data%20for%20agents%20%26%20apps&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&gap.gtb=1&tfd=2634",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_0ek429",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 401): https://cloud.redis.io/api/v1/csrf",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_fkssal",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=1&ae=g&auid=749265388.1790663975&dt=Redis%20-%20Real-time%20data%20for%20agents%20%26%20apps&en=page_view&dl=https%3A%2F%2Fredis.io%2F&scrsrc=redis.io&rnd=1071652571.1790663975&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dY2E1Nz.dNTIxZG.dNzQzZD&_tu=CA&gtm=45E92e69p1v78394893za204zd78394893xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120385422~120469145~120469153&tft=1790663975468&tfd=2291&gap.gtb=1&fmt=8",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_oowzb1",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 0): https://www.google.com/rmkt/collect/943135215/?random=1790663975733&cv=11&fst=1790663975733&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45M92e69p1v9186540657z878394893za20kzb78394893zd78394893xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~119404696~120213116~120385423~120469145~120469153&u_w=1280&u_h=800&url=https%3A%2F%2Fredis.io%2F&rcb=0&frm=0&tiba=Redis%20-%20Real-time%20data%20for%20agents%20%26%20apps&did=dY2E1Nz%2CdNTIxZG&gdid=dY2E1Nz.dNTIxZG&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=749265388.1790663975&uaa=x86&uab=64&uafvl=HeadlessChrome%3B153.0.8010.12%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.12&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&data=event%3Dgtag.config&gap.gtb=1&ept=68&gcp=5",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_z2bwtt",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 1617ms (Threshold: 600ms)",
+          "metricValue": "1617ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663985308_jirctd",
+          "ruleId": "AXE_BUTTON_NAME_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Button Missing Accessible Name (WCAG 4.1.2)",
+          "plainEnglishCause": "An icon-only <button> element does not have inner text or an aria-label attribute, so screen readers only announce 'button' without indicating its function.",
+          "technicalDetails": "Rule: button-name (critical). HTML: <button aria-label=\"\" type=\"button\" class=\"styles-module-scss-module__N1dKDW__button styles-module-scss-module__N1dKDW__variant_pill styles-module-scss-module__N1dKDW__theme_secondary styles-module-scss-module__N1dKDW__size_md styles-module-scss-module__LIJuKG__searchButtonDesktop\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add an aria-label attribute or a visually-hidden text span inside the button.",
+              "technology": "HTML / React",
+              "codeSnippet": "<button type=\"button\" aria-label=\"Close dialog\">\n  <CloseIcon />\n</button>"
+            }
+          ],
+          "repoSearchQuery": "<button",
+          "elementSelector": ".styles-module-scss-module__LIJuKG__searchButtonDesktop",
+          "wcagRule": "button-name",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790663982300_sokyhp",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Links must have discernible text",
+          "plainEnglishCause": "Ensure links have discernible text",
+          "technicalDetails": "Rule: link-name (serious). HTML: <a class=\"styles-module-scss-module__N1dKDW__button styles-module-scss-module__N1dKDW__size_none styles-module-scss-module__N1dKDW__variant_content\" target=\"_self\" tabindex=\"0\" style=\"display:contents\" href=\"/iris/\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".styles-module-scss-module__N1dKDW__size_none.styles-module-scss-module__N1dKDW__variant_content[href$=\"iris/\"]",
+          "wcagRule": "link-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790663985308_76x3iq",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Content-Type-Options to next.config.js headers.",
+              "technology": "Next.js",
+              "codeSnippet": "{ key: 'X-Content-Type-Options', value: 'nosniff' }"
+            }
+          ],
+          "codeSnippet": "{ key: 'X-Content-Type-Options', value: 'nosniff' }",
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Next.js (next.config.js)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]"
+          }
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "url": "https://www.postgresql.org",
+      "category": "Databases & Tools",
+      "status": "completed",
+      "healthScore": 90,
+      "durationMs": 41328,
+      "findingsCount": 2,
+      "detectedStack": {
+        "server": "nginx",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Nginx web server header detected: `nginx`"
+        ],
+        "summary": "NGINX"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664014004_cxmfla",
+          "ruleId": "AXE_BUTTON_NAME_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Button Missing Accessible Name (WCAG 4.1.2)",
+          "plainEnglishCause": "An icon-only <button> element does not have inner text or an aria-label attribute, so screen readers only announce 'button' without indicating its function.",
+          "technicalDetails": "Rule: button-name (critical). HTML: <button class=\"btn btn-default\" type=\"submit\"><i class=\"fas fa-search\"></i></button>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add an aria-label attribute or a visually-hidden text span inside the button.",
+              "technology": "HTML / React",
+              "codeSnippet": "<button type=\"button\" aria-label=\"Close dialog\">\n  <CloseIcon />\n</button>"
+            }
+          ],
+          "repoSearchQuery": "<button",
+          "elementSelector": "button[type=\"submit\"]",
+          "wcagRule": "button-name",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664014004_9s1ofj",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Content-Type-Options header in Nginx configuration.",
+              "technology": "Nginx",
+              "codeSnippet": "add_header X-Content-Type-Options \"nosniff\" always;"
+            }
+          ],
+          "codeSnippet": "add_header X-Content-Type-Options \"nosniff\" always;",
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Nginx Server Block",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NGINX"
+          }
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "url": "https://nginx.org",
+      "category": "Infrastructure",
+      "status": "completed",
+      "healthScore": 69,
+      "durationMs": 35802,
+      "findingsCount": 7,
+      "detectedStack": {
+        "server": "nginx",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Nginx web server header detected: `nginx/1.31.3`"
+        ],
+        "summary": "NGINX"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 6,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664049810_jwoq2u",
+          "ruleId": "SSL_EXPIRING_SOON",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "SSL Certificate Expiring in < 30 Days",
+          "plainEnglishCause": "The TLS certificate is valid but expires in less than 30 days. Auto-renewal may be misconfigured or failing.",
+          "technicalDetails": "Expires in 18 days (Oct 17 09:12:13 2026 GMT)",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Verify automated renewal cron and DNS verification hooks.",
+              "technology": "SSL Monitoring",
+              "codeSnippet": "sudo certbot renew --dry-run"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664049810_xu99ps",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664018919_c1zd7t",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790664049810_0u6vmi",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the Content-Security-Policy header directive in your Nginx server block.",
+              "technology": "Nginx",
+              "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;"
+            }
+          ],
+          "codeSnippet": "# /etc/nginx/sites-available/your-site\nadd_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:;\" always;",
+          "repoSearchQuery": "add_header Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Nginx Server Block",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NGINX"
+          }
+        },
+        {
+          "id": "fnd_1790664049810_b9n19i",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options, allowing third-party malicious sites to embed your pages inside an iframe and trick users into clicking hidden buttons (clickjacking).",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Frame-Options in your Nginx configuration.",
+              "technology": "Nginx",
+              "codeSnippet": "add_header X-Frame-Options \"SAMEORIGIN\" always;"
+            }
+          ],
+          "codeSnippet": "add_header X-Frame-Options \"SAMEORIGIN\" always;",
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Nginx Server Block",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NGINX"
+          }
+        },
+        {
+          "id": "fnd_1790664049810_0h6wzx",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add X-Content-Type-Options header in Nginx configuration.",
+              "technology": "Nginx",
+              "codeSnippet": "add_header X-Content-Type-Options \"nosniff\" always;"
+            }
+          ],
+          "codeSnippet": "add_header X-Content-Type-Options \"nosniff\" always;",
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Nginx Server Block",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NGINX"
+          }
+        },
+        {
+          "id": "fnd_1790664049810_ll52iz",
+          "ruleId": "SEC_SERVER_HEADER_LEAK",
+          "category": "security",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Server Identity Information Leaked",
+          "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+          "technicalDetails": "Server signature leaked: X-Powered-By='', Server='nginx/1.31.3'",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Disable server version numbers in the http block of /etc/nginx/nginx.conf.",
+              "technology": "Nginx",
+              "codeSnippet": "# /etc/nginx/nginx.conf\nhttp {\n    server_tokens off;\n    more_clear_headers Server; # If using headers-more module\n}"
+            }
+          ],
+          "codeSnippet": "# /etc/nginx/nginx.conf\nhttp {\n    server_tokens off;\n    more_clear_headers Server; # If using headers-more module\n}",
+          "repoSearchQuery": "server_tokens off;",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Nginx (nginx.conf)",
+            "isGenericFallback": false,
+            "detectedStackSummary": "NGINX"
+          }
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "url": "https://archlinux.org",
+      "category": "Linux & Distros",
+      "status": "completed",
+      "healthScore": 75,
+      "durationMs": 36785,
+      "findingsCount": 3,
+      "detectedStack": {
+        "server": "nginx",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Nginx web server header detected: `nginx`"
+        ],
+        "summary": "NGINX"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664050804_27fwn0",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664050804_ykvyd5",
+          "ruleId": "SEO_VIEWPORT_MISSING",
+          "category": "seo",
+          "severity": "critical",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Mobile Viewport Meta Tag",
+          "plainEnglishCause": "The document lacks a viewport meta tag. Mobile browsers will render the page at desktop width, breaking responsive mobile usability.",
+          "technicalDetails": "Missing mobile viewport meta tag <meta name=\"viewport\">.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the standard mobile viewport tag to the document <head>.",
+              "technology": "HTML",
+              "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+            }
+          ],
+          "repoSearchQuery": "name=\"viewport\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664050804_cc403t",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"/packages/\" title=\"Arch Package Database\">Packages</a>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": "a[title=\"Arch Package Database\"]",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "url": "https://www.kernel.org",
+      "category": "Linux & Distros",
+      "status": "completed",
+      "healthScore": 78,
+      "durationMs": 36277,
+      "findingsCount": 6,
+      "detectedStack": {
+        "server": "nginx",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Nginx web server header detected: `nginx`"
+        ],
+        "summary": "NGINX"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664087049_altbkh",
+          "ruleId": "SSL_EXPIRING_SOON",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "SSL Certificate Expiring in < 30 Days",
+          "plainEnglishCause": "The TLS certificate is valid but expires in less than 30 days. Auto-renewal may be misconfigured or failing.",
+          "technicalDetails": "Expires in 18 days (Oct 18 00:52:15 2026 GMT)",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Verify automated renewal cron and DNS verification hooks.",
+              "technology": "SSL Monitoring",
+              "codeSnippet": "sudo certbot renew --dry-run"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664087049_v9c8a9",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664087049_uoakfs",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"https://www.kernel.org/category/about.html\">About</a>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": "#banner > nav > ul > li:nth-child(1) > a",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664056115_2nhgp0",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: Links must be distinguishable without relying on color",
+          "plainEnglishCause": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+          "technicalDetails": "Rule: link-in-text-block (serious). HTML: <a href=\"https://www.kernel.org/nonprofit.html\">501(c)3 nonprofit corporation</a>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "#about > a",
+          "wcagRule": "link-in-text-block",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790664087049_eze1j0",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664087049_dxziqe",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. Having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "url": "https://huggingface.co",
+      "category": "AI & ML",
+      "status": "completed",
+      "healthScore": 68,
+      "durationMs": 40695,
+      "findingsCount": 8,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "svelte",
+        "language": "unknown",
+        "cdn": "cloudfront",
+        "confidence": "high",
+        "detectedSignals": [
+          "Edge CDN: AWS CloudFront detected",
+          "Svelte scoped stylesheet / component markers detected"
+        ],
+        "summary": "SVELTE on via CLOUDFRONT CDN [Verified]"
+      },
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 6,
+        "info": 2,
+        "pass": 0,
+        "total": 8
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664091496_hofis3",
+          "ruleId": "CWV_TBT_POOR",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Total Blocking Time (TBT > 600ms)",
+          "plainEnglishCause": "Long-running JavaScript tasks blocked the main browser thread for over 600ms, delaying user interactivity and responsiveness.",
+          "technicalDetails": "Total Blocking Time: 659ms (Threshold: 600ms)",
+          "metricValue": "659ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Code-split heavy bundles with dynamic imports, defer analytics scripts, and break up heavy loops.",
+              "technology": "JavaScript",
+              "codeSnippet": "// Dynamic import / Code splitting\nimport React, { Suspense, lazy } from 'react';\nconst HeavyChart = lazy(() => import('./HeavyChart'));"
+            }
+          ],
+          "repoSearchQuery": "React.lazy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664091496_9uk7jh",
+          "ruleId": "AXE_BUTTON_NAME_MISSING",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Button Missing Accessible Name (WCAG 4.1.2)",
+          "plainEnglishCause": "An icon-only <button> element does not have inner text or an aria-label attribute, so screen readers only announce 'button' without indicating its function.",
+          "technicalDetails": "Rule: button-name (critical). HTML: <button type=\"button\" class=\"px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-600 flex items-center\n\t\t\t\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add an aria-label attribute or a visually-hidden text span inside the button.",
+              "technology": "HTML / React",
+              "codeSnippet": "<button type=\"button\" aria-label=\"Close dialog\">\n  <CloseIcon />\n</button>"
+            }
+          ],
+          "repoSearchQuery": "<button",
+          "elementSelector": ".dark\\:hover\\:text-gray-600",
+          "wcagRule": "button-name",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664091496_5vzhvo",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"ml-1.5 translate-y-px rounded bg-blue-600/15 px-1 py-px text-[.65rem] font-bold uppercase leading-tight text-blue-600 dark:bg-blue-500/20 dark:text-blue-300\">new</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".ml-1\\.5",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664059485_5zegud",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html class=\"\" style=\"--animation-phase: -4861ms;\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790664059485_6dzd8q",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "info",
+          "effort": "medium",
+          "priorityBucket": "nice_to_have",
+          "title": "WCAG Violation: Zooming and scaling must not be disabled",
+          "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "meta[name=\"viewport\"]",
+          "wcagRule": "meta-viewport",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790664091496_rmv05f",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is vulnerable to Cross-Site Scripting (XSS), clickjacking, and rogue script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFRONT) detected — configure headers in CDN Edge Transform Rules or on origin web server] Configure a restrictive Content Security Policy specifying trusted script, style, image, and connect origins.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+            }
+          ],
+          "repoSearchQuery": "Content-Security-Policy",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "SVELTE on via CLOUDFRONT CDN [Verified]"
+          }
+        },
+        {
+          "id": "fnd_1790664091496_pa960o",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses lacking 'nosniff', which can lead to executable script execution from user-uploaded images or text files.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFRONT) detected — configure headers in CDN Edge Transform Rules or on origin web server] Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Universal HTTP Header",
+              "codeSnippet": "X-Content-Type-Options: nosniff"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "SVELTE on via CLOUDFRONT CDN [Verified]"
+          }
+        },
+        {
+          "id": "fnd_1790664091496_4ymus4",
+          "ruleId": "SEC_SERVER_HEADER_LEAK",
+          "category": "security",
+          "severity": "info",
+          "effort": "low",
+          "priorityBucket": "nice_to_have",
+          "title": "Server Identity Information Leaked",
+          "plainEnglishCause": "The server is disclosing its underlying software and version number via the 'Server' or 'X-Powered-By' response header. This aids attackers in footprinting known CVE vulnerabilities.",
+          "technicalDetails": "Server signature leaked: X-Powered-By='huggingface-moon', Server=''",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "[Edge CDN (CLOUDFRONT) detected — configure headers in CDN Edge Transform Rules or on origin web server] Suppress or sanitize Server and X-Powered-By response headers in your web server configuration.",
+              "technology": "Universal Server Hardening",
+              "codeSnippet": "# Remove Server and X-Powered-By response headers"
+            }
+          ],
+          "repoSearchQuery": "ServerTokens",
+          "isVerified": true,
+          "isAiSuggested": false,
+          "stackContext": {
+            "matchedTechnology": "Generic / Universal",
+            "isGenericFallback": true,
+            "detectedStackSummary": "SVELTE on via CLOUDFRONT CDN [Verified]"
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "url": "https://www.kaggle.com",
+      "category": "AI & ML",
+      "status": "completed",
+      "healthScore": 75,
+      "durationMs": 40430,
+      "findingsCount": 3,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "unknown",
+        "confidence": "none",
+        "detectedSignals": [],
+        "summary": "Stack not detected — generic server configuration"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664131925_fq73b1",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "requestStorageAccess: Permission denied.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664131925_zx65ma",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664131925_h1sg6d",
+          "ruleId": "LIGHT_LOAD_HIGH_LATENCY",
+          "category": "performance",
+          "severity": "warning",
+          "effort": "high",
+          "priorityBucket": "plan_next",
+          "title": "High Latency Under Light Concurrent Load (10 Reqs)",
+          "plainEnglishCause": "During a light test with 10 concurrent requests, average response latency exceeded 1500ms. This indicates potential thread contention, unindexed database queries, or server resource bottlenecks.",
+          "technicalDetails": "Avg latency: 2278ms (P95: 4089ms) under 10 concurrent requests.",
+          "metricValue": "2278ms avg",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Profile backend handlers, add database indexes on queried fields, and implement connection pooling.",
+              "technology": "Backend Optimization"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "url": "https://pypi.org",
+      "category": "Package Managers",
+      "status": "completed",
+      "healthScore": 80,
+      "durationMs": 40004,
+      "findingsCount": 2,
+      "detectedStack": {
+        "server": "unknown",
+        "framework": "unknown",
+        "language": "python",
+        "confidence": "medium",
+        "detectedSignals": [
+          "Python WSGI/ASGI server header detected: `gunicorn`"
+        ],
+        "summary": "(python)"
+      },
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "rawFindings": [
+        {
+          "id": "fnd_1790664131511_d0dtuv",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "effort": "medium",
+          "priorityBucket": "plan_next",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution, risking broken UI workflows.",
+          "technicalDetails": "Uncaught Exception: No ad placements found.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and wrap root components in Error Boundaries to isolate errors gracefully.",
+              "technology": "React / JavaScript",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790664131511_c2aovp",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "effort": "low",
+          "priorityBucket": "quick_win",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <p class=\"footer__tagline\">Developed and maintained by the <a href=\"https://www.python.org/psf/\" title=\"External link\" target=\"_blank\" rel=\"noopener\">Python Software Foundation</a> and Python community, for the Python community.</p>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".footer__tagline",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ]
+    }
+  ]
+}

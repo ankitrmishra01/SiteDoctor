@@ -1,0 +1,185 @@
+[
+  {
+    "name": "httpbin.org (API)",
+    "url": "https://httpbin.org/json",
+    "scanType": "backend",
+    "expectedIsApi": true,
+    "detectedClassification": "API Target",
+    "healthScore": 63,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 37 pts (uncapped: 37 pts) => 63/100]",
+    "completeness": "partial_backend_only",
+    "findingsCount": 7,
+    "findingRuleIds": [
+      "SEC_HSTS_MISSING",
+      "SEC_CSP_MISSING",
+      "SEC_XFO_MISSING",
+      "SEC_XCTO_MISSING",
+      "SEO_ROBOTS_MISSING",
+      "SEO_SITEMAP_MISSING",
+      "API_HEALTH_FAIL"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "contentType": "application/json",
+      "cors": {
+        "configured": true,
+        "allowOrigin": "https://example.com",
+        "allowMethods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "allowHeaders": null,
+        "allowCredentials": "true"
+      },
+      "sslValid": true
+    }
+  },
+  {
+    "name": "dummyjson.com (API)",
+    "url": "https://dummyjson.com/products",
+    "scanType": "backend",
+    "expectedIsApi": true,
+    "detectedClassification": "API Target",
+    "healthScore": 78,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 22 pts (uncapped: 22 pts) => 78/100]",
+    "completeness": "partial_backend_only",
+    "findingsCount": 4,
+    "findingRuleIds": [
+      "SEC_CSP_MISSING",
+      "SEO_ROBOTS_MISSING",
+      "SEO_SITEMAP_MISSING",
+      "API_HEALTH_FAIL"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "contentType": "application/json; charset=utf-8",
+      "cors": {
+        "configured": true,
+        "allowOrigin": "https://example.com",
+        "allowMethods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "allowHeaders": null,
+        "allowCredentials": "true"
+      },
+      "sslValid": true
+    }
+  },
+  {
+    "name": "pokeapi.co (API)",
+    "url": "https://pokeapi.co/api/v2/pokemon",
+    "scanType": "backend",
+    "expectedIsApi": true,
+    "detectedClassification": "API Target",
+    "healthScore": 69,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 31 pts (uncapped: 31 pts) => 69/100]",
+    "completeness": "partial_backend_only",
+    "findingsCount": 5,
+    "findingRuleIds": [
+      "SEC_CSP_MISSING",
+      "SEC_XFO_MISSING",
+      "SEC_XCTO_MISSING",
+      "SEC_SERVER_HEADER_LEAK",
+      "API_HEALTH_FAIL"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "contentType": "application/json; charset=utf-8",
+      "cors": {
+        "configured": true,
+        "allowOrigin": "*",
+        "allowMethods": "GET,HEAD",
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "sslValid": true
+    }
+  },
+  {
+    "name": "etsy.com (HTML Website)",
+    "url": "https://www.etsy.com",
+    "scanType": "both",
+    "expectedIsApi": false,
+    "detectedClassification": "HTML Website",
+    "healthScore": 98,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 2 pts (uncapped: 2 pts) => 98/100]",
+    "completeness": "partial_backend_only",
+    "findingsCount": 2,
+    "findingRuleIds": [
+      "SEO_SITEMAP_MISSING",
+      "LIGHT_LOAD_BLOCKED_BY_WAF"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "sslValid": true
+    }
+  },
+  {
+    "name": "rust-lang.org (HTML Website)",
+    "url": "https://www.rust-lang.org",
+    "scanType": "both",
+    "expectedIsApi": false,
+    "detectedClassification": "HTML Website",
+    "healthScore": 73,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 27 pts (uncapped: 27 pts) => 73/100]",
+    "completeness": "full",
+    "findingsCount": 7,
+    "findingRuleIds": [
+      "CUSTOM_ANOMALY",
+      "SEC_HSTS_MISSING",
+      "SEC_CSP_MISSING",
+      "SEC_XFO_MISSING",
+      "SEC_XCTO_MISSING",
+      "SEO_SITEMAP_MISSING",
+      "SEO_ROBOTS_MISSING"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "cors": {
+        "configured": true,
+        "allowOrigin": "*",
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "sslValid": true
+    }
+  },
+  {
+    "name": "berkshirehathaway.com (HTML Website)",
+    "url": "https://www.berkshirehathaway.com",
+    "scanType": "both",
+    "expectedIsApi": false,
+    "detectedClassification": "HTML Website",
+    "healthScore": 63,
+    "scoreFormula": "Score = 100 - sum(min(25, cat_penalty)) [Total Penalty: 37 pts (uncapped: 37 pts) => 63/100]",
+    "completeness": "full",
+    "findingsCount": 7,
+    "findingRuleIds": [
+      "SEO_META_DESCRIPTION_MISSING",
+      "SEO_VIEWPORT_MISSING",
+      "CUSTOM_ANOMALY",
+      "CUSTOM_ANOMALY",
+      "SEC_HSTS_MISSING",
+      "SEO_ROBOTS_MISSING",
+      "SEO_SITEMAP_MISSING"
+    ],
+    "corsMissingFired": false,
+    "rawMetrics": {
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "cors": {
+        "configured": false,
+        "allowOrigin": null,
+        "allowMethods": null,
+        "allowHeaders": null,
+        "allowCredentials": null
+      },
+      "sslValid": true
+    }
+  }
+]

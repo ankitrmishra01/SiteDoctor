@@ -1,0 +1,2244 @@
+{
+  "scans": [
+    {
+      "jobId": "sweep_1790573629920_u5luy",
+      "targetUrl": "https://portfolio-ankits.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:33:49.920Z",
+      "completedAt": "2026-09-28T05:33:49.920Z",
+      "healthScore": 48,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (2×15) - (4×5) - (2×1) = 48]",
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 8
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573627463_hxoz1d",
+          "ruleId": "CWV_LCP_POOR",
+          "category": "performance",
+          "severity": "critical",
+          "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+          "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+          "technicalDetails": "Largest Contentful Paint: 5636ms (Poor > 4000ms)",
+          "metricValue": "5636ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+              "technology": "HTML",
+              "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+            },
+            {
+              "step": 2,
+              "instruction": "Ensure your server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+              "technology": "Performance"
+            }
+          ],
+          "repoSearchQuery": "<link rel=\"preload\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629183_rdfjbm",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span>AM</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".nav-logo > span",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629512_cjscyw",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629512_mbs3ig",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629512_pqgobq",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629730_e5ms7e",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. While search engines can still crawl, having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629764_r6vogz",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573629793_ff8br5",
+          "ruleId": "API_HEALTH_FAIL",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Health Check Endpoint Unreachable or Failing",
+          "plainEnglishCause": "Probing common health check routes (/health, /api/health) returned an error or 404 status. Automated monitors and orchestrators (Kubernetes, AWS ALB) rely on this endpoint to verify container health.",
+          "technicalDetails": "Neither /health nor /api/health returned an active 2xx status code.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Expose a lightweight /health or /api/health route that returns status 200 and basic runtime status.",
+              "technology": "Express.js",
+              "codeSnippet": "app.get('/health', (req, res) => {\n  res.status(200).json({\n    status: 'ok',\n    uptime: process.uptime(),\n    timestamp: new Date().toISOString()\n  });\n});"
+            }
+          ],
+          "repoSearchQuery": "app.get('/health'",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573636755_nr99n",
+      "targetUrl": "https://automax-vqh9.onrender.com",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:33:56.755Z",
+      "completedAt": "2026-09-28T05:33:56.755Z",
+      "healthScore": 0,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (5×15) - (7×5) - (2×1) = 0]",
+      "summaryCounts": {
+        "critical": 5,
+        "warning": 7,
+        "info": 2,
+        "pass": 0,
+        "total": 14
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573630848_a82kt6",
+          "ruleId": "CONSOLE_JS_ERROR",
+          "category": "frontend",
+          "severity": "critical",
+          "title": "Uncaught JavaScript Console Error",
+          "plainEnglishCause": "A JavaScript runtime exception or unhandled promise rejection occurred in the browser console during page execution. This can break user interaction or crash React component trees.",
+          "technicalDetails": "Failed to load resource: the server responded with a status of 404 ()",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Review the stack trace and component error boundaries to catch errors gracefully.",
+              "technology": "React",
+              "codeSnippet": "class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(error, info) { console.error(\"Caught UI error:\", error, info); }\n  render() {\n    if (this.state.hasError) return <h2>Something went wrong.</h2>;\n    return this.props.children;\n  }\n}"
+            }
+          ],
+          "repoSearchQuery": "ErrorBoundary",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573630848_babwb0",
+          "ruleId": "NETWORK_FAILED_REQUEST",
+          "category": "frontend",
+          "severity": "warning",
+          "title": "Failed Network Request (4xx / 5xx)",
+          "plainEnglishCause": "The browser attempted to load a resource or hit an API endpoint that returned an HTTP error code, resulting in failed data rendering or broken UI.",
+          "technicalDetails": "Failed asset/request (HTTP 404): https://automax-vqh9.onrender.com/",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check if the requested API route or asset URL is deployed and accessible. Ensure authentication tokens and request URLs are correct.",
+              "technology": "API Client"
+            }
+          ],
+          "repoSearchQuery": "fetch(",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573632370_qk2xnr",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573632370_qp1v25",
+          "ruleId": "SEO_VIEWPORT_MISSING",
+          "category": "seo",
+          "severity": "critical",
+          "title": "Missing Mobile Viewport Meta Tag",
+          "plainEnglishCause": "The document lacks a viewport meta tag. Mobile browsers will render the page at desktop width, breaking responsive mobile usability.",
+          "technicalDetails": "Missing mobile viewport meta tag <meta name=\"viewport\">.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the standard mobile viewport tag to the document <head>.",
+              "technology": "HTML",
+              "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+            }
+          ],
+          "repoSearchQuery": "name=\"viewport\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573633146_jwnjv3",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Documents must have <title> element to aid in navigation",
+          "plainEnglishCause": "Ensure each HTML document contains a non-empty <title> element",
+          "technicalDetails": "Rule: document-title (serious). HTML: <html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Not Found\n</pre></body></html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "document-title",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573633146_hj8f5h",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: <html> element must have a lang attribute",
+          "plainEnglishCause": "Ensure every HTML document has a lang attribute",
+          "technicalDetails": "Rule: html-has-lang (serious). HTML: <html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Not Found\n</pre></body></html>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "html",
+          "wcagRule": "html-has-lang",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573633639_0cmn90",
+          "ruleId": "SEC_HSTS_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Strict-Transport-Security (HSTS) Header",
+          "plainEnglishCause": "The server does not enforce HTTPS connections via HSTS. Users communicating over insecure networks could be vulnerable to SSL stripping and man-in-the-middle (MITM) attacks.",
+          "technicalDetails": "Strict-Transport-Security header is absent in response headers.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add the Strict-Transport-Security header in Helmet or your web server configuration.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "// npm install helmet\nimport helmet from 'helmet';\n\napp.use(helmet.hsts({\n  maxAge: 31536000, // 1 year in seconds\n  includeSubDomains: true,\n  preload: true\n}));"
+            },
+            {
+              "step": 2,
+              "instruction": "If using Nginx as a reverse proxy, add the header in your server block.",
+              "technology": "Nginx",
+              "codeSnippet": "add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;"
+            }
+          ],
+          "repoSearchQuery": "helmet",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573633639_gx5lmi",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573633639_l7j2np",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573633639_k4bbfd",
+          "ruleId": "CORS_MISSING",
+          "category": "backend",
+          "severity": "critical",
+          "title": "CORS Header Missing on API Endpoint",
+          "plainEnglishCause": "The server did not send the 'Access-Control-Allow-Origin' response header when requested from a cross-origin domain. Modern browsers will block client-side JavaScript requests to this API.",
+          "technicalDetails": "Access-Control-Allow-Origin was not returned when Origin header was sent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Install and enable CORS middleware on your backend server.",
+              "technology": "Express / Node.js",
+              "codeSnippet": "// npm install cors @types/cors\nimport express from 'express';\nimport cors from 'cors';\n\nconst app = express();\napp.use(cors({\n  origin: process.env.CLIENT_URL || 'https://yourfrontend.com',\n  credentials: true,\n  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],\n  allowedHeaders: ['Content-Type', 'Authorization']\n}));"
+            },
+            {
+              "step": 2,
+              "instruction": "If using Next.js Route Handlers, configure CORS headers in next.config.js or Route Handler response headers.",
+              "technology": "Next.js",
+              "codeSnippet": "// next.config.js\nmodule.exports = {\n  async headers() {\n    return [{\n      source: '/api/:path*',\n      headers: [\n        { key: 'Access-Control-Allow-Origin', value: 'https://yourfrontend.com' },\n        { key: 'Access-Control-Allow-Methods', value: 'GET,POST,PUT,DELETE,OPTIONS' },\n        { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization' },\n      ],\n    }];\n  },\n};"
+            }
+          ],
+          "repoSearchQuery": "app.use(cors",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573635406_k5pj3v",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. While search engines can still crawl, having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573635682_ttpkfs",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573635954_6iyfqf",
+          "ruleId": "API_HEALTH_FAIL",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Health Check Endpoint Unreachable or Failing",
+          "plainEnglishCause": "Probing common health check routes (/health, /api/health) returned an error or 404 status. Automated monitors and orchestrators (Kubernetes, AWS ALB) rely on this endpoint to verify container health.",
+          "technicalDetails": "Neither /health nor /api/health returned an active 2xx status code.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Expose a lightweight /health or /api/health route that returns status 200 and basic runtime status.",
+              "technology": "Express.js",
+              "codeSnippet": "app.get('/health', (req, res) => {\n  res.status(200).json({\n    status: 'ok',\n    uptime: process.uptime(),\n    timestamp: new Date().toISOString()\n  });\n});"
+            }
+          ],
+          "repoSearchQuery": "app.get('/health'",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573636755_zc0r5e",
+          "ruleId": "LIGHT_LOAD_ERROR_RATE",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Server Errors Under Light Concurrent Load",
+          "plainEnglishCause": "The server produced 5xx errors or connection drops when handling 10 simultaneous requests. The backend is struggling with concurrency.",
+          "technicalDetails": "Failed requests under 10 concurrent requests. Status distribution: {\"404\":10}",
+          "metricValue": "10/10 failed",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Check server logs for unhandled rejection errors, database connection pool exhaustion, or memory limits.",
+              "technology": "Backend"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573644554_kfra1",
+      "targetUrl": "https://cine-sense-ai.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:04.554Z",
+      "completedAt": "2026-09-28T05:34:04.554Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573641597_uy0g3g",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <p style=\"font-size: 13px; color: var(--color-text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;\">Describe your mood</p>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".glass > div > div:nth-child(1) > p",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573644096_0dwf0e",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573644096_umsv7a",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573644096_k9xp0y",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573650454_52vbc",
+      "targetUrl": "https://cp-analytics-dashboard-five.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:10.454Z",
+      "completedAt": "2026-09-28T05:34:10.454Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573649384_ldo05w",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <p class=\"mt-10 text-slate-700 text-xs\">Powered by the public Codeforces API · No login required</p>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".mt-10",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573649606_66k156",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573649606_qrv84f",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573649606_psjvin",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573662178_4o4jc",
+      "targetUrl": "https://cresta1.vercel.app",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:22.178Z",
+      "completedAt": "2026-09-28T05:34:22.178Z",
+      "healthScore": 59,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (5×5) - (1×1) = 59]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 5,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573654049_f7s3wm",
+          "ruleId": "CWV_CLS_POOR",
+          "category": "performance",
+          "severity": "critical",
+          "title": "High Cumulative Layout Shift (CLS > 0.25)",
+          "plainEnglishCause": "Elements on the page jumped or shifted position while loading, causing a jarring visual experience and accidental clicks.",
+          "technicalDetails": "Cumulative Layout Shift: 0.252 (Poor > 0.25)",
+          "metricValue": "0.252",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Always specify explicit width and height dimensions or aspect-ratio on images, videos, and dynamic ad containers.",
+              "technology": "CSS / HTML",
+              "codeSnippet": "img, video {\n  width: 100%;\n  height: auto;\n  aspect-ratio: 16 / 9;\n}"
+            }
+          ],
+          "repoSearchQuery": "aspect-ratio",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573659648_ddyhb5",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"text-[9px] md:text-[10px] font-black uppercase tracking-[0.15em]\" style=\"color: rgb(124, 58, 237);\">🇬🇧 FTSE 100</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".mb-2.gap-2.items-center > .text-\\[9px\\].md\\:text-\\[10px\\].tracking-\\[0\\.15em\\]",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573659649_xkoty6",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Links must have discernible text",
+          "plainEnglishCause": "Ensure links have discernible text",
+          "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"https://twitter.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-notion-muted hover:text-notion-text transition-colors\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "a[href$=\"twitter.com\"]",
+          "wcagRule": "link-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573659649_op2w0m",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "info",
+          "title": "WCAG Violation: Zooming and scaling must not be disabled",
+          "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "meta[name=\"viewport\"]",
+          "wcagRule": "meta-viewport",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573661820_8ntaon",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573661820_mr41yk",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573661820_ejj0up",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573673354_aat99",
+      "targetUrl": "https://cresta1.vercel.app",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:33.354Z",
+      "completedAt": "2026-09-28T05:34:33.354Z",
+      "healthScore": 59,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (5×5) - (1×1) = 59]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 5,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573665185_fgkbs3",
+          "ruleId": "CWV_CLS_POOR",
+          "category": "performance",
+          "severity": "critical",
+          "title": "High Cumulative Layout Shift (CLS > 0.25)",
+          "plainEnglishCause": "Elements on the page jumped or shifted position while loading, causing a jarring visual experience and accidental clicks.",
+          "technicalDetails": "Cumulative Layout Shift: 0.252 (Poor > 0.25)",
+          "metricValue": "0.252",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Always specify explicit width and height dimensions or aspect-ratio on images, videos, and dynamic ad containers.",
+              "technology": "CSS / HTML",
+              "codeSnippet": "img, video {\n  width: 100%;\n  height: auto;\n  aspect-ratio: 16 / 9;\n}"
+            }
+          ],
+          "repoSearchQuery": "aspect-ratio",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573669565_aycd0u",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"text-xs font-bold text-emerald-600\">+38.48</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".text-emerald-600",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573669565_64x6xq",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Links must have discernible text",
+          "plainEnglishCause": "Ensure links have discernible text",
+          "technicalDetails": "Rule: link-name (serious). HTML: <a href=\"https://twitter.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-notion-muted hover:text-notion-text transition-colors\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "a[href$=\"twitter.com\"]",
+          "wcagRule": "link-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573669565_pmfi3t",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "info",
+          "title": "WCAG Violation: Zooming and scaling must not be disabled",
+          "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "meta[name=\"viewport\"]",
+          "wcagRule": "meta-viewport",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573672943_el9psp",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573672943_tm58m8",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573672943_mv8kda",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573677657_kttu4",
+      "targetUrl": "https://day-book-planner-app.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:37.657Z",
+      "completedAt": "2026-09-28T05:34:37.657Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573676275_xf80zm",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573677251_mudw3y",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573677251_kwygfg",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573677251_ewiibz",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573688121_05ivi",
+      "targetUrl": "https://saptarshi-coder.github.io/EaseMotion-css/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:48.121Z",
+      "completedAt": "2026-09-28T05:34:48.121Z",
+      "healthScore": 53,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (6×5) - (2×1) = 53]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 6,
+        "info": 2,
+        "pass": 0,
+        "total": 9
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573683564_ymndve",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <a href=\"demo.html\" class=\"ease-btn ease-btn-pr...\" style=\"\n              displ...\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".ease-btn-primary",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573683564_574ade",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Scrollable region must have keyboard access",
+          "plainEnglishCause": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "technicalDetails": "Rule: scrollable-region-focusable (serious). HTML: <pre><code>&lt;!-- CDN via jsDelivr (GitHub) — recommended, works everywhere --&gt;\n&lt;link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css\" /&gt;</code></pre>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".docs-code:nth-child(4) > pre",
+          "wcagRule": "scrollable-region-focusable",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573686044_eaxd0x",
+          "ruleId": "CRAWLER_BROKEN_LINK",
+          "category": "frontend",
+          "severity": "warning",
+          "title": "Broken Internal Link (404 Not Found)",
+          "plainEnglishCause": "The internal page crawler encountered a link leading to a 404 dead page on your domain. Broken links damage user experience and SEO rankings.",
+          "technicalDetails": "Internal link returned HTTP 404: https://saptarshi-coder.github.io/benchmarks/README.md",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Update or remove the dead href link, or configure a 301 redirect on your server.",
+              "technology": "Routing"
+            }
+          ],
+          "repoSearchQuery": "href=",
+          "url": "https://saptarshi-coder.github.io/benchmarks/README.md",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573686531_fkljoh",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573686532_sh8wdt",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573686532_kfc3wj",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573687527_aht1nx",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. While search engines can still crawl, having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573687769_z7kggs",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573687999_v0kw7z",
+          "ruleId": "API_HEALTH_FAIL",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Health Check Endpoint Unreachable or Failing",
+          "plainEnglishCause": "Probing common health check routes (/health, /api/health) returned an error or 404 status. Automated monitors and orchestrators (Kubernetes, AWS ALB) rely on this endpoint to verify container health.",
+          "technicalDetails": "Neither /health nor /api/health returned an active 2xx status code.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Expose a lightweight /health or /api/health route that returns status 200 and basic runtime status.",
+              "technology": "Express.js",
+              "codeSnippet": "app.get('/health', (req, res) => {\n  res.status(200).json({\n    status: 'ok',\n    uptime: process.uptime(),\n    timestamp: new Date().toISOString()\n  });\n});"
+            }
+          ],
+          "repoSearchQuery": "app.get('/health'",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573697422_icchz",
+      "targetUrl": "https://f1-inky.vercel.app",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:34:57.422Z",
+      "completedAt": "2026-09-28T05:34:57.422Z",
+      "healthScore": 65,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (4×5) - (0×1) = 65]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573694401_jb8uiy",
+          "ruleId": "CWV_LCP_POOR",
+          "category": "performance",
+          "severity": "critical",
+          "title": "Poor Largest Contentful Paint (LCP > 4.0s)",
+          "plainEnglishCause": "The largest visible element (hero image, banner, or heading) took longer than 4.0 seconds to render, signaling significant perceptual slowness.",
+          "technicalDetails": "Largest Contentful Paint: 4256ms (Poor > 4000ms)",
+          "metricValue": "4256ms",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Preload critical hero images and optimize image formats using modern AVIF/WebP.",
+              "technology": "HTML",
+              "codeSnippet": "<link rel=\"preload\" as=\"image\" href=\"/hero.webp\" fetchpriority=\"high\" />"
+            },
+            {
+              "step": 2,
+              "instruction": "Ensure your server response time (TTFB) is fast and avoid render-blocking CSS/JavaScript.",
+              "technology": "Performance"
+            }
+          ],
+          "repoSearchQuery": "<link rel=\"preload\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573695618_0n1jsj",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span>OFFLINE</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".topbar-status > span:nth-child(2)",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573697048_uar521",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573697048_e2qeg7",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573697048_awc9oz",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573703544_d46zd",
+      "targetUrl": "https://fair-scan.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:03.544Z",
+      "completedAt": "2026-09-28T05:35:03.544Z",
+      "healthScore": 53,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (6×5) - (2×1) = 53]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 6,
+        "info": 2,
+        "pass": 0,
+        "total": 9
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573701315_edjxgd",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573702608_y2dr96",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <div class=\"flex items-center text-[0.8rem] text-[var(--text-tertiary)] font-medium\">No file uploaded</div>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".text-\\[0\\.8rem\\].font-medium.text-\\[var\\(--text-tertiary\\)\\]",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573702608_7pnz76",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "WCAG Violation: Select element must have an accessible name",
+          "plainEnglishCause": "Ensure select element has an accessible name",
+          "technicalDetails": "Rule: select-name (critical). HTML: <select disabled=\"\" class=\"form-select\"><option value=\"\" disabled=\"\">Select column...</option></select>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": ".flex-col.gap-1\\.5.flex:nth-child(1) > .relative > select",
+          "wcagRule": "select-name",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573703167_hxokcw",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573703167_dgdhn4",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573703167_02kakm",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573703341_f08ex0",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. While search engines can still crawl, having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573703372_3qhh9p",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573703404_je14xe",
+          "ruleId": "API_HEALTH_FAIL",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Health Check Endpoint Unreachable or Failing",
+          "plainEnglishCause": "Probing common health check routes (/health, /api/health) returned an error or 404 status. Automated monitors and orchestrators (Kubernetes, AWS ALB) rely on this endpoint to verify container health.",
+          "technicalDetails": "Neither /health nor /api/health returned an active 2xx status code.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Expose a lightweight /health or /api/health route that returns status 200 and basic runtime status.",
+              "technology": "Express.js",
+              "codeSnippet": "app.get('/health', (req, res) => {\n  res.status(200).json({\n    status: 'ok',\n    uptime: process.uptime(),\n    timestamp: new Date().toISOString()\n  });\n});"
+            }
+          ],
+          "repoSearchQuery": "app.get('/health'",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573710501_1nug5",
+      "targetUrl": "https://green-lens-tau.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:10.501Z",
+      "completedAt": "2026-09-28T05:35:10.501Z",
+      "healthScore": 79,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (1×1) = 79]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573708145_33onls",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573709530_94vebw",
+          "ruleId": "CUSTOM_ANOMALY",
+          "category": "accessibility",
+          "severity": "info",
+          "title": "WCAG Violation: Zooming and scaling must not be disabled",
+          "plainEnglishCause": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "technicalDetails": "Rule: meta-viewport (moderate). HTML: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Inspect the technical details in server logs and browser network tools to identify the origin.",
+              "technology": "General"
+            }
+          ],
+          "elementSelector": "meta[name=\"viewport\"]",
+          "wcagRule": "meta-viewport",
+          "isVerified": false,
+          "isAiSuggested": true
+        },
+        {
+          "id": "fnd_1790573710024_ybxx50",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573710024_ijoe7f",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573710024_x6asgp",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573726760_mb2mz",
+      "targetUrl": "https://open-trace-six.vercel.app",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:26.760Z",
+      "completedAt": "2026-09-28T05:35:26.760Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573713847_bc0w5q",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573716123_duudf3",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573716123_p9sydy",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573716123_nwevs9",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573732899_bp15a",
+      "targetUrl": "https://portfolio-ankits.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:32.899Z",
+      "completedAt": "2026-09-28T05:35:32.899Z",
+      "healthScore": 63,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (1×15) - (4×5) - (2×1) = 63]",
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573732154_fep3vy",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span>AM</span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".nav-logo > span",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732499_q02zrb",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732499_gg49uc",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732499_m7kg7r",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732724_8q2lgf",
+          "ruleId": "SEO_ROBOTS_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing robots.txt File",
+          "plainEnglishCause": "No robots.txt file was found at the root of the domain. While search engines can still crawl, having a robots.txt allows you to direct crawler traffic and specify sitemap locations.",
+          "technicalDetails": "HTTP 404 on /robots.txt",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Create a public/robots.txt file at the root of your web server.",
+              "technology": "Robots.txt",
+              "codeSnippet": "User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml"
+            }
+          ],
+          "repoSearchQuery": "robots.txt",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732758_pd2h9z",
+          "ruleId": "SEO_SITEMAP_MISSING",
+          "category": "seo",
+          "severity": "info",
+          "title": "Missing sitemap.xml File",
+          "plainEnglishCause": "No sitemap.xml file was discovered at /sitemap.xml. Sitemaps help search engine crawlers index all your public URLs efficiently.",
+          "technicalDetails": "HTTP 404 on /sitemap.xml",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Generate and host a sitemap.xml file at the root of your domain.",
+              "technology": "Sitemap",
+              "codeSnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://yourdomain.com/</loc>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n</urlset>"
+            }
+          ],
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573732786_uqp0cl",
+          "ruleId": "API_HEALTH_FAIL",
+          "category": "backend",
+          "severity": "critical",
+          "title": "Health Check Endpoint Unreachable or Failing",
+          "plainEnglishCause": "Probing common health check routes (/health, /api/health) returned an error or 404 status. Automated monitors and orchestrators (Kubernetes, AWS ALB) rely on this endpoint to verify container health.",
+          "technicalDetails": "Neither /health nor /api/health returned an active 2xx status code.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Expose a lightweight /health or /api/health route that returns status 200 and basic runtime status.",
+              "technology": "Express.js",
+              "codeSnippet": "app.get('/health', (req, res) => {\n  res.status(200).json({\n    status: 'ok',\n    uptime: process.uptime(),\n    timestamp: new Date().toISOString()\n  });\n});"
+            }
+          ],
+          "repoSearchQuery": "app.get('/health'",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573738140_k2alv",
+      "targetUrl": "https://pulse-chat-pi.vercel.app/",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:38.140Z",
+      "completedAt": "2026-09-28T05:35:38.140Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573736058_o6hi1h",
+          "ruleId": "SEO_META_DESCRIPTION_MISSING",
+          "category": "seo",
+          "severity": "warning",
+          "title": "Missing Meta Description Tag",
+          "plainEnglishCause": "The HTML document lacks a <meta name=\"description\"> tag. Search engines may display arbitrary page text in search result snippets.",
+          "technicalDetails": "Missing <meta name=\"description\"> tag in document head.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Add a concise, informative meta description (50-160 characters) inside the <head> tag.",
+              "technology": "HTML / Next.js",
+              "codeSnippet": "<head>\n  <meta name=\"description\" content=\"SiteDoctor — Real-Time Full-Stack Health & Fix Diagnostics Platform.\" />\n</head>"
+            }
+          ],
+          "repoSearchQuery": "name=\"description\"",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573737769_jm6b4k",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573737769_8t3uy4",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573737769_r4f85m",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    },
+    {
+      "jobId": "sweep_1790573743901_tw17v",
+      "targetUrl": "https://review-mate-six.vercel.app",
+      "scanType": "both",
+      "status": "completed",
+      "startedAt": "2026-09-28T05:35:43.901Z",
+      "completedAt": "2026-09-28T05:35:43.901Z",
+      "healthScore": 80,
+      "scoreFormula": "Score = 100 - (critical × 15) - (warning × 5) - (info × 1) [100 - (0×15) - (4×5) - (0×1) = 80]",
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "findings": [
+        {
+          "id": "fnd_1790573742789_smdquc",
+          "ruleId": "AXE_COLOR_CONTRAST",
+          "category": "accessibility",
+          "severity": "warning",
+          "title": "Insufficient Color Contrast (WCAG 1.4.3 AA)",
+          "plainEnglishCause": "Text elements do not meet the minimum 4.5:1 contrast ratio against their background color, making text hard or impossible to read for users with visual impairments.",
+          "technicalDetails": "Rule: color-contrast (serious). HTML: <span class=\"text-zinc-500\">0 / 500 lines </span>",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Adjust the foreground text color or background color to satisfy WCAG AA contrast guidelines.",
+              "technology": "CSS",
+              "codeSnippet": "/* Before: #888888 on #ffffff (ratio ~3.5:1 - FAILS) */\n/* After:  #595959 on #ffffff (ratio >= 4.5:1 - PASSES) */\n.accessible-text {\n  color: #595959;\n}"
+            }
+          ],
+          "repoSearchQuery": "color:",
+          "elementSelector": ".justify-between.font-mono.text-zinc-400 > .text-zinc-500",
+          "wcagRule": "color-contrast",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573743269_ug4zza",
+          "ruleId": "SEC_CSP_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing Content-Security-Policy (CSP) Header",
+          "plainEnglishCause": "No Content-Security-Policy header was detected. Without a CSP, the application is more susceptible to Cross-Site Scripting (XSS) and malicious script injection.",
+          "technicalDetails": "Content-Security-Policy header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Configure a restrictive Content Security Policy specifying allowed script, style, and connect origins.",
+              "technology": "Express (Helmet)",
+              "codeSnippet": "app.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.yourdomain.com\"]\n  }\n}));"
+            }
+          ],
+          "repoSearchQuery": "contentSecurityPolicy",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573743269_y9hce2",
+          "ruleId": "SEC_XFO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Frame-Options Header (Clickjacking Risk)",
+          "plainEnglishCause": "The page does not set X-Frame-Options or CSP frame-ancestors, allowing third-party sites to embed your pages in an iframe and attempt clickjacking attacks.",
+          "technicalDetails": "X-Frame-Options header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Set X-Frame-Options to DENY or SAMEORIGIN.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Frame-Options', 'SAMEORIGIN');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Frame-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        },
+        {
+          "id": "fnd_1790573743269_54lgn3",
+          "ruleId": "SEC_XCTO_MISSING",
+          "category": "security",
+          "severity": "warning",
+          "title": "Missing X-Content-Type-Options: nosniff",
+          "plainEnglishCause": "Browsers may attempt MIME-type sniffing on responses that lack the 'nosniff' header, which can lead to unexpected script execution from non-executable file uploads.",
+          "technicalDetails": "X-Content-Type-Options: nosniff header is absent.",
+          "fixSteps": [
+            {
+              "step": 1,
+              "instruction": "Send X-Content-Type-Options: nosniff on all responses.",
+              "technology": "Express",
+              "codeSnippet": "app.use((req, res, next) => {\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  next();\n});"
+            }
+          ],
+          "repoSearchQuery": "X-Content-Type-Options",
+          "isVerified": true,
+          "isAiSuggested": false
+        }
+      ],
+      "rawMetrics": {}
+    }
+  ],
+  "lastUpdated": "2026-09-28T05:35:43.901Z"
+}

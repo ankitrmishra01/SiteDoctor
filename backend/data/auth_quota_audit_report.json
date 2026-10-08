@@ -1,0 +1,72 @@
+{
+  "signupTests": [
+    {
+      "test": "Weak password rejection",
+      "passed": true,
+      "message": "Password must be at least 8 characters long."
+    },
+    {
+      "test": "Valid signup",
+      "passed": true,
+      "user": {
+        "id": "usr_1790752422230_c7c4558d",
+        "email": "alice@example.com",
+        "name": "Alice Developer",
+        "plan": "free",
+        "createdAt": "2026-09-30T07:13:42.268Z",
+        "scansThisMonth": 0,
+        "maxMonthlyScans": 10,
+        "lastResetMonth": "2026-09"
+      }
+    },
+    {
+      "test": "Duplicate email rejection",
+      "passed": true,
+      "message": "An account with this email address already exists."
+    }
+  ],
+  "loginTests": [
+    {
+      "test": "Invalid password rejection",
+      "passed": true,
+      "message": "Invalid email or password."
+    },
+    {
+      "test": "Valid password authentication",
+      "passed": true,
+      "tokenIssued": true
+    }
+  ],
+  "tokenTests": [
+    {
+      "test": "Valid token signature check",
+      "passed": true
+    },
+    {
+      "test": "Tampered token rejection",
+      "passed": true
+    }
+  ],
+  "quotaEnforcementTests": [
+    {
+      "test": "10 scans quota limit",
+      "passed": true,
+      "scansUsed": 10,
+      "maxAllowed": 10
+    },
+    {
+      "test": "User quota isolation",
+      "passed": true
+    }
+  ],
+  "historyIsolationTests": [
+    {
+      "test": "Alice history isolation",
+      "passed": true
+    },
+    {
+      "test": "Bob history isolation",
+      "passed": true
+    }
+  ]
+}

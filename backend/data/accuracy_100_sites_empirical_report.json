@@ -1,0 +1,3798 @@
+{
+  "timestamp": "2026-09-30T08:49:42.383Z",
+  "auditSummary": {
+    "totalAttempted": 100,
+    "completedScans": 100,
+    "reachableScans": 95,
+    "unreachableScans": 5,
+    "completionRate": "100/100 (100.0%)",
+    "totalEmpiricalAssertions": 475,
+    "matchedAssertions": 472,
+    "empiricalAccuracyRate": "472/475 (99.37%)",
+    "totalAuditDurationMs": 97190,
+    "throughputScansPerSec": 1.03
+  },
+  "scoreStatistics": {
+    "mean": 69.6,
+    "median": 70,
+    "min": 49,
+    "max": 95
+  },
+  "categoryBreakdown": {
+    "Frameworks & Runtimes": {
+      "total": 20,
+      "matchedAssertions": 100,
+      "totalAssertions": 100,
+      "avgScore": 66.9
+    },
+    "Docs & Standards": {
+      "total": 20,
+      "matchedAssertions": 94,
+      "totalAssertions": 95,
+      "avgScore": 69.3
+    },
+    "Cloud & Dev Tools": {
+      "total": 20,
+      "matchedAssertions": 98,
+      "totalAssertions": 100,
+      "avgScore": 72.7
+    },
+    "APIs & Services": {
+      "total": 15,
+      "matchedAssertions": 65,
+      "totalAssertions": 65,
+      "avgScore": 68.9
+    },
+    "Open Source & Foundations": {
+      "total": 25,
+      "matchedAssertions": 115,
+      "totalAssertions": 115,
+      "avgScore": 69.7
+    }
+  },
+  "discrepancyCount": 2,
+  "discrepancies": [
+    {
+      "index": 23,
+      "url": "https://www.w3.org",
+      "category": "Docs & Standards",
+      "discrepancies": [
+        "HSTS discrepancy: groundTruthPresent=false, scannerMissingFlag=false"
+      ],
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 403,
+        "hsts": null,
+        "csp": "default-src 'none'; script-src 'nonce-l8vciEXx4W2o4tc0pqNXa5' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      }
+    },
+    {
+      "index": 46,
+      "url": "https://crates.io",
+      "category": "Cloud & Dev Tools",
+      "discrepancies": [
+        "XFO discrepancy: groundTruthPresent=true, scannerMissingFlag=true",
+        "XCTO discrepancy: groundTruthPresent=true, scannerMissingFlag=true"
+      ],
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      }
+    }
+  ],
+  "records": [
+    {
+      "index": 1,
+      "url": "https://nodejs.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 5958,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 2,
+      "url": "https://vite.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 916,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NETLIFY",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 3,
+      "url": "https://react.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 625,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "VERCEL",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 4,
+      "url": "https://vuejs.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1353,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NETLIFY",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "frame-ancestors https://staging.certification.vuejs.org https://certification.vuejs.org https://certificates.dev https://staging.certificates.dev https://alemira.com https://*.alemira.com",
+        "xfo": "ALLOW-FROM https://staging.certification.vuejs.org https://certification.vuejs.org https://certificates.dev https://staging.certificates.dev https://alemira.com https://*.alemira.com",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 5,
+      "url": "https://angular.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 797,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31556926",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 6,
+      "url": "https://svelte.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 702,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "VERCEL",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 7,
+      "url": "https://nextjs.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 1709,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NEXTJS on VERCEL on (node) [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'self' nextjs.org *.nextjs.org vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com wss://*.nextjs.org localhost:*;script-src 'self' 'unsafe-inline' www.google.com www.google-analytics.com www.googleadservices.com www.gstatic.com *.youtube.com *.youtube-nocookie.com *.ytimg.com *.twimg.com cdn.ampproject.org www.googletagmanager.com *.googleapis.com *.fides-cdn.ethyca.com *.ethyca.com cdn.ethyca.com cdn.vercel-insights.com va.vercel-scripts.com app.cal.com *.cr-relay.com vercel.com *.vercel.com *.vercel.sh vercel.live nextjs.org *.nextjs.org localhost:* chrome-extension://*;child-src *.youtube.com *.youtube-nocookie.com *.stripe.com www.google.com td.doubleclick.net github.com calendly.com vercel.cal.com *.vercel.app *.vercel.dev nextjs.org *.nextjs.org vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com wss://*.nextjs.org localhost:*;style-src 'self' 'unsafe-inline' *.googleapis.com nextjs.org *.nextjs.org vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com wss://*.nextjs.org localhost:*;img-src * blob: data:;media-src 'self' videos.ctfassets.net user-images.githubusercontent.com replicate.delivery *.public.blob.vercel-storage.com blob: data: nextjs.org *.nextjs.org vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com wss://*.nextjs.org localhost:*;connect-src 'self' data: vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com wss://*.nextjs.org nextjs.org *.nextjs.org localhost:* cdn.vercel-insights.com va.vercel-scripts.com cdp.vercel.com www.google-analytics.com www.googletagmanager.com *.googleapis.com *.cr-relay.com *.ethyca.com cdn.ethyca.com risk.clearbit.com *.ingest.sentry.io *.ingest.us.sentry.io *.public.blob.vercel-storage.com;font-src 'self' *.nextjs.org *.vercel.com *.gstatic.com vercel.live *.vercel.sh;worker-src 'self' *.nextjs.org *.vercel.com blob:",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 8,
+      "url": "https://astro.build",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 54,
+      "durationMs": 1329,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 9,
+      "url": "https://deno.com",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 80,
+      "durationMs": 4972,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 10,
+      "url": "https://bun.sh",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 571,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 11,
+      "url": "https://expressjs.com",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 486,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "GITHUB_PAGES on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 12,
+      "url": "https://fastapi.tiangolo.com",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 591,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 13,
+      "url": "https://rubyonrails.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 65,
+      "durationMs": 760,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "GITHUB_PAGES on via FASTLY CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 14,
+      "url": "https://laravel.com",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 4108,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 15,
+      "url": "https://go.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 2334,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "connect-src 'self' www.google-analytics.com stats.g.doubleclick.net ; default-src 'self' ; font-src 'self' fonts.googleapis.com fonts.gstatic.com data: ; frame-ancestors 'self' ; frame-src 'self' www.google.com feedback.googleusercontent.com www.googletagmanager.com scone-pa.clients6.google.com www.youtube.com player.vimeo.com ; img-src 'self' www.google.com www.google-analytics.com ssl.gstatic.com www.gstatic.com gstatic.com data: * ; object-src 'none' ; script-src 'self' 'sha256-n6OdwTrm52KqKm6aHYgD0TFUdMgww4a0GQlIAVrMzck=' 'sha256-4ryYrf7Y5daLOBv0CpYtyBIcJPZkRD2eBPdfqsN3r1M=' 'sha256-sVKX08+SqOmnWhiySYk3xC7RDUgKyAkmbXV2GWts4fo=' www.google.com apis.google.com www.gstatic.com gstatic.com support.google.com www.googletagmanager.com www.google-analytics.com ssl.google-analytics.com tagmanager.google.com ; style-src 'self' 'unsafe-inline' fonts.googleapis.com feedback.googleusercontent.com www.gstatic.com gstatic.com tagmanager.google.com ;",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 16,
+      "url": "https://rust-lang.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 63,
+      "durationMs": 459,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "detectedStack": "GITHUB_PAGES on via FASTLY CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 17,
+      "url": "https://python.org",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 1964,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 18,
+      "url": "https://spring.io",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 79,
+      "durationMs": 962,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15552000; includeSubDomains",
+        "csp": null,
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 19,
+      "url": "https://flutter.dev",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 537,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31556926",
+        "csp": null,
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 20,
+      "url": "https://tailwindcss.com",
+      "category": "Frameworks & Runtimes",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 57,
+      "durationMs": 2947,
+      "findingsCount": 8,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 3,
+        "pass": 0,
+        "total": 8
+      },
+      "detectedStack": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 21,
+      "url": "https://developer.mozilla.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 2137,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": "default-src 'self'; script-src 'report-sample' 'self' 'wasm-unsafe-eval' assets.codepen.io production-assets.codepen.io https://js.stripe.com transcend-cdn.com 'sha256-XNBp89FG76amD8BqrJzyflxOF9PaWPqPqvJfKZPCv7M=' 'sha256-YCNoU9DNiinACbd8n6UPyB/8vj0kXvhkOni9/06SuYw=' 'sha256-PZjP7OR6mBEtnvXIZfCZ5PuOlxoDF1LDZL8aj8c42rw='; script-src-elem 'report-sample' 'self' 'wasm-unsafe-eval' assets.codepen.io production-assets.codepen.io https://js.stripe.com transcend-cdn.com 'sha256-XNBp89FG76amD8BqrJzyflxOF9PaWPqPqvJfKZPCv7M=' 'sha256-YCNoU9DNiinACbd8n6UPyB/8vj0kXvhkOni9/06SuYw=' 'sha256-PZjP7OR6mBEtnvXIZfCZ5PuOlxoDF1LDZL8aj8c42rw='; style-src 'report-sample' 'self' 'unsafe-inline' transcend-cdn.com; object-src 'none'; base-uri 'self'; connect-src 'self' developer.allizom.org bcd.developer.allizom.org bcd.developer.mozilla.org updates.developer.allizom.org updates.developer.mozilla.org https://incoming.telemetry.mozilla.org https://observatory-api.mdn.allizom.net https://observatory-api.mdn.mozilla.net telemetry.transcend.io telemetry.us.transcend.io transcend-cdn.com https://api.github.com/search/issues https://api.stripe.com; font-src 'self'; frame-src 'self' mdn.github.io *.mdnplay.dev *.mdnyalp.dev *.play.test.mdn.allizom.net https://v2.scrimba.com https://scrimba.com jsfiddle.net www.youtube-nocookie.com codepen.io survey.alchemer.com https://js.stripe.com; img-src 'self' data: *.githubusercontent.com *.gravatar.com mozillausercontent.com firefoxusercontent.com profile.stage.mozaws.net profile.accounts.firefox.com developer.mozilla.org mdn.dev wikipedia.org upload.wikimedia.org https://mdn.github.io/shared-assets/ https://mdn.dev/; manifest-src 'self'; media-src 'self' archive.org videos.cdn.mozilla.net https://mdn.github.io/shared-assets/; child-src 'self'; worker-src 'self';",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 22,
+      "url": "https://en.wikipedia.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 3141,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=106384710; includeSubDomains; preload",
+        "csp": "script-src 'unsafe-eval' blob: 'self' meta.wikimedia.org *.wikimedia.org *.wikipedia.org *.wikinews.org *.wiktionary.org *.wikibooks.org *.wikiversity.org *.wikisource.org wikisource.org *.wikiquote.org *.wikidata.org *.wikifunctions.org *.wikivoyage.org *.mediawiki.org mediawiki.org wikimedia.org *.wmflabs.org *.wmcloud.org *.toolforge.org wss://*.toolforge.org *.jsdelivr.net unpkg.com cdnjs.cloudflare.com raw.githubusercontent.com *.github.com code.jquery.com cdn.mathjax.org use.typekit.net fonts.cdnfonts.com use.fontawesome.com i.ytimg.com rsms.me doi.org localhost https://localhost:* http://localhost:* wss://localhost:* ws://localhost:* *.google.com *.gstatic.com *.googleapis.com *.translate.yandex.net yastatic.net ya.ru radically.github.io cdn.sammdot.ca cdn.fontshare.com viaf.org publicai-proxy.alaexis.workers.dev iiif.archive.org api.flickr.com live.staticflickr.com api.anthropic.com api.openai.com api.publicai.co catalogo.pusc.it parsifal.urbe.it opac.sbn.it overpass-api.de api.openrouteservice.org archive.org *.openstreetmap.org *.waymarkedtrails.org *.thunderforest.com registry.ipe.wiki analytics.ipe.wiki qlever.dev app.goacoustic.com wikipedia-archive.ourworldindata.org api.inaturalist.org inaturalist-open-data.s3.amazonaws.com validator.w3.org db.onlinewebfonts.com fontlibrary.org 'unsafe-inline' auth.wikimedia.org; default-src 'self' data: blob: upload.wikimedia.org thumb.wikimedia.org https://commons.wikimedia.org meta.wikimedia.org *.wikimedia.org *.wikipedia.org *.wikinews.org *.wiktionary.org *.wikibooks.org *.wikiversity.org *.wikisource.org wikisource.org *.wikiquote.org *.wikidata.org *.wikifunctions.org *.wikivoyage.org *.mediawiki.org mediawiki.org wikimedia.org *.wmflabs.org *.wmcloud.org *.toolforge.org wss://*.toolforge.org *.jsdelivr.net unpkg.com cdnjs.cloudflare.com raw.githubusercontent.com *.github.com code.jquery.com cdn.mathjax.org use.typekit.net fonts.cdnfonts.com use.fontawesome.com i.ytimg.com rsms.me doi.org localhost https://localhost:* http://localhost:* wss://localhost:* ws://localhost:* *.google.com *.gstatic.com *.googleapis.com *.translate.yandex.net yastatic.net ya.ru radically.github.io cdn.sammdot.ca cdn.fontshare.com viaf.org publicai-proxy.alaexis.workers.dev iiif.archive.org api.flickr.com live.staticflickr.com api.anthropic.com api.openai.com api.publicai.co catalogo.pusc.it parsifal.urbe.it opac.sbn.it overpass-api.de api.openrouteservice.org archive.org *.openstreetmap.org *.waymarkedtrails.org *.thunderforest.com registry.ipe.wiki analytics.ipe.wiki qlever.dev app.goacoustic.com wikipedia-archive.ourworldindata.org api.inaturalist.org inaturalist-open-data.s3.amazonaws.com validator.w3.org db.onlinewebfonts.com fontlibrary.org en.wikibooks.org en.wikinews.org en.wikiquote.org en.wikisource.org en.wikiversity.org en.wikivoyage.org en.wiktionary.org www.mediawiki.org commons.wikimedia.org foundation.wikimedia.org incubator.wikimedia.org species.wikimedia.org wikimania.wikimedia.org www.wikidata.org www.wikifunctions.org auth.wikimedia.org; style-src 'self' data: blob: upload.wikimedia.org thumb.wikimedia.org https://commons.wikimedia.org meta.wikimedia.org *.wikimedia.org *.wikipedia.org *.wikinews.org *.wiktionary.org *.wikibooks.org *.wikiversity.org *.wikisource.org wikisource.org *.wikiquote.org *.wikidata.org *.wikifunctions.org *.wikivoyage.org *.mediawiki.org mediawiki.org wikimedia.org *.wmflabs.org *.wmcloud.org *.toolforge.org wss://*.toolforge.org *.jsdelivr.net unpkg.com cdnjs.cloudflare.com raw.githubusercontent.com *.github.com code.jquery.com cdn.mathjax.org use.typekit.net fonts.cdnfonts.com use.fontawesome.com i.ytimg.com rsms.me doi.org localhost https://localhost:* http://localhost:* wss://localhost:* ws://localhost:* *.google.com *.gstatic.com *.googleapis.com *.translate.yandex.net yastatic.net ya.ru radically.github.io cdn.sammdot.ca cdn.fontshare.com viaf.org publicai-proxy.alaexis.workers.dev iiif.archive.org api.flickr.com live.staticflickr.com api.anthropic.com api.openai.com api.publicai.co catalogo.pusc.it parsifal.urbe.it opac.sbn.it overpass-api.de api.openrouteservice.org archive.org *.openstreetmap.org *.waymarkedtrails.org *.thunderforest.com registry.ipe.wiki analytics.ipe.wiki qlever.dev app.goacoustic.com wikipedia-archive.ourworldindata.org api.inaturalist.org inaturalist-open-data.s3.amazonaws.com validator.w3.org db.onlinewebfonts.com fontlibrary.org 'unsafe-inline'; object-src 'none'; report-uri /w/api.php?action=cspreport&format=json; report-to csp-report-to-endpoint",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 23,
+      "url": "https://www.w3.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 80,
+      "durationMs": 517,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 403,
+        "hsts": null,
+        "csp": "default-src 'none'; script-src 'nonce-l8vciEXx4W2o4tc0pqNXa5' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 4,
+        "totalAsserted": 5
+      },
+      "discrepancies": [
+        "HSTS discrepancy: groundTruthPresent=false, scannerMissingFlag=false"
+      ]
+    },
+    {
+      "index": 24,
+      "url": "https://www.typescriptlang.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 68,
+      "durationMs": 675,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "GITHUB_PAGES on via FASTLY CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31556952; includeSubDomains; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 25,
+      "url": "https://graphql.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 68,
+      "durationMs": 1156,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 26,
+      "url": "https://www.docker.com",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1663,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31622400",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 27,
+      "url": "https://kubernetes.io",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 2023,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NETLIFY",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 28,
+      "url": "https://redis.io",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1782,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=10368000; includeSubDomains; preload",
+        "csp": "frame-ancestors 'self' https://redis.io",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 29,
+      "url": "https://www.postgresql.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 7601,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "default-src 'self' ; img-src * data: ; script-src 'unsafe-eval' 'self' www.google-analytics.com ssl.google-analytics.com www.googletagmanager.com tagmanager.google.com data: ; connect-src 'self' www.google-analytics.com ssl.google-analytics.com ; media-src 'self' ; style-src 'self' fonts.googleapis.com tagmanager.google.com ; font-src 'self' fonts.gstatic.com data: ; frame-ancestors 'none' ; report-uri https://csp-report.postgresql.org/",
+        "xfo": "DENY",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 30,
+      "url": "https://www.sqlite.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 49,
+      "durationMs": 4654,
+      "findingsCount": 8,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 5,
+        "info": 1,
+        "pass": 0,
+        "total": 8
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 31,
+      "url": "https://www.mongodb.com",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 3750,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NEXTJS on (node) on via CLOUDFRONT CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 32,
+      "url": "https://www.elastic.co",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 3782,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "NEXTJS on NGINX on (node) [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": "frame-ancestors 'self' https://*.elastic.co https://elasticsandbox.docebosaas.com https://elastic.docebosaas.com https://www.gather.town;",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 33,
+      "url": "https://www.apache.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 79,
+      "durationMs": 1055,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "APACHE",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'self' data: 'unsafe-inline' https://www.apachecon.com/ https://analytics.apache.org/ http://analytics.apache.org/ https://www.youtube-nocookie.com https://www.youtube.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.apachecon.com/ https://analytics.apache.org/ http://analytics.apache.org/ https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'; img-src 'self' data: https://www.apache.org/ https://www.apachecon.com/;",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 34,
+      "url": "https://www.linuxfoundation.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1866,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "upgrade-insecure-requests",
+        "xfo": "SAMEORIGIN",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 35,
+      "url": "https://archlinux.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 3741,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubdomains; preload",
+        "csp": "img-src 'self' data:; form-action 'self'; default-src 'self'; base-uri 'none'; script-src 'self'; frame-ancestors 'none'",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 36,
+      "url": "https://www.kernel.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 68,
+      "durationMs": 772,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 2,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31557600",
+        "csp": "default-src 'self' *.kernel.org; img-src https: data:",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 37,
+      "url": "https://www.gnu.org",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 65,
+      "durationMs": 26593,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 3,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": false,
+        "statusCode": null,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": false
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": false,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": true,
+        "totalMatched": 0,
+        "totalAsserted": 0
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 38,
+      "url": "https://web.dev",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 6370,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubdomains; preload",
+        "csp": "base-uri 'self'; object-src 'none'; script-src 'strict-dynamic' 'unsafe-inline' https: http: 'nonce-WJk9cVtZo66Bie1Zj5yR/E8p8E7tnR' 'unsafe-eval'; frame-ancestors 'self' https://developers.google.com/_d/analytics-iframe; report-uri https://csp.withgoogle.com/csp/devsite/v2",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 39,
+      "url": "https://caniuse.com",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 7324,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 40,
+      "url": "https://devdocs.io",
+      "category": "Docs & Standards",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 3535,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": "default-src 'self' *; script-src 'self' 'nonce-devdocs' https://www.google-analytics.com https://secure.gaug.es https://*.jquery.com; font-src 'none'; style-src 'self' 'unsafe-inline' *; img-src 'self' * data:;",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 41,
+      "url": "https://github.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 85,
+      "durationMs": 2357,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "GITHUB_PAGES",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubdomains; preload",
+        "csp": "default-src 'none'; base-uri 'self'; child-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com github.githubassets.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net productionresultssa1.blob.core.windows.net productionresultssa2.blob.core.windows.net productionresultssa3.blob.core.windows.net productionresultssa4.blob.core.windows.net productionresultssa5.blob.core.windows.net productionresultssa6.blob.core.windows.net productionresultssa7.blob.core.windows.net productionresultssa8.blob.core.windows.net productionresultssa9.blob.core.windows.net productionresultssa10.blob.core.windows.net productionresultssa11.blob.core.windows.net productionresultssa12.blob.core.windows.net productionresultssa13.blob.core.windows.net productionresultssa14.blob.core.windows.net productionresultssa15.blob.core.windows.net productionresultssa16.blob.core.windows.net productionresultssa17.blob.core.windows.net productionresultssa18.blob.core.windows.net productionresultssa19.blob.core.windows.net github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com wss://alive-staging.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com wss://production-copilot-host.webpubsub.azure.com api.github.com/cmc_internal/api/ edge.fullstory.com rs.fullstory.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com www.youtube-nocookie.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com release-assets.githubusercontent.com secured-user-images.githubusercontent.com user-images.githubusercontent.com private-user-images.githubusercontent.com opengraph.githubassets.com repository-images.githubusercontent.com marketplace-screenshots.githubusercontent.com copilotprodattachments.blob.core.windows.net/github-production-copilot-attachments/ github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com explore-feed.github.com *.googleusercontent.com objects-origin.githubusercontent.com *.githubusercontent.com images.ctfassets.net/8aevphvgewt8/; manifest-src 'self'; media-src github.com user-images.githubusercontent.com secured-user-images.githubusercontent.com private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com github.githubassets.com assets.ctfassets.net/8aevphvgewt8/ videos.ctfassets.net/8aevphvgewt8/; script-src github.githubassets.com 'sha256-tSjmyPUky1KbRZ0fw9VUil3wFEbeM82rtbJDygGJAXw='; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 42,
+      "url": "https://gitlab.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 4633,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 43,
+      "url": "https://bitbucket.org",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 3096,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "via CLOUDFRONT CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubDomains; preload",
+        "csp": "base-uri 'self'; default-src 'self' *.atlassian.com *.intercomcdn.com *.orangelogic.com *.6sc.co *.6sense.com sourcetreeapp.com *.sourcetreeapp.com bitbucket.org *.bitbucket.org; script-src 'self' *.1mind.com *.gstatic.com *.cookielaw.org *.public.atl-paas.net *.prod.atl-paas.net *.googletagmanager.com *.marketo.net *.marketo.com *.atlassian.com utt.impactcdn.com *.google.com *.doubleclick.com *.googleadservices.com *.livechatinc.com *.bing.com *.quora.com *.yimg.jp *.clicktale.net *.linkedin.com *.twitter.com *.licdn.com *.demandbase.com *.doubleclick.net *.facebook.net *.redditstatic.com *.clearbitscripts.com *.clarity.ms *.vimeo.com *.google-analytics.com facebook.com *.facebook.com impactcdn.com *.impactcdn.com clearbitjs.com *.clearbitjs.com yahoo.co.jp *.yahoo.co.jp *.recaptcha.net *.ads-twitter.com *.intercom.io *.intercomcdn.com *.jsdelivr.net *.6sc.co *.6sense.com *.techtarget.com *.capterra.com sourcetreeapp.com *.sourcetreeapp.com bitbucket.org *.bitbucket.org roundprincethere.com *.roundprincethere.com bzrcdn.openai.com dyv6f9ner1ir9.cloudfront.net *.adsrvr.org analytics.o11.tech https://s3.amazonaws.com/beehiiv-adnetwork-production/pixel-v2.js 'unsafe-eval' 'unsafe-inline'; style-src 'self' *.public.atl-paas.net *.prod.atl-paas.net fonts.googleapis.com *.googletagmanager.com sourcetreeapp.com *.sourcetreeapp.com bitbucket.org *.bitbucket.org 'unsafe-inline'; img-src 'self' *.1mind.com blob: data: atlassian.com *.atlassian.com *.cookielaw.org *.gravatar.com *.wp.com fd-assets.prod.atl-paas.net pixel.pointmediatracker.com *.prod.public.atl-paas.net cnv.event.prod.bidr.io *.doubleclick.net *.clicktale.net *.bing.com rlcdn.com reddit.com quora.com *.rlcdn.com *.reddit.com *.quora.com *.ctfassets.net  *.linkedin.com *.google.com *.google.com.au *.company-target.com *.facebook.com *.google-analytics.com *.twitter.com t.co *.intercomcdn.com *.intercomassets.com *.frontend.public.atl-paas.net *.orangelogic.com *.googletagmanager.com img.logo.dev *.atlassian.net sourcetreeapp.com *.sourcetreeapp.com bitbucket.org *.bitbucket.org bytebucket.org *.bytebucket.org bitbucket-assetroot.s3.amazonaws.com b.6sc.co obs.roundprincethere.com cdn.blisspointmedia.com connect.facebook.net; font-src 'self' *.1mind.com *.ctfassets.net *.intercomcdn.com *.gstatic.com *.frontend.public.atl-paas.net *.atl.orangelogic.com; frame-ancestors 'none'; form-action 'self' pages.eml.atlassian.com app-ab35.marketo.com *.marketo.com *.mktoresp.com *.facebook.com; report-uri https://web-security-reports.services.atlassian.com/csp-report/wac-web; report-to csp-default-endpoint; media-src 'self' *.1mind.com *.ctfassets.net *.atlassian.com *.orangelogic.com; worker-src 'self' blob:; frame-src 'self' *.1mind.com *.loom.com *.youtube.com *.google.com *.doubleclick.net *.recaptcha.net *.atl-paas.net pages.eml.atlassian.com app-ab35.marketo.com *.marketo.com *.mktoresp.com *.company-target.com *.googletagmanager.com *.atlassian.net *.facebook.com atlassian931.outgrow.us atlassian.wvc-test.ecosystems.io https://support-forms-ui.atlassian.com analytics.o11.tech *.adsrvr.org; connect-src 'self' *.1mind.com wss://*.1mind.com ws: atlassian.com *.atlassian.com *.cookielaw.org *.onetrust.com *.public.atl-paas.net *.prod.atl-paas.net *.mktoresp.com *.marketo.com *.ingest.sentry.io *.workato.com atlassian.sjv.io statsigapi.net *.statsigapi.net *.contentful.com atlassian.net *.clicktale.net *.contentsquare.net *.bing.com google-analytics.com company-target.com linkedin.com *.google-analytics.com *.company-target.com *.linkedin.com *.doubleclick.net *.reddit.com *.redditstatic.com *.google.com *.demandbase.com *.clarity.ms *.clearbit.com *.intercom.io *.algolianet.com *.algolia.net *.algolia.io *.recaptcha.net https://unpkg.com/@rive-app/ *.facebook.com *.orangelogic.com *.adnxs.com *.6sc.co *.6sense.com m.castle.io apis.auxia.io *.atlassian.net https://participant.connect.us-east-1.amazonaws.com wss://participant.connect.us-east-1.amazonaws.com *.connect.us-east-1.amazonaws.com sourcetreeapp.com *.sourcetreeapp.com bitbucket.org *.bitbucket.org obs.roundprincethere.com ibc-flow.techtarget.com *.googleadservices.com *.ingest.us.sentry.io bzrcdn.openai.com bzr.openai.com *.adsrvr.org ingestion.prod.apiarydata.net, frame-ancestors 'none';",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 44,
+      "url": "https://www.npmjs.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 79,
+      "durationMs": 488,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 403,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'none'; script-src 'nonce-SBEvdZwihYQ0VIyD8J8SKh' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 45,
+      "url": "https://pypi.org",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 912,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "(python)",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "base-uri 'self'; connect-src 'self' https://api.github.com/repos/ https://api.github.com/search/issues https://gitlab.com/api/ https://analytics.python.org *.ethicalads.io https://api.pwnedpasswords.com https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/sre/mathmaps/ https://2p66nmmycsj3.statuspage.io; default-src 'none'; font-src 'self'; form-action 'self' https://checkout.stripe.com https://billing.stripe.com; frame-ancestors 'none'; frame-src 'none'; img-src 'self' https://pypi-camo.freetls.fastly.net/ *.ethicalads.io ethicalads.blob.core.windows.net; script-src 'self' https://analytics.python.org *.ethicalads.io 'sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0=' https://cdn.jsdelivr.net/npm/mathjax@3.2.2/ 'sha256-1CldwzdEg2k1wTmf7s5RWVd7NMXI/7nxxjJM2C4DqII='; style-src 'self' *.ethicalads.io 'sha256-2YHqZokjiizkHi1Zt+6ar0XJ0OeEy/egBnlm+MDMtrM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-JLEjeN9e5dGsz5475WyRaoA4eQOdNPxDIeUhclnJDCE=' 'sha256-mQyxHEuwZJqpxCw3SLmc4YOySNKXunyu2Oiz1r3/wAE=' 'sha256-OCf+kv5Asiwp++8PIevKBYSgnNLNUZvxAp4a7wMLuKA=' 'sha256-h5LOiLhk6wiJrGsG5ItM0KimwzWQH/yAcmoJDJL//bY='",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 46,
+      "url": "https://crates.io",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 2798,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": true,
+        "totalMatched": 3,
+        "totalAsserted": 5
+      },
+      "discrepancies": [
+        "XFO discrepancy: groundTruthPresent=true, scannerMissingFlag=true",
+        "XCTO discrepancy: groundTruthPresent=true, scannerMissingFlag=true"
+      ]
+    },
+    {
+      "index": 47,
+      "url": "https://pkg.go.dev",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 1890,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": "object-src 'none'; base-uri 'none'; script-src 'unsafe-inline' 'strict-dynamic' https: http: 'sha256-DVdvl49HC0iGx/YKQq/kVNATnEdzGfExbJVTHqT95l8=' 'sha256-CoGrkqEM1Kjjf5b1bpcnDLl8ZZLAsVX+BoAzZ5+AOmc=' 'sha256-QqhlxKosyquihHG/Jahbski3BB1pDss2/CDgLzKKbmE=' 'sha256-karKh1IrXOF1g+uoSxK+k9BuciCwYY/ytGuQVUiRzcM=' 'sha256-mxm3e8M0u3nPPBmLIBgGuMvGUIL5LGv+HzV3bLAIBgw=' 'sha256-+iS8jRq15Ez/Kzz0/G+SNc0geLNvTyf2NZC7MyJgpRE=' 'sha256-UiVwSVJIK9udADqG5GZe+nRUXWK9wEot2vrxL4D2pQs=' 'sha256-cB+y/oSfWGFf7lHk8KX+ZX2CZQz/dPamIICuPvHcB6w=' 'sha256-7mi5SPcD1cogj2+ju8J/+/qJG99F6Qo+3pO4xQkRf6Q=' 'sha256-rEbn/zvLCsDDvDrVWQuUkKGEQsjQjFvIvJK4NVIMqZ4='",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 48,
+      "url": "https://packagist.org",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 84,
+      "durationMs": 1847,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31104000",
+        "csp": "default-src 'self'; base-uri 'none'; block-all-mixed-content; connect-src 'self' https://*.algolia.net https://*.algolianet.com; frame-src https://www.google.com/recaptcha/; img-src 'self' https: data:; object-src 'none'; script-src 'unsafe-eval' https://www.gstatic.com/recaptcha/ 'strict-dynamic' 'unsafe-inline' 'nonce-aY5ABeiz2YjICfZbUvxzhA=='; style-src 'self' 'unsafe-inline'",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 49,
+      "url": "https://rubygems.org",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 2622,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": "default-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://secure.gaug.es https://gravatar.com https://www.gravatar.com https://secure.gravatar.com https://*.fastly-insights.com https://avatars.githubusercontent.com; object-src 'none'; script-src 'self' 'sha256-N9uVqnCAuC1ALeRzBrWP26XLWumoUPdnzlbC1dcPsu0=' https://secure.gaug.es https://www.fastly-insights.com 'nonce-y9TQ3ly0EMGqJJFTbxoVJg=='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://s3-us-west-2.amazonaws.com/rubygems-dumps/ https://*.fastly-insights.com https://fastly-insights.com https://api.github.com http://localhost:*; form-action 'self' https://github.com/login/oauth/authorize; frame-ancestors 'self'; base-uri 'self'; report-uri https://csp-report.browser-intake-datadoghq.com/api/v2/logs?dd-api-key=pub852fa3e2312391fafa5640b60784e660&dd-evp-origin=content-security-policy&ddsource=csp-report&ddtags=service%3Arubygems.org%2Cversion%3Afdd3a193d9166deb6cffa71c565afa454d47dc3b%2Cenv%3Aproduction%2Ctrace_id%3A6abcccc100000000304b1e2f5a69955d",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 50,
+      "url": "https://www.nuget.org",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 18750,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": null,
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 51,
+      "url": "https://vercel.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 1189,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NEXTJS on VERCEL on (node) [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'self' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com https://risk.clearbit.com https://react-tweet.vercel.app/*;script-src 'self' 'unsafe-eval' 'unsafe-inline' 'inline-speculation-rules' https://snap.licdn.com https://www.youtube.com cdn.vercel-insights.com va.vercel-scripts.com vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com https://risk.clearbit.com https://react-tweet.vercel.app/* cdp.vercel.com;style-src 'self' 'unsafe-inline' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com https://risk.clearbit.com https://react-tweet.vercel.app/*;img-src 'self' blob: data: *.github.io avatars.githubusercontent.com user-images.githubusercontent.com vercel.com vercel.live *.vercel.sh assets.vercel.com cdn.raster.app https://images.ctfassets.net https://www.google.com https://i.ytimg.com https://s3.amazonaws.com pbs.twimg.com https://www.gravatar.com https://lishhsx6kmthaacj.public.blob.vercel-storage.com https://fvqcrhkhgatlyl2m.public.blob.vercel-storage.com;media-src 'self' blob: data: vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com https://risk.clearbit.com https://react-tweet.vercel.app/*;connect-src 'self' data: *.ingest.sentry.io *.ingest.us.sentry.io wss://ws-us3.pusher.com sockjs-use3.pusher.com react-tweet.vercel.app https://*.contentful.com www.vercel-status.com unpkg.com vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com https://risk.clearbit.com https://react-tweet.vercel.app/* cdp.vercel.com;font-src 'self' vercel.com assets.vercel.com vercel.live fonts.gstatic.com *.vercel.sh;frame-ancestors  'self'  https://vercel.com  https://app.contentful.com  https://*.contentful.com  https://*.vercel.sh  https://*.vercel.com",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 52,
+      "url": "https://www.netlify.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 1703,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NETLIFY",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 53,
+      "url": "https://www.cloudflare.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 2287,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://static-staging.cloudflareinsights.com https://challenges.cloudflare.com https://*.onetrust.com https://cdn.cookielaw.org https://ot.www.cloudflare.com https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://adservice.google.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://platform.twitter.com https://static.ads-twitter.com https://scripts.demandbase.com https://tag.demandbase.com https://*.6sc.co https://*.qualified.com https://snap.licdn.com https://bat.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.doubleclick.net https://www.googleadservices.com https://translate.googleapis.com https://cdn.bizible.com https://js.adsrvr.org https://*.marketo.net https://ads-twitter.com https://analytics.twitter.com https://*.twimg.com https://api.demandbase.com https://scripts.demandbase.com https://tag.demandbase.com https://tag-logger.demandbase.com https://api.company-target.com https://*.6sc.co https://epsilon.6sense.com https://*.qualified.com https://*.ads.linkedin.com https://www.linkedin.com https://bat.bing.com https: wss://*.qualified.com wss://*.registrar.cloudflare.com; frame-src https://*.adsrvr.org https://*.cloudflare.com https://*.videodelivery.net https://*.cloudflarestream.com https://www.googletagmanager.com https://*.qualified.com https://td.doubleclick.net https://bid.g.doubleclick.net https://9309168.fls.doubleclick.net https://9973066.fls.doubleclick.net https://s.company-target.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self' blob:; child-src 'self' blob:; upgrade-insecure-requests",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 54,
+      "url": "https://fly.io",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1717,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": "base-uri 'self'; frame-ancestors 'self';",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 55,
+      "url": "https://render.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 2243,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com https://*.i.posthog.com https://assets.calendly.com https://scout-cdn.salesloft.com https://snap.licdn.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com ; connect-src 'self' https://*.algolia.net https://*.algolianet.com https://*.google-analytics.com https://*.google.com https://*.googletagmanager.com https://*.hsforms.com https://*.inkeep.com https://*.linkedin.com https://*.osano.com https://*.posthog.com https://*.i.posthog.com https://*.segment.com https://*.segment.io https://api.unifyintent.com https://api.ashbyhq.com https://cdn.growthbook.io https://cdn.sanity.io https://hubspot-forms-static-embed.s3.amazonaws.com https://pagead2.googlesyndication.com https://scout.salesloft.com https://translate.googleapis.com ; worker-src 'self' blob: https://*.osano.com; report-uri https://render.report-uri.com/r/t/csp/reportOnly; report-to wizard;",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 56,
+      "url": "https://www.digitalocean.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 2170,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "NEXTJS on (node) on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.googletagmanager.com segment.digitalocean.com *.trustarc.com fast.wistia.com fast.wistia.net capture.navattic.com digitalocean.navattic.com boards.greenhouse.io *.ondigitalocean.app assets.digitalocean.com anchor.digitalocean.com *.google-analytics.com www.googleadservices.com googleads.g.doubleclick.net *.amplitude.com challenges.cloudflare.com bat.bing.com static.ads-twitter.com platform.twitter.com www.instagram.com static.codepen.io asciinema.org cdn.jsdelivr.net snap.licdn.com connect.facebook.net *.googlesyndication.com bzrcdn.openai.com cdn.vector.co wt.inflection.io cdn.schemaapp.com pocustrack.com js.zi-scripts.com *.pw.adn.cloud ddwl4m2hdecbv.cloudfront.net www.youtube.com do-community.github.io digitalocean.github.io; worker-src 'self' blob: *.wistia.com *.wistia.net *.navattic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com do-community.github.io digitalocean.github.io cdnjs.cloudflare.com https://www.digitalocean.com; img-src 'self' data: blob: https: https://www.digitalocean.com; media-src 'self' blob: *.digitaloceanspaces.com *.wistia.com *.wistia.net; font-src 'self' data: *.trustarc.com fonts.gstatic.com *.wistia.com *.wistia.net cdnjs.cloudflare.com digitalocean.github.io do-community.github.io; connect-src 'self' api.digitalocean.com inbound.digitalocean.com tracking.digitalocean.com cloud.digitalocean.com/api/v1/ segment.digitalocean.com *.segment.io api.greenhouse.io 113-DTN-266.mktorest.com anchor.digitalocean.com *.navattic.com *.trustarc.com *.google-analytics.com analytics.google.com *.analytics.google.com *.googletagmanager.com *.ondigitalocean.app *.amplitude.com *.doubleclick.net www.google.com google.com www.google.ae www.google.am www.google.at www.google.az www.google.ba www.google.be www.google.bg www.google.bj www.google.by www.google.ca www.google.ch www.google.ci www.google.cl www.google.cm www.google.co.ao www.google.co.cr www.google.co.id www.google.co.il www.google.co.in www.google.co.jp www.google.co.ke www.google.co.kr www.google.co.ma www.google.co.mz www.google.co.nz www.google.co.th www.google.co.tz www.google.co.uk www.google.co.uz www.google.co.ve www.google.co.za www.google.co.zw www.google.com.ar www.google.com.au www.google.com.bd www.google.com.bo www.google.com.br www.google.com.bz www.google.com.co www.google.com.do www.google.com.ec www.google.com.eg www.google.com.et www.google.com.gh www.google.com.gt www.google.com.hk www.google.com.jm www.google.com.kh www.google.com.kw www.google.com.lb www.google.com.mm www.google.com.mt www.google.com.mx www.google.com.my www.google.com.ng www.google.com.ni www.google.com.np www.google.com.om www.google.com.pa www.google.com.pe www.google.com.pg www.google.com.ph www.google.com.pk www.google.com.pr www.google.com.py www.google.com.qa www.google.com.sa www.google.com.sg www.google.com.sv www.google.com.tr www.google.com.tw www.google.com.ua www.google.com.uy www.google.com.vc www.google.com.vn www.google.cz www.google.de www.google.dk www.google.dz www.google.es www.google.fi www.google.fr www.google.ge www.google.gm www.google.gr www.google.gy www.google.hn www.google.hu www.google.ie www.google.iq www.google.it www.google.je www.google.jo www.google.kg www.google.kz www.google.li www.google.lk www.google.lt www.google.md www.google.mk www.google.mn www.google.mu www.google.mv www.google.mw www.google.nl www.google.no www.google.pl www.google.ps www.google.ro www.google.rs www.google.ru www.google.se www.google.sn www.google.so www.google.tg www.google.tl www.google.tn www.google.tt bat.bing.com bat.bing.net px.ads.linkedin.com t.co analytics.twitter.com www.googleadservices.com adservice.google.com *.googlesyndication.com connect.facebook.net www.facebook.com cdn.vector.co api.vector.co wt.inflection.io cdn.schemaapp.com data.schemaapp.com pocustrack.com api-ingest.pocustrack.com js.zi-scripts.com ws.zoominfo.com bzrcdn.openai.com bzr.openai.com *.pw.adn.cloud ddwl4m2hdecbv.cloudfront.net *.algolia.net *.algolianet.com cloudflare-dns.com dns.google *.wistia.com *.wistia.net *.litix.io do-community.github.io *.ingest.sentry.io *.ingest.us.sentry.io https://www.digitalocean.com; frame-src 'self' lyceum.digitalocean.com fast.wistia.com fast.wistia.net *.navattic.com www.youtube-nocookie.com www.youtube.com open.spotify.com *.buzzsprout.com *.ondigitalocean.app challenges.cloudflare.com job-boards.greenhouse.io www.facebook.com api.vector.co platform.twitter.com www.instagram.com codepen.io player.vimeo.com glitch.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'",
+        "xfo": "SAMEORIGIN",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 57,
+      "url": "https://supabase.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 613,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "VERCEL",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 58,
+      "url": "https://firebase.google.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 3720,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubdomains; preload",
+        "csp": "base-uri 'self'; object-src 'none'; script-src 'strict-dynamic' 'unsafe-inline' https: http: 'nonce-wWfNhlBq+L6shqFMnUw74kEjONSB8z' 'unsafe-eval'; frame-ancestors 'self' https://developers.google.com/_d/analytics-iframe; report-uri https://csp.withgoogle.com/csp/devsite/v2",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 59,
+      "url": "https://postman.com",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 95,
+      "durationMs": 5787,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 60,
+      "url": "https://swagger.io",
+      "category": "Cloud & Dev Tools",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 55,
+      "durationMs": 1394,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 61,
+      "url": "https://httpbin.org",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 12227,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 5,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "(python)",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 62,
+      "url": "https://dummyjson.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 95,
+      "durationMs": 1581,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15552000; includeSubDomains",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 63,
+      "url": "https://pokeapi.co",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 1242,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31556926",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 64,
+      "url": "https://reqres.in",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 80,
+      "durationMs": 1648,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": null,
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 65,
+      "url": "https://jsonplaceholder.typicode.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 62,
+      "durationMs": 1834,
+      "findingsCount": 8,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 3,
+        "pass": 0,
+        "total": 8
+      },
+      "detectedStack": "EXPRESS on (node) on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 66,
+      "url": "https://restcountries.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 55,
+      "durationMs": 7262,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 67,
+      "url": "https://open-meteo.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 971,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 68,
+      "url": "https://api.github.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 83,
+      "durationMs": 1345,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 2,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "GITHUB_PAGES",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubdomains; preload",
+        "csp": "default-src 'none'",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 69,
+      "url": "https://icanhazdadjoke.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 80,
+      "durationMs": 2945,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15552000; includeSubDomains",
+        "csp": null,
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 70,
+      "url": "https://api.coindesk.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 103,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 4,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": false,
+        "statusCode": null,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": false
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": false,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": true,
+        "totalMatched": 0,
+        "totalAsserted": 0
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 71,
+      "url": "https://api.spacexdata.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 5477,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 3,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 525,
+        "hsts": null,
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 72,
+      "url": "https://rickandmortyapi.com",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 69,
+      "durationMs": 1262,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 73,
+      "url": "https://dog.ceo",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 55,
+      "durationMs": 1638,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 74,
+      "url": "https://catfact.ninja",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 1792,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 1,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 75,
+      "url": "https://worldtimeapi.org",
+      "category": "APIs & Services",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 921,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 4,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": false,
+        "statusCode": null,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": false
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": false,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": true,
+        "totalMatched": 0,
+        "totalAsserted": 0
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 76,
+      "url": "https://www.mozilla.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 2195,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "frame-ancestors 'none'; default-src 'self' *.mozilla.org; base-uri 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google-analytics.com *.googletagmanager.com cdn.transcend.io google-analytics.com googletagmanager.com js.stripe.com s.ytimg.com tagmanager.google.com transcend-cdn.com www.mozilla.org www.youtube.com; img-src 'self' blog.mozilla.org data: images.ctfassets.net www.google-analytics.com www.googletagmanager.com www.mozilla.org; form-action 'self' https://abdri3ttkb.execute-api.us-east-2.amazonaws.com https://accounts.firefox.com/ https://basket.mozilla.org; style-src 'self' 'unsafe-inline' cdn.transcend.io transcend-cdn.com www.mozilla.org; object-src 'none'; upgrade-insecure-requests; media-src 'self' assets.mozilla.net videos.cdn.mozilla.net www.mozilla.org; connect-src 'self' *.analytics.google.com *.google-analytics.com *.googletagmanager.com analytics.google.com cdn.transcend.io google-analytics.com googletagmanager.com gtm.mozilla.org https://abdri3ttkb.execute-api.us-east-2.amazonaws.com https://accounts.firefox.com/ https://basket.mozilla.org o1069899.ingest.sentry.io o1069899.sentry.io region1.google-analytics.com telemetry.transcend.io telemetry.us.transcend.io transcend-cdn.com www.mozilla.org/submit/bedrock/; font-src 'self' www.mozilla.org; frame-src 'self' accounts.firefox.com gtm.mozilla.org js.stripe.com www.google-analytics.com www.googletagmanager.com www.youtube.com",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 77,
+      "url": "https://www.eff.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 60,
+      "durationMs": 2346,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": "SAMEORIGIN, SAMEORIGIN",
+        "xcto": "nosniff, nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 78,
+      "url": "https://www.torproject.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 4984,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "APACHE",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15768000; preload",
+        "csp": "default-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-J/tux0AP4WAYsCxprPoE+2XJ+XNJ8Esd8nCF8o/diiw='; style-src 'self' 'unsafe-inline';",
+        "xfo": "sameorigin",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 79,
+      "url": "https://signal.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 68,
+      "durationMs": 809,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 3,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 80,
+      "url": "https://matrix.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 70,
+      "durationMs": 1915,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 0,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": null,
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 81,
+      "url": "https://www.openstreetmap.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 73,
+      "durationMs": 2805,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 2,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "APACHE",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'self'; child-src 'self'; font-src 'self'; frame-ancestors 'self'; frame-src 'self'; manifest-src 'self'; media-src 'none'; object-src 'none'; worker-src blob:; connect-src 'self' tile.openstreetmap.org api.thunderforest.com tile.tracestrack.com *.openstreetmap.fr vector.openstreetmap.org api.maptiler.com matomo.openstreetmap.org http://127.0.0.1:8111 https://vector.openstreetmap.org https://api.maptiler.com https://tile.thunderforest.com https://render.openstreetmap.org https://nominatim.openstreetmap.org/ https://query.openstreetmap.org/query-features https://routing.openstreetmap.de/ https://graphhopper.com/api/1/route https://valhalla1.openstreetmap.de/route https://www.wikidata.org/w/api.php; form-action 'self' render.openstreetmap.org tile.thunderforest.com; img-src 'self' data: www.gravatar.com *.wp.com tile.openstreetmap.org gps.tile.openstreetmap.org api.thunderforest.com tile.tracestrack.com *.openstreetmap.fr matomo.openstreetmap.org https://openstreetmap-user-avatars.s3.dualstack.eu-west-1.amazonaws.com https://openstreetmap-gps-images.s3.dualstack.eu-west-1.amazonaws.com https://commons.wikimedia.org/wiki/ upload.wikimedia.org; script-src 'self' matomo.openstreetmap.org 'wasm-unsafe-eval' 'nonce-43Dmc8mGSWtARJxOoVCfU072nDzUM5qV'; style-src 'self' 'unsafe-inline' 'nonce-43Dmc8mGSWtARJxOoVCfU072nDzUM5qV'",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 82,
+      "url": "https://archive.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 63,
+      "durationMs": 6332,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15724800",
+        "csp": "report-uri https://archive.org/services/csp-report; base-uri 'self'; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data: blob:; worker-src 'self' blob:; script-src https://archive.org/offshoot_assets/ https://*.archive.org/offshoot_assets/ https://offshoot.prod.archive.org/offshoot_assets/ https://archive.org/includes/ https://*.archive.org/includes/ https://offshoot.prod.archive.org/includes/ https://archive.org/components/ https://*.archive.org/components/ https://offshoot.prod.archive.org/components/ https://archive.org/v/ https://offshoot.prod.archive.org/v/ https://offshoot.prod.archive.org/upload/app/ https://av.archive.org/ https://av.archive.org/js/ https://av.prod.archive.org/js/ https://av.dev.archive.org/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://www.google.com/recaptcha/ https://www.recaptcha.net/recaptcha/ https://www.gstatic.com/recaptcha/ 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://apollo.archive.org/ https://auth.bookshare.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://offshoot.prod.archive.org/services/emularity/ 'wasm-unsafe-eval' https://apis.google.com/ https://accounts.google.com/ https://accounts.google.com/gsi/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://*.zdassets.com/ https://*.zendesk.com/; style-src 'unsafe-inline' https://archive.org/ https://*.archive.org/ https://offshoot.prod.archive.org/ https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/;",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 83,
+      "url": "https://wikimediafoundation.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 85,
+      "durationMs": 2558,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=106384710;includeSubdomains;preload",
+        "csp": "default-src 'self'; connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://www.tiktok.com https://*.givechariot.com https://hcaptcha.com https://*.hcaptcha.com https://*.wikipedia.org https://*.wikimedia.org; font-src data: 'self' https://*.givechariot.com https://*.wp.com; frame-src 'self' https://videopress.com https://www.tiktok.com https://www.instagram.com https://platform.instagram.com https://secure.dafpay.com https://hcaptcha.com https://*.hcaptcha.com https://*.wp.com https://www.youtube.com https://player.vimeo.com https://platform.instagram.com https://www.instagram.com https://embed.bsky.app; img-src data: 'self' https://wikipedia.org https://*.givechariot.com https://www.paypalobjects.com https://*.wp.com https://*.wikimedia.org; media-src 'self' https://videos.files.wordpress.com https://commons.wikimedia.org https://upload.wikimedia.org; script-src 'unsafe-eval' 'unsafe-inline' 'self' https://www.tiktok.com https://*.tiktokcdn-us.com https://*.tiktokcdn-eu.com https://*.ttwstatic.com https://www.instagram.com https://platform.instagram.com https://*.givechariot.com https://hcaptcha.com https://*.hcaptcha.com https://*.wp.com https://www.youtube.com https://player.vimeo.com https://platform.instagram.com https://www.instagram.com https://embed.bsky.app https://*.wikimedia.org https://api.mapbox.com; style-src 'unsafe-inline' 'self' https://www.tiktok.com https://*.tiktokcdn-us.com https://*.tiktokcdn-eu.com https://*.ttwstatic.com https://hcaptcha.com https://*.hcaptcha.com https://*.wp.com https://*.wikimedia.org https://api.mapbox.com; worker-src blob: 'self'; base-uri 'self'; form-action 'self' https://donate.wikimedia.org; frame-ancestors 'self'; object-src 'none'; block-all-mixed-content",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 84,
+      "url": "https://creativecommons.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 20732,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": false,
+        "statusCode": null,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": false
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": false,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": false,
+        "totalMatched": 0,
+        "totalAsserted": 0
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 85,
+      "url": "https://www.fsf.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 55,
+      "durationMs": 6815,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 86,
+      "url": "https://duckduckgo.com",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 85,
+      "durationMs": 986,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "default-src 'none' ; connect-src  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src blob: data:  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duck.ai https://*.duck.ai https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 87,
+      "url": "https://brave.com",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 75,
+      "durationMs": 1928,
+      "findingsCount": 2,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 2
+      },
+      "detectedStack": "via CLOUDFRONT CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubdomains; preload",
+        "csp": "connect-src 'self' https://search.brave.com https://newsletter.brave.app https://analytics.brave.com https://api2.blocksurvey.io; default-src 'none'; media-src 'self'; font-src 'self'; frame-ancestors 'self' https://ads.brave.com https://ads.bravesoftware.com; frame-src 'self' https://blocksurvey.io https://survey.brave.app https://contact.ads.brave.com https://html5-player.libsyn.com https://player.vimeo.com https://boards.greenhouse.io https://job-boards.greenhouse.io https://www.youtube-nocookie.com https://app.boostr.com/; img-src 'self' data: https://imgs.search.brave.com https://analytics.brave.com https://boards.greenhouse.io https://job-boards.greenhouse.io; script-src 'self' https://boards.greenhouse.io https://job-boards.greenhouse.io; style-src 'self' 'unsafe-inline'; object-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests;",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 88,
+      "url": "https://proton.me",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 85,
+      "durationMs": 2884,
+      "findingsCount": 1,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 0,
+        "info": 0,
+        "pass": 0,
+        "total": 1
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'self'; media-src https://static.zdassets.com https://res.cloudinary.com https://pmecdn.protonweb.com; connect-src 'self' wss: https://protonmail.zendesk.com https://ekr.zdassets.com blob: https://account.proton.me https://reports.proton.me https://telemetry.proton.me https://*.algolia.net https://*.algolianet.com https://go.getproton.me https://noembed.com https://boards-api.greenhouse.io https://proton.me https://*.paypal.com https://*.paypalobjects.com https://growth.proton.me ; script-src 'self' blob: 'unsafe-eval' 'unsafe-inline'  https://static.zdassets.com https://pmecdn.protonweb.com https://www.youtube.com https://platform.twitter.com https://*.paypal.com https://*.paypalobjects.com; style-src 'self' 'unsafe-inline' https://pmecdn.protonweb.com https://*.paypal.com https://*.paypalobjects.com; font-src 'self' https://pmecdn.protonweb.com; img-src 'self' data: blob: https:; frame-src 'self' data: blob: https://www.youtube-nocookie.com https://platform.twitter.com https://*.paypal.com https://*.paypalobjects.com; object-src 'self' data: blob:; child-src 'self' data: blob: https://*.paypal.com https://*.paypalobjects.com; report-uri https://reports.proton.me/reports/csp; frame-ancestors 'self' https://*.proton.me;",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 89,
+      "url": "https://www.libreoffice.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 3544,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31557600; includeSubDomains",
+        "csp": "default-src 'none'; connect-src 'self' https://piwik.documentfoundation.org; font-src 'self'; form-action 'self' https://www.paypal.com; frame-src https://www.youtube-nocookie.com https://js.stripe.com/; frame-ancestors 'none'; img-src 'self' data: https://*.documentfoundation.org https://*.tile.openstreetmap.org; script-src 'self' https://*.documentfoundation.org https://js.stripe.com/v3/; style-src 'self'",
+        "xfo": "DENY",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 90,
+      "url": "https://www.blender.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 65,
+      "durationMs": 3667,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "via CLOUDFLARE CDN",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": "frame-ancestors 'self';",
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 91,
+      "url": "https://www.videolan.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 59,
+      "durationMs": 7294,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 3,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=15768000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 92,
+      "url": "https://www.gimp.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 74,
+      "durationMs": 2916,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "APACHE",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains; preload",
+        "csp": "default-src 'none';              img-src 'self' https://testing.developer.gimp.org https://developer.gimp.org https://blogs.gnome.org;              style-src 'self';              script-src 'self' https://www.openhub.net;              font-src 'self';              child-src 'self' https://peer.tube https://www.openhub.net https://www.youtube.com https://www.youtube-nocookie.com https://video.blender.org;              object-src 'none';              media-src 'self' https://download.gimp.org https://download-fallback.gimp.org https://www.mirrorservice.org https://*.ftp.acc.umu.se https://ftp.rrze.uni-erlangen.de;              base-uri 'self';              form-action 'self' https://www.paypal.com https://gitlab.gnome.org https://duckduckgo.com;              frame-ancestors 'self';",
+        "xfo": "SAMEORIGIN",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 93,
+      "url": "https://inkscape.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 65,
+      "durationMs": 26582,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 3,
+        "warning": 2,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "Stack not detected — generic server configuration",
+      "groundTruth": {
+        "reachable": false,
+        "statusCode": null,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": false
+      },
+      "assertions": {
+        "hstsMatch": false,
+        "cspMatch": false,
+        "xfoMatch": false,
+        "xctoMatch": false,
+        "sslMatch": true,
+        "totalMatched": 0,
+        "totalAsserted": 0
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 94,
+      "url": "https://www.audacityteam.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 58,
+      "durationMs": 1686,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "detectedStack": "NETLIFY",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 95,
+      "url": "https://obsproject.com",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 68,
+      "durationMs": 4618,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 1,
+        "info": 2,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31557600; includeSubDomains; preload",
+        "csp": "default-src 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.googletagmanager.com www.google-analytics.com platform.twitter.com www.google.com www.gstatic.com www.recaptcha.net https://challenges.cloudflare.com ; style-src 'self' 'unsafe-inline' ; img-src * data: blob: ; font-src 'self' fonts.googleapis.com fonts.gstatic.com ; connect-src 'self' opencollective.com www.google-analytics.com stats.g.doubleclick.net ; object-src 'none' ; child-src 'self' www.youtube.com www.google.com www.recaptcha.net https://challenges.cloudflare.com ; frame-ancestors 'none' ; form-action 'self' www.paypal.com www.sandbox.paypal.com github.com ; media-src 'self' cdn-fastly.obsproject.com ; block-all-mixed-content",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 96,
+      "url": "https://curl.se",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 73,
+      "durationMs": 646,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 0,
+        "info": 2,
+        "pass": 0,
+        "total": 4
+      },
+      "detectedStack": "NGINX",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000",
+        "csp": "upgrade-insecure-requests; default-src 'none'; base-uri 'none'; img-src 'self'; style-src 'unsafe-inline' 'self'; form-action 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';",
+        "xfo": "deny",
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 97,
+      "url": "https://git-scm.com",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 64,
+      "durationMs": 925,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 1,
+        "pass": 0,
+        "total": 6
+      },
+      "detectedStack": "GITHUB_PAGES on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 98,
+      "url": "https://ffmpeg.org",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 58,
+      "durationMs": 2546,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 2,
+        "warning": 3,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "detectedStack": "APACHE",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=63072000; includeSubDomains",
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 99,
+      "url": "https://neovim.io",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 65,
+      "durationMs": 947,
+      "findingsCount": 5,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 4,
+        "info": 0,
+        "pass": 0,
+        "total": 5
+      },
+      "detectedStack": "GITHUB_PAGES on via CLOUDFLARE CDN [Verified]",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": null,
+        "csp": null,
+        "xfo": null,
+        "xcto": null,
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    },
+    {
+      "index": 100,
+      "url": "https://code.visualstudio.com",
+      "category": "Open Source & Foundations",
+      "status": "completed",
+      "completeness": "partial_backend_only",
+      "healthScore": 79,
+      "durationMs": 9940,
+      "findingsCount": 3,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 1,
+        "info": 1,
+        "pass": 0,
+        "total": 3
+      },
+      "detectedStack": "IIS on (csharp)",
+      "groundTruth": {
+        "reachable": true,
+        "statusCode": 200,
+        "hsts": "max-age=31536000; includeSubDomains",
+        "csp": "frame-ancestors 'self'",
+        "xfo": null,
+        "xcto": "nosniff",
+        "sslValid": true
+      },
+      "assertions": {
+        "hstsMatch": true,
+        "cspMatch": true,
+        "xfoMatch": true,
+        "xctoMatch": true,
+        "sslMatch": true,
+        "totalMatched": 5,
+        "totalAsserted": 5
+      },
+      "discrepancies": []
+    }
+  ]
+}

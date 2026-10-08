@@ -1,0 +1,108 @@
+{
+  "test1_csp": {
+    "ruleId": "SEC_CSP_MISSING",
+    "repo": "https://github.com/expressjs/express",
+    "location": {
+      "filePath": "index.js",
+      "lineNumber": 1,
+      "snippet": "   1 | /*!\n   2 |  * express\n   3 |  * Copyright(c) 2009-2013 TJ Holowaychuk\n   4 |  * Copyright(c) 2013 Roman Shtylman\n   5 |  * Copyright(c) 2014-2015 Douglas Christopher Wilson\n   6 |  * MIT Licensed\n   7 |  */",
+      "surroundingContext": {
+        "startLine": 1,
+        "endLine": 7,
+        "lines": [
+          {
+            "lineNumber": 1,
+            "content": "/*!",
+            "isTarget": true
+          },
+          {
+            "lineNumber": 2,
+            "content": " * express",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 3,
+            "content": " * Copyright(c) 2009-2013 TJ Holowaychuk",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 4,
+            "content": " * Copyright(c) 2013 Roman Shtylman",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 5,
+            "content": " * Copyright(c) 2014-2015 Douglas Christopher Wilson",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 6,
+            "content": " * MIT Licensed",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 7,
+            "content": " */",
+            "isTarget": false
+          }
+        ]
+      },
+      "diff": "--- a/index.js\n+++ b/index.js\n@@ -1,7 +1,9 @@\n  /*!\n+   // [SiteDoctor Remediation: SEC_CSP_MISSING]\n+   Content-Security-Policy: default-src 'self';\n   * express\n   * Copyright(c) 2009-2013 TJ Holowaychuk\n   * Copyright(c) 2013 Roman Shtylman\n   * Copyright(c) 2014-2015 Douglas Christopher Wilson\n   * MIT Licensed\n   */",
+      "confidence": "medium",
+      "disclaimer": "Heuristic search recommendation — verify before modifying. Read-only suggestion."
+    }
+  },
+  "test2_cors": {
+    "ruleId": "CORS_MISSING",
+    "repo": "https://github.com/expressjs/express",
+    "location": {
+      "filePath": "index.js",
+      "lineNumber": 1,
+      "snippet": "   1 | /*!\n   2 |  * express\n   3 |  * Copyright(c) 2009-2013 TJ Holowaychuk\n   4 |  * Copyright(c) 2013 Roman Shtylman\n   5 |  * Copyright(c) 2014-2015 Douglas Christopher Wilson\n   6 |  * MIT Licensed\n   7 |  */",
+      "surroundingContext": {
+        "startLine": 1,
+        "endLine": 7,
+        "lines": [
+          {
+            "lineNumber": 1,
+            "content": "/*!",
+            "isTarget": true
+          },
+          {
+            "lineNumber": 2,
+            "content": " * express",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 3,
+            "content": " * Copyright(c) 2009-2013 TJ Holowaychuk",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 4,
+            "content": " * Copyright(c) 2013 Roman Shtylman",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 5,
+            "content": " * Copyright(c) 2014-2015 Douglas Christopher Wilson",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 6,
+            "content": " * MIT Licensed",
+            "isTarget": false
+          },
+          {
+            "lineNumber": 7,
+            "content": " */",
+            "isTarget": false
+          }
+        ]
+      },
+      "diff": "--- a/index.js\n+++ b/index.js\n@@ -1,7 +1,12 @@\n  /*!\n+   // [SiteDoctor Remediation: CORS_MISSING]\n+   app.use(cors({\n+     origin: 'https://yourfrontend.com',\n+     credentials: true\n+   }));\n   * express\n   * Copyright(c) 2009-2013 TJ Holowaychuk\n   * Copyright(c) 2013 Roman Shtylman\n   * Copyright(c) 2014-2015 Douglas Christopher Wilson\n   * MIT Licensed\n   */",
+      "confidence": "medium",
+      "disclaimer": "Heuristic search recommendation — verify before modifying. Read-only suggestion."
+    }
+  }
+}

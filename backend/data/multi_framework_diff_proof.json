@@ -1,0 +1,390 @@
+{
+  "repo_1_express": {
+    "repo": "https://github.com/expressjs/express",
+    "framework": "Express.js (Node.js)",
+    "findings": {
+      "SEC_CSP_MISSING": {
+        "filePath": "examples/hello-world/index.js",
+        "lineNumber": 5,
+        "snippet": "   1 | 'use strict'\n   2 | \n   3 | var express = require('../../');\n   4 | \n   5 | var app = module.exports = express()\n   6 | \n   7 | app.get('/', function(req, res){\n   8 |   res.send('Hello World');\n   9 | });\n  10 | \n  11 | /* istanbul ignore next */",
+        "surroundingContext": {
+          "startLine": 1,
+          "endLine": 11,
+          "lines": [
+            {
+              "lineNumber": 1,
+              "content": "'use strict'",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 2,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 3,
+              "content": "var express = require('../../');",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 4,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 5,
+              "content": "var app = module.exports = express()",
+              "isTarget": true
+            },
+            {
+              "lineNumber": 6,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 7,
+              "content": "app.get('/', function(req, res){",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 8,
+              "content": "  res.send('Hello World');",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 9,
+              "content": "});",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 10,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 11,
+              "content": "/* istanbul ignore next */",
+              "isTarget": false
+            }
+          ]
+        },
+        "diff": "--- a/examples/hello-world/index.js\n+++ b/examples/hello-world/index.js\n@@ -1,11 +1,21 @@\n  'use strict'\n  \n  var express = require('../../');\n+ var helmet = require('helmet');\n  \n  var app = module.exports = express()\n+ \n+ app.use(helmet.contentSecurityPolicy({\n+   directives: {\n+     defaultSrc: [\"'self'\"],\n+     scriptSrc: [\"'self'\"],\n+     styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n+     imgSrc: [\"'self'\", \"data:\"]\n+   }\n+ }));\n  \n  app.get('/', function(req, res){\n    res.send('Hello World');\n  });\n  \n  /* istanbul ignore next */",
+        "confidence": "high",
+        "disclaimer": "Code-aware repository recommendation — verified syntactically for the detected runtime architecture."
+      },
+      "CORS_MISSING": {
+        "filePath": "examples/hello-world/index.js",
+        "lineNumber": 5,
+        "snippet": "   1 | 'use strict'\n   2 | \n   3 | var express = require('../../');\n   4 | \n   5 | var app = module.exports = express()\n   6 | \n   7 | app.get('/', function(req, res){\n   8 |   res.send('Hello World');\n   9 | });\n  10 | \n  11 | /* istanbul ignore next */",
+        "surroundingContext": {
+          "startLine": 1,
+          "endLine": 11,
+          "lines": [
+            {
+              "lineNumber": 1,
+              "content": "'use strict'",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 2,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 3,
+              "content": "var express = require('../../');",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 4,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 5,
+              "content": "var app = module.exports = express()",
+              "isTarget": true
+            },
+            {
+              "lineNumber": 6,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 7,
+              "content": "app.get('/', function(req, res){",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 8,
+              "content": "  res.send('Hello World');",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 9,
+              "content": "});",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 10,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 11,
+              "content": "/* istanbul ignore next */",
+              "isTarget": false
+            }
+          ]
+        },
+        "diff": "--- a/examples/hello-world/index.js\n+++ b/examples/hello-world/index.js\n@@ -1,11 +1,18 @@\n  'use strict'\n  \n  var express = require('../../');\n+ var cors = require('cors');\n  \n  var app = module.exports = express()\n+ \n+ app.use(cors({\n+   origin: process.env.CLIENT_ORIGIN || 'https://yourfrontend.com',\n+   credentials: true,\n+   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']\n+ }));\n  \n  app.get('/', function(req, res){\n    res.send('Hello World');\n  });\n  \n  /* istanbul ignore next */",
+        "confidence": "high",
+        "disclaimer": "Code-aware repository recommendation — verified syntactically for the detected runtime architecture."
+      }
+    }
+  },
+  "repo_2_fastapi": {
+    "repo": "https://github.com/fastapi/full-stack-fastapi-template",
+    "framework": "FastAPI / Python",
+    "findings": {
+      "SEC_CSP_MISSING": {
+        "filePath": "backend/app/main.py",
+        "lineNumber": 25,
+        "snippet": "  19 |     sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)\n  20 | \n  21 | app = FastAPI(\n  22 |     title=settings.PROJECT_NAME,\n  23 |     openapi_url=f\"{settings.API_V1_STR}/openapi.json\",\n  24 |     generate_unique_id_function=custom_generate_unique_id,\n  25 | )\n  26 | \n  27 | app.add_middleware(\n  28 |     CORSMiddleware,\n  29 |     allow_origins=[settings.FRONTEND_HOST],\n  30 |     allow_credentials=True,\n  31 |     allow_methods=[\"*\"],",
+        "surroundingContext": {
+          "startLine": 19,
+          "endLine": 31,
+          "lines": [
+            {
+              "lineNumber": 19,
+              "content": "    sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 20,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 21,
+              "content": "app = FastAPI(",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 22,
+              "content": "    title=settings.PROJECT_NAME,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 23,
+              "content": "    openapi_url=f\"{settings.API_V1_STR}/openapi.json\",",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 24,
+              "content": "    generate_unique_id_function=custom_generate_unique_id,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 25,
+              "content": ")",
+              "isTarget": true
+            },
+            {
+              "lineNumber": 26,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 27,
+              "content": "app.add_middleware(",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 28,
+              "content": "    CORSMiddleware,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 29,
+              "content": "    allow_origins=[settings.FRONTEND_HOST],",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 30,
+              "content": "    allow_credentials=True,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 31,
+              "content": "    allow_methods=[\"*\"],",
+              "isTarget": false
+            }
+          ]
+        },
+        "diff": "--- a/backend/app/main.py\n+++ b/backend/app/main.py\n@@ -19,13 +19,21 @@\n      sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)\n  \n  app = FastAPI(\n      title=settings.PROJECT_NAME,\n      openapi_url=f\"{settings.API_V1_STR}/openapi.json\",\n      generate_unique_id_function=custom_generate_unique_id,\n  )\n+ \n+ @app.middleware(\"http\")\n+ async def add_security_headers(request, call_next):\n+     response = await call_next(request)\n+     response.headers[\"Content-Security-Policy\"] = \"default-src 'self'\"\n+     response.headers[\"X-Frame-Options\"] = \"DENY\"\n+     response.headers[\"X-Content-Type-Options\"] = \"nosniff\"\n+     return response\n  \n  app.add_middleware(\n      CORSMiddleware,\n      allow_origins=[settings.FRONTEND_HOST],\n      allow_credentials=True,\n      allow_methods=[\"*\"],",
+        "confidence": "high",
+        "disclaimer": "Code-aware repository recommendation — verified syntactically for the detected runtime architecture."
+      },
+      "CORS_MISSING": {
+        "filePath": "backend/app/main.py",
+        "lineNumber": 25,
+        "snippet": "  19 |     sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)\n  20 | \n  21 | app = FastAPI(\n  22 |     title=settings.PROJECT_NAME,\n  23 |     openapi_url=f\"{settings.API_V1_STR}/openapi.json\",\n  24 |     generate_unique_id_function=custom_generate_unique_id,\n  25 | )\n  26 | \n  27 | app.add_middleware(\n  28 |     CORSMiddleware,\n  29 |     allow_origins=[settings.FRONTEND_HOST],\n  30 |     allow_credentials=True,\n  31 |     allow_methods=[\"*\"],",
+        "surroundingContext": {
+          "startLine": 19,
+          "endLine": 31,
+          "lines": [
+            {
+              "lineNumber": 19,
+              "content": "    sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 20,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 21,
+              "content": "app = FastAPI(",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 22,
+              "content": "    title=settings.PROJECT_NAME,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 23,
+              "content": "    openapi_url=f\"{settings.API_V1_STR}/openapi.json\",",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 24,
+              "content": "    generate_unique_id_function=custom_generate_unique_id,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 25,
+              "content": ")",
+              "isTarget": true
+            },
+            {
+              "lineNumber": 26,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 27,
+              "content": "app.add_middleware(",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 28,
+              "content": "    CORSMiddleware,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 29,
+              "content": "    allow_origins=[settings.FRONTEND_HOST],",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 30,
+              "content": "    allow_credentials=True,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 31,
+              "content": "    allow_methods=[\"*\"],",
+              "isTarget": false
+            }
+          ]
+        },
+        "diff": "--- a/backend/app/main.py\n+++ b/backend/app/main.py\n@@ -19,13 +19,21 @@\n      sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)\n  \n  app = FastAPI(\n      title=settings.PROJECT_NAME,\n      openapi_url=f\"{settings.API_V1_STR}/openapi.json\",\n      generate_unique_id_function=custom_generate_unique_id,\n  )\n+ \n+ app.add_middleware(\n+     CORSMiddleware,\n+     allow_origins=[os.getenv(\"CLIENT_ORIGIN\", \"https://yourfrontend.com\")],\n+     allow_credentials=True,\n+     allow_methods=[\"*\"],\n+     allow_headers=[\"*\"],\n+ )\n  \n  app.add_middleware(\n      CORSMiddleware,\n      allow_origins=[settings.FRONTEND_HOST],\n      allow_credentials=True,\n      allow_methods=[\"*\"],",
+        "confidence": "high",
+        "disclaimer": "Code-aware repository recommendation — verified syntactically for the detected runtime architecture."
+      }
+    }
+  },
+  "repo_3_nextjs": {
+    "repo": "https://github.com/shadcn-ui/taxonomy",
+    "framework": "Next.js (React)",
+    "findings": {
+      "SEC_CSP_MISSING": {
+        "filePath": "next.config.mjs",
+        "lineNumber": 6,
+        "snippet": "   1 | import { withContentlayer } from \"next-contentlayer\"\n   2 | \n   3 | import \"./env.mjs\"\n   4 | \n   5 | /** @type {import('next').NextConfig} */\n   6 | const nextConfig = {\n   7 |   reactStrictMode: true,\n   8 |   images: {\n   9 |     domains: [\"avatars.githubusercontent.com\"],\n  10 |   },\n  11 |   experimental: {\n  12 |     appDir: true,",
+        "surroundingContext": {
+          "startLine": 1,
+          "endLine": 12,
+          "lines": [
+            {
+              "lineNumber": 1,
+              "content": "import { withContentlayer } from \"next-contentlayer\"",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 2,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 3,
+              "content": "import \"./env.mjs\"",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 4,
+              "content": "",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 5,
+              "content": "/** @type {import('next').NextConfig} */",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 6,
+              "content": "const nextConfig = {",
+              "isTarget": true
+            },
+            {
+              "lineNumber": 7,
+              "content": "  reactStrictMode: true,",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 8,
+              "content": "  images: {",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 9,
+              "content": "    domains: [\"avatars.githubusercontent.com\"],",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 10,
+              "content": "  },",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 11,
+              "content": "  experimental: {",
+              "isTarget": false
+            },
+            {
+              "lineNumber": 12,
+              "content": "    appDir: true,",
+              "isTarget": false
+            }
+          ]
+        },
+        "diff": "--- a/next.config.mjs\n+++ b/next.config.mjs\n@@ -1,12 +1,25 @@\n  import { withContentlayer } from \"next-contentlayer\"\n  \n  import \"./env.mjs\"\n  \n  /** @type {import('next').NextConfig} */\n  const nextConfig = {\n+   async headers() {\n+     return [\n+       {\n+         source: \"/:path*\",\n+         headers: [\n+           { key: \"Content-Security-Policy\", value: \"default-src 'self'\" },\n+           { key: \"X-Frame-Options\", value: \"DENY\" },\n+           { key: \"X-Content-Type-Options\", value: \"nosniff\" },\n+           { key: \"Referrer-Policy\", value: \"strict-origin-when-cross-origin\" }\n+         ]\n+       }\n+     ];\n+   },\n    reactStrictMode: true,\n    images: {\n      domains: [\"avatars.githubusercontent.com\"],\n    },\n    experimental: {\n      appDir: true,",
+        "confidence": "high",
+        "disclaimer": "Code-aware repository recommendation — verified syntactically for the detected runtime architecture."
+      }
+    }
+  }
+}

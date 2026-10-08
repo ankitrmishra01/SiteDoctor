@@ -1,0 +1,469 @@
+{
+  "timestamp": "2026-09-30T08:47:55.487Z",
+  "stabilityAudit": [
+    {
+      "url": "https://www.etsy.com",
+      "scores": [
+        93,
+        93,
+        93
+      ],
+      "scoreSpread": 0,
+      "findingCounts": [
+        3,
+        3,
+        3
+      ],
+      "findingsSpread": 0,
+      "durations": [
+        1272,
+        1311,
+        1050
+      ],
+      "durationSpread": 261,
+      "runs": [
+        {
+          "run": 1,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 93,
+          "findingsCount": 3,
+          "durationMs": 1272,
+          "findingRuleIds": [
+            "CORS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "LIGHT_LOAD_BLOCKED_BY_WAF"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 10,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "403": 10
+            }
+          }
+        },
+        {
+          "run": 2,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 93,
+          "findingsCount": 3,
+          "durationMs": 1311,
+          "findingRuleIds": [
+            "CORS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "LIGHT_LOAD_BLOCKED_BY_WAF"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 10,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "403": 10
+            }
+          }
+        },
+        {
+          "run": 3,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 93,
+          "findingsCount": 3,
+          "durationMs": 1050,
+          "findingRuleIds": [
+            "CORS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "LIGHT_LOAD_BLOCKED_BY_WAF"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 10,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "403": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://www.rust-lang.org",
+      "scores": [
+        63,
+        63,
+        63
+      ],
+      "scoreSpread": 0,
+      "findingCounts": [
+        7,
+        7,
+        7
+      ],
+      "findingsSpread": 0,
+      "durations": [
+        981,
+        245,
+        195
+      ],
+      "durationSpread": 786,
+      "runs": [
+        {
+          "run": 1,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 63,
+          "findingsCount": 7,
+          "durationMs": 981,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "SEC_CSP_MISSING",
+            "SEC_XFO_MISSING",
+            "SEC_XCTO_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "API_HEALTH_FAIL"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 2,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 63,
+          "findingsCount": 7,
+          "durationMs": 245,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "SEC_CSP_MISSING",
+            "SEC_XFO_MISSING",
+            "SEC_XCTO_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "API_HEALTH_FAIL"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 3,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 63,
+          "findingsCount": 7,
+          "durationMs": 195,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "SEC_CSP_MISSING",
+            "SEC_XFO_MISSING",
+            "SEC_XCTO_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "API_HEALTH_FAIL"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://www.berkshirehathaway.com",
+      "scores": [
+        68,
+        68,
+        63
+      ],
+      "scoreSpread": 5,
+      "findingCounts": [
+        5,
+        5,
+        6
+      ],
+      "findingsSpread": 1,
+      "durations": [
+        3794,
+        1044,
+        10175
+      ],
+      "durationSpread": 9131,
+      "runs": [
+        {
+          "run": 1,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 68,
+          "findingsCount": 5,
+          "durationMs": 3794,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "CORS_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "API_HEALTH_FAIL"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 2,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 68,
+          "findingsCount": 5,
+          "durationMs": 1044,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "CORS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "API_HEALTH_FAIL"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 3,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 63,
+          "findingsCount": 6,
+          "durationMs": 10175,
+          "findingRuleIds": [
+            "SEC_HSTS_MISSING",
+            "CORS_MISSING",
+            "SEO_SITEMAP_MISSING",
+            "SEO_ROBOTS_MISSING",
+            "API_HEALTH_FAIL",
+            "LIGHT_LOAD_HIGH_LATENCY"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://deno.com",
+      "scores": [
+        80,
+        80,
+        80
+      ],
+      "scoreSpread": 0,
+      "findingCounts": [
+        2,
+        2,
+        2
+      ],
+      "findingsSpread": 0,
+      "durations": [
+        4316,
+        3832,
+        2652
+      ],
+      "durationSpread": 1664,
+      "runs": [
+        {
+          "run": 1,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 80,
+          "findingsCount": 2,
+          "durationMs": 4316,
+          "findingRuleIds": [
+            "SEC_CSP_MISSING",
+            "CORS_MISSING"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 2,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 80,
+          "findingsCount": 2,
+          "durationMs": 3832,
+          "findingRuleIds": [
+            "SEC_CSP_MISSING",
+            "CORS_MISSING"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        },
+        {
+          "run": 3,
+          "status": "completed",
+          "completeness": "partial_backend_only",
+          "score": 80,
+          "findingsCount": 2,
+          "durationMs": 2652,
+          "findingRuleIds": [
+            "SEC_CSP_MISSING",
+            "CORS_MISSING"
+          ],
+          "rawMetricsSummary": {
+            "sslValid": true,
+            "lightLoadFailed": 0,
+            "lightLoadTotal": 10,
+            "statusDistribution": {
+              "200": 10
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "realExternalConcurrencyAudit": {
+    "targetsFired": 10,
+    "completedScans": 10,
+    "failedScans": 0,
+    "totalWallClockMs": 4124,
+    "throughputScansPerSec": 2.42,
+    "scanDurations": {
+      "avg": 1711,
+      "min": 967,
+      "max": 4089
+    },
+    "memory": {
+      "before": {
+        "rssMb": 174,
+        "heapUsedMb": 81.7
+      },
+      "after": {
+        "rssMb": 191.1,
+        "heapUsedMb": 78.1
+      }
+    },
+    "individualResults": [
+      {
+        "targetUrl": "https://news.ycombinator.com",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 74,
+        "durationMs": 4089,
+        "findingsCount": 3
+      },
+      {
+        "targetUrl": "https://www.rust-lang.org",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 63,
+        "durationMs": 1255,
+        "findingsCount": 7
+      },
+      {
+        "targetUrl": "https://deno.com",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 80,
+        "durationMs": 1651,
+        "findingsCount": 2
+      },
+      {
+        "targetUrl": "https://svelte.dev",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 69,
+        "durationMs": 1045,
+        "findingsCount": 5
+      },
+      {
+        "targetUrl": "https://curl.se",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 73,
+        "durationMs": 1396,
+        "findingsCount": 4
+      },
+      {
+        "targetUrl": "https://go.dev",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 69,
+        "durationMs": 2088,
+        "findingsCount": 4
+      },
+      {
+        "targetUrl": "https://www.python.org",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 64,
+        "durationMs": 1850,
+        "findingsCount": 5
+      },
+      {
+        "targetUrl": "https://vuejs.org",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 70,
+        "durationMs": 1441,
+        "findingsCount": 3
+      },
+      {
+        "targetUrl": "https://expressjs.com",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 64,
+        "durationMs": 1329,
+        "findingsCount": 6
+      },
+      {
+        "targetUrl": "https://fastapi.tiangolo.com",
+        "status": "completed",
+        "completeness": "partial_backend_only",
+        "healthScore": 70,
+        "durationMs": 967,
+        "findingsCount": 4
+      }
+    ]
+  }
+}

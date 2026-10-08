@@ -1,0 +1,708 @@
+{
+  "totalAttempted": 100,
+  "completedCount": 79,
+  "failedCount": 21,
+  "completionRate": "79.0%",
+  "results": [
+    {
+      "url": "https://transmissionbt.com",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 1153
+    },
+    {
+      "url": "https://w3.org",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 908
+    },
+    {
+      "url": "https://twiliocorp.com",
+      "status": "failed_unreachable",
+      "failureReason": "DNS lookup failed for 'https://twiliocorp.com': Hostname could not be resolved.",
+      "score": 0,
+      "durationMs": 664
+    },
+    {
+      "url": "https://sourceforge.net",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 872
+    },
+    {
+      "url": "https://inkscape.org",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://inkscape.org' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20983
+    },
+    {
+      "url": "https://slack.com",
+      "status": "completed",
+      "score": 30,
+      "findingsCount": 14,
+      "durationMs": 47574
+    },
+    {
+      "url": "https://sentry.io",
+      "status": "completed",
+      "score": 70,
+      "findingsCount": 4,
+      "durationMs": 41437
+    },
+    {
+      "url": "https://datadoghq.com",
+      "status": "completed",
+      "score": 85,
+      "findingsCount": 3,
+      "durationMs": 10861
+    },
+    {
+      "url": "https://discord.com",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 8,
+      "durationMs": 40820
+    },
+    {
+      "url": "https://cloudflare.com",
+      "status": "completed",
+      "score": 90,
+      "findingsCount": 2,
+      "durationMs": 11594
+    },
+    {
+      "url": "https://fastly.com",
+      "status": "completed",
+      "score": 54,
+      "findingsCount": 18,
+      "durationMs": 42320
+    },
+    {
+      "url": "https://vercel.com",
+      "status": "completed",
+      "score": 98,
+      "findingsCount": 2,
+      "durationMs": 39791
+    },
+    {
+      "url": "https://netlify.com",
+      "status": "completed",
+      "score": 74,
+      "findingsCount": 6,
+      "durationMs": 29043
+    },
+    {
+      "url": "https://akamai.com",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 1862
+    },
+    {
+      "url": "https://fly.io",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 5,
+      "durationMs": 40476
+    },
+    {
+      "url": "https://render.com",
+      "status": "completed",
+      "score": 33,
+      "findingsCount": 12,
+      "durationMs": 41558
+    },
+    {
+      "url": "https://supabase.com",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 5,
+      "durationMs": 41175
+    },
+    {
+      "url": "https://railway.app",
+      "status": "completed",
+      "score": 85,
+      "findingsCount": 3,
+      "durationMs": 39904
+    },
+    {
+      "url": "https://firebase.google.com",
+      "status": "completed",
+      "score": 90,
+      "findingsCount": 2,
+      "durationMs": 42131
+    },
+    {
+      "url": "https://auth0.com",
+      "status": "completed",
+      "score": 40,
+      "findingsCount": 10,
+      "durationMs": 47344
+    },
+    {
+      "url": "https://clerk.com",
+      "status": "completed",
+      "score": 85,
+      "findingsCount": 3,
+      "durationMs": 43275
+    },
+    {
+      "url": "https://twilio.com",
+      "status": "completed",
+      "score": 50,
+      "findingsCount": 10,
+      "durationMs": 48687
+    },
+    {
+      "url": "https://plausible.io",
+      "status": "completed",
+      "score": 55,
+      "findingsCount": 10,
+      "durationMs": 12497
+    },
+    {
+      "url": "https://stripe.com",
+      "status": "completed",
+      "score": 64,
+      "findingsCount": 8,
+      "durationMs": 48794
+    },
+    {
+      "url": "https://sendgrid.com",
+      "status": "completed",
+      "score": 45,
+      "findingsCount": 9,
+      "durationMs": 60965
+    },
+    {
+      "url": "https://resend.com",
+      "status": "completed",
+      "score": 79,
+      "findingsCount": 5,
+      "durationMs": 50022
+    },
+    {
+      "url": "https://umami.is",
+      "status": "completed",
+      "score": 60,
+      "findingsCount": 6,
+      "durationMs": 46787
+    },
+    {
+      "url": "https://amplitude.com",
+      "status": "completed",
+      "score": 59,
+      "findingsCount": 7,
+      "durationMs": 43278
+    },
+    {
+      "url": "https://mixpanel.com",
+      "status": "completed",
+      "score": 45,
+      "findingsCount": 11,
+      "durationMs": 16337
+    },
+    {
+      "url": "https://posthog.com",
+      "status": "completed",
+      "score": 15,
+      "findingsCount": 14,
+      "durationMs": 27870
+    },
+    {
+      "url": "https://segment.com",
+      "status": "failed_unreachable",
+      "failureReason": "Failed to load target URL 'https://segment.com': page.goto: net::ERR_NETWORK_CHANGED at https://segment.com/\nCall log:\n\u001b[2m  - navigating to \"https://segment.com/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "score": 0,
+      "durationMs": 9537
+    },
+    {
+      "url": "https://launchdarkly.com",
+      "status": "failed_unreachable",
+      "failureReason": "DNS lookup failed for 'https://launchdarkly.com': Hostname could not be resolved.",
+      "score": 0,
+      "durationMs": 7034
+    },
+    {
+      "url": "https://growthbook.io",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://growthbook.io' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20798
+    },
+    {
+      "url": "https://unleash.run",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://unleash.run' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20824
+    },
+    {
+      "url": "https://flagsmith.com",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://flagsmith.com' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20744
+    },
+    {
+      "url": "https://hashicorp.com",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://hashicorp.com' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20784
+    },
+    {
+      "url": "https://pagerduty.com",
+      "status": "failed_unreachable",
+      "failureReason": "Failed to load target URL 'https://pagerduty.com': page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://pagerduty.com/\nCall log:\n\u001b[2m  - navigating to \"https://pagerduty.com/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "score": 0,
+      "durationMs": 6678
+    },
+    {
+      "url": "https://opsgenie.com",
+      "status": "failed_unreachable",
+      "failureReason": "Failed to load target URL 'https://opsgenie.com': page.goto: net::ERR_NETWORK_ACCESS_DENIED at https://opsgenie.com/\nCall log:\n\u001b[2m  - navigating to \"https://opsgenie.com/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "score": 0,
+      "durationMs": 11652
+    },
+    {
+      "url": "https://betterstack.com",
+      "status": "completed",
+      "score": 30,
+      "findingsCount": 15,
+      "durationMs": 46431
+    },
+    {
+      "url": "https://statuspage.io",
+      "status": "completed",
+      "score": 30,
+      "findingsCount": 11,
+      "durationMs": 51517
+    },
+    {
+      "url": "https://uptimerobot.com",
+      "status": "completed",
+      "score": 60,
+      "findingsCount": 8,
+      "durationMs": 14131
+    },
+    {
+      "url": "https://lightstep.com",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 2188
+    },
+    {
+      "url": "https://incident.io",
+      "status": "completed",
+      "score": 95,
+      "findingsCount": 1,
+      "durationMs": 40777
+    },
+    {
+      "url": "https://dynatrace.com",
+      "status": "completed",
+      "score": 65,
+      "findingsCount": 4,
+      "durationMs": 40382
+    },
+    {
+      "url": "https://honeycomb.io",
+      "status": "completed",
+      "score": 94,
+      "findingsCount": 2,
+      "durationMs": 46534
+    },
+    {
+      "url": "https://rootly.com",
+      "status": "completed",
+      "score": 60,
+      "findingsCount": 10,
+      "durationMs": 40198
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com",
+      "status": "completed",
+      "score": 38,
+      "findingsCount": 12,
+      "durationMs": 36798
+    },
+    {
+      "url": "https://httpbin.org",
+      "status": "completed",
+      "score": 35,
+      "findingsCount": 9,
+      "durationMs": 37130
+    },
+    {
+      "url": "https://catfact.ninja",
+      "status": "completed",
+      "score": 54,
+      "findingsCount": 8,
+      "durationMs": 35977
+    },
+    {
+      "url": "https://pokeapi.co",
+      "status": "completed",
+      "score": 39,
+      "findingsCount": 11,
+      "durationMs": 9694
+    },
+    {
+      "url": "https://reqres.in",
+      "status": "completed",
+      "score": 65,
+      "findingsCount": 5,
+      "durationMs": 40820
+    },
+    {
+      "url": "https://open-meteo.com",
+      "status": "completed",
+      "score": 84,
+      "findingsCount": 4,
+      "durationMs": 36781
+    },
+    {
+      "url": "https://api.coindesk.com",
+      "status": "failed_unreachable",
+      "failureReason": "DNS lookup failed for 'https://api.coindesk.com': Hostname could not be resolved.",
+      "score": 0,
+      "durationMs": 603
+    },
+    {
+      "url": "https://restcountries.com",
+      "status": "completed",
+      "score": 54,
+      "findingsCount": 8,
+      "durationMs": 41034
+    },
+    {
+      "url": "https://dog.ceo",
+      "status": "completed",
+      "score": 55,
+      "findingsCount": 9,
+      "durationMs": 33938
+    },
+    {
+      "url": "https://agify.io",
+      "status": "completed",
+      "score": 74,
+      "findingsCount": 4,
+      "durationMs": 38738
+    },
+    {
+      "url": "https://api.ipify.org",
+      "status": "completed",
+      "score": 48,
+      "findingsCount": 10,
+      "durationMs": 33201
+    },
+    {
+      "url": "https://genderize.io",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 5,
+      "durationMs": 38417
+    },
+    {
+      "url": "https://nationalize.io",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 5,
+      "durationMs": 38205
+    },
+    {
+      "url": "https://worldtimeapi.org",
+      "status": "failed_unreachable",
+      "failureReason": "Failed to load target URL 'https://worldtimeapi.org': page.goto: net::ERR_CONNECTION_CLOSED at https://worldtimeapi.org/\nCall log:\n\u001b[2m  - navigating to \"https://worldtimeapi.org/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "score": 0,
+      "durationMs": 2275
+    },
+    {
+      "url": "https://ipinfo.io",
+      "status": "completed",
+      "score": 79,
+      "findingsCount": 5,
+      "durationMs": 39000
+    },
+    {
+      "url": "https://zippopotam.us",
+      "status": "completed",
+      "score": 33,
+      "findingsCount": 13,
+      "durationMs": 37683
+    },
+    {
+      "url": "https://sunrise-sunset.org",
+      "status": "completed",
+      "score": 60,
+      "findingsCount": 6,
+      "durationMs": 39023
+    },
+    {
+      "url": "https://gutendex.com",
+      "status": "completed",
+      "score": 85,
+      "findingsCount": 3,
+      "durationMs": 37515
+    },
+    {
+      "url": "https://fakerapi.it",
+      "status": "completed",
+      "score": 15,
+      "findingsCount": 10,
+      "durationMs": 34664
+    },
+    {
+      "url": "https://openlibrary.org",
+      "status": "failed_unreachable",
+      "failureReason": "Connection timed out while loading 'https://openlibrary.org' after 20 seconds.",
+      "score": 0,
+      "durationMs": 20582
+    },
+    {
+      "url": "https://en.wikipedia.org",
+      "status": "completed",
+      "score": 89,
+      "findingsCount": 3,
+      "durationMs": 13414
+    },
+    {
+      "url": "https://wiktionary.org",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 5,
+      "durationMs": 37208
+    },
+    {
+      "url": "https://wikimedia.org",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 7,
+      "durationMs": 37936
+    },
+    {
+      "url": "https://wikisource.org",
+      "status": "completed",
+      "score": 65,
+      "findingsCount": 5,
+      "durationMs": 22198
+    },
+    {
+      "url": "https://arxiv.org",
+      "status": "completed",
+      "score": 80,
+      "findingsCount": 4,
+      "durationMs": 43138
+    },
+    {
+      "url": "https://archive.org",
+      "status": "completed",
+      "score": 68,
+      "findingsCount": 6,
+      "durationMs": 40434
+    },
+    {
+      "url": "https://creativecommons.org",
+      "status": "completed",
+      "score": 55,
+      "findingsCount": 9,
+      "durationMs": 42673
+    },
+    {
+      "url": "https://fsf.org",
+      "status": "completed",
+      "score": 30,
+      "findingsCount": 13,
+      "durationMs": 15464
+    },
+    {
+      "url": "https://eff.org",
+      "status": "completed",
+      "score": 35,
+      "findingsCount": 11,
+      "durationMs": 45628
+    },
+    {
+      "url": "https://khanacademy.org",
+      "status": "failed_error",
+      "failureReason": "page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+      "score": 0,
+      "durationMs": 4543
+    },
+    {
+      "url": "https://gutenberg.org",
+      "status": "completed",
+      "score": 79,
+      "findingsCount": 5,
+      "durationMs": 38560
+    },
+    {
+      "url": "https://harvard.edu",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 5,
+      "durationMs": 35114
+    },
+    {
+      "url": "https://mit.edu",
+      "status": "completed",
+      "score": 84,
+      "findingsCount": 4,
+      "durationMs": 35804
+    },
+    {
+      "url": "https://mozilla.org",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 6,
+      "durationMs": 36325
+    },
+    {
+      "url": "https://stanford.edu",
+      "status": "completed",
+      "score": 49,
+      "findingsCount": 9,
+      "durationMs": 40355
+    },
+    {
+      "url": "https://berkeley.edu",
+      "status": "completed",
+      "score": 84,
+      "findingsCount": 4,
+      "durationMs": 37765
+    },
+    {
+      "url": "https://cam.ac.uk",
+      "status": "completed",
+      "score": 90,
+      "findingsCount": 2,
+      "durationMs": 35801
+    },
+    {
+      "url": "https://cern.ch",
+      "status": "completed",
+      "score": 27,
+      "findingsCount": 13,
+      "durationMs": 25018
+    },
+    {
+      "url": "https://nasa.gov",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 3,
+      "durationMs": 11737
+    },
+    {
+      "url": "https://usgs.gov",
+      "status": "failed_unreachable",
+      "failureReason": "DNS lookup failed for 'https://usgs.gov': Hostname could not be resolved.",
+      "score": 0,
+      "durationMs": 541
+    },
+    {
+      "url": "https://loc.gov",
+      "status": "failed_unreachable",
+      "failureReason": "Target URL is protected by an authentication wall (HTTP 403). SiteDoctor cannot perform public automated scanning without credentials.",
+      "score": 0,
+      "durationMs": 3677
+    },
+    {
+      "url": "https://ox.ac.uk",
+      "status": "completed",
+      "score": 55,
+      "findingsCount": 15,
+      "durationMs": 44074
+    },
+    {
+      "url": "https://si.edu",
+      "status": "completed",
+      "score": 50,
+      "findingsCount": 16,
+      "durationMs": 41217
+    },
+    {
+      "url": "https://noaa.gov",
+      "status": "completed",
+      "score": 65,
+      "findingsCount": 3,
+      "durationMs": 43431
+    },
+    {
+      "url": "https://coursera.org",
+      "status": "completed",
+      "score": 54,
+      "findingsCount": 12,
+      "durationMs": 44975
+    },
+    {
+      "url": "https://freecodecamp.org",
+      "status": "completed",
+      "score": 79,
+      "findingsCount": 5,
+      "durationMs": 8088
+    },
+    {
+      "url": "https://edx.org",
+      "status": "completed",
+      "score": 34,
+      "findingsCount": 9,
+      "durationMs": 43279
+    },
+    {
+      "url": "https://udacity.com",
+      "status": "completed",
+      "score": 75,
+      "findingsCount": 4,
+      "durationMs": 47551
+    },
+    {
+      "url": "https://codecademy.com",
+      "status": "completed",
+      "score": 54,
+      "findingsCount": 9,
+      "durationMs": 49062
+    },
+    {
+      "url": "https://w3schools.com",
+      "status": "completed",
+      "score": 89,
+      "findingsCount": 3,
+      "durationMs": 38916
+    },
+    {
+      "url": "https://geeksforgeeks.org",
+      "status": "completed",
+      "score": 69,
+      "findingsCount": 5,
+      "durationMs": 41342
+    },
+    {
+      "url": "https://baeldung.com",
+      "status": "completed",
+      "score": 40,
+      "findingsCount": 11,
+      "durationMs": 8450
+    },
+    {
+      "url": "https://css-tricks.com",
+      "status": "completed",
+      "score": 45,
+      "findingsCount": 17,
+      "durationMs": 12458
+    },
+    {
+      "url": "https://digitalocean.com/community",
+      "status": "completed",
+      "score": 87,
+      "findingsCount": 5,
+      "durationMs": 42566
+    }
+  ]
+}

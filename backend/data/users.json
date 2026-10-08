@@ -1,0 +1,24 @@
+[
+  {
+    "id": "usr_1790752422230_c7c4558d",
+    "email": "alice@example.com",
+    "name": "Alice Developer",
+    "passwordHash": "b46d82eab5cd2fac0d8821230bafad43:333ed0d90b94b16949d02317e1f3c6aa47ada2660f157cd4140c7390a6b17f607e049e2805916adbb96ba7a62302d9ac17a0cd19993cf96138dc28fdca23c961",
+    "plan": "free",
+    "createdAt": "2026-09-30T07:13:42.268Z",
+    "scansThisMonth": 10,
+    "maxMonthlyScans": 10,
+    "lastResetMonth": "2026-09"
+  },
+  {
+    "id": "usr_1790752422272_77fb7d91",
+    "email": "bob@example.com",
+    "name": "Bob Engineer",
+    "passwordHash": "b93db4bd062a006ffce1b11770563cbe:42f564b4155137bd94d4b794135a1a690e4ac51d86a9572920f2443933241390568c7c6d90655a7174f98a34a3d69cd30ff2eb60780772b87be07ef8ee964367",
+    "plan": "free",
+    "createdAt": "2026-09-30T07:13:42.310Z",
+    "scansThisMonth": 0,
+    "maxMonthlyScans": 10,
+    "lastResetMonth": "2026-09"
+  }
+]

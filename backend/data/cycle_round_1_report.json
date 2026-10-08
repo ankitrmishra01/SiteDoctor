@@ -1,0 +1,365 @@
+{
+  "timestamp": "2026-09-29T08:55:19.103Z",
+  "categoryA_accuracy": [
+    {
+      "url": "https://news.ycombinator.com",
+      "status": "completed",
+      "scanCompleteness": "full",
+      "healthScore": 69,
+      "durationMs": 37745,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 6,
+        "info": 1,
+        "pass": 0,
+        "total": 7
+      },
+      "crossChecks": [
+        {
+          "rule": "SEC_HSTS_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "max-age=31556900",
+          "match": true
+        },
+        {
+          "rule": "SEC_XFO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "DENY",
+          "match": true
+        },
+        {
+          "rule": "SEC_CSP_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://cdnjs.cloudflare.com/; frame-src 'self' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' https://account.ycombinator.com; frame-ancestors 'self'",
+          "match": true
+        },
+        {
+          "rule": "SEC_XCTO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "nosniff",
+          "match": true
+        }
+      ]
+    },
+    {
+      "url": "https://www.rust-lang.org",
+      "status": "completed",
+      "scanCompleteness": "full",
+      "healthScore": 73,
+      "durationMs": 33242,
+      "findingsCount": 7,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 5,
+        "info": 2,
+        "pass": 0,
+        "total": 7
+      },
+      "crossChecks": [
+        {
+          "rule": "SEC_HSTS_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_XFO_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_CSP_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_XCTO_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        }
+      ]
+    },
+    {
+      "url": "https://deno.com",
+      "status": "completed",
+      "scanCompleteness": "full",
+      "healthScore": 60,
+      "durationMs": 45371,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 1,
+        "warning": 5,
+        "info": 0,
+        "pass": 0,
+        "total": 6
+      },
+      "crossChecks": [
+        {
+          "rule": "SEC_HSTS_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "max-age=63072000; includeSubDomains; preload",
+          "match": true
+        },
+        {
+          "rule": "SEC_XFO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "DENY",
+          "match": true
+        },
+        {
+          "rule": "SEC_CSP_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_XCTO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "nosniff",
+          "match": true
+        }
+      ]
+    },
+    {
+      "url": "https://svelte.dev",
+      "status": "completed",
+      "scanCompleteness": "full",
+      "healthScore": 84,
+      "durationMs": 34109,
+      "findingsCount": 4,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 3,
+        "info": 1,
+        "pass": 0,
+        "total": 4
+      },
+      "crossChecks": [
+        {
+          "rule": "SEC_HSTS_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "max-age=63072000",
+          "match": true
+        },
+        {
+          "rule": "SEC_XFO_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_CSP_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        },
+        {
+          "rule": "SEC_XCTO_MISSING",
+          "scannerReportedMissing": true,
+          "groundTruthMissing": true,
+          "groundTruthRawHeader": null,
+          "match": true
+        }
+      ]
+    },
+    {
+      "url": "https://curl.se",
+      "status": "completed",
+      "scanCompleteness": "full",
+      "healthScore": 78,
+      "durationMs": 34412,
+      "findingsCount": 6,
+      "summaryCounts": {
+        "critical": 0,
+        "warning": 4,
+        "info": 2,
+        "pass": 0,
+        "total": 6
+      },
+      "crossChecks": [
+        {
+          "rule": "SEC_HSTS_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "max-age=31536000",
+          "match": true
+        },
+        {
+          "rule": "SEC_XFO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "deny",
+          "match": true
+        },
+        {
+          "rule": "SEC_CSP_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "upgrade-insecure-requests; default-src 'none'; base-uri 'none'; img-src 'self'; style-src 'unsafe-inline' 'self'; form-action 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';",
+          "match": true
+        },
+        {
+          "rule": "SEC_XCTO_MISSING",
+          "scannerReportedMissing": false,
+          "groundTruthMissing": false,
+          "groundTruthRawHeader": "nosniff",
+          "match": true
+        }
+      ]
+    }
+  ],
+  "categoryB_adversarial": [],
+  "categoryC_codeDiffs": {
+    "repo_go_gin": {
+      "repo": "https://github.com/gin-gonic/examples",
+      "framework": "Go (Gin)",
+      "targetFile": "basic/main.go",
+      "targetLine": 14,
+      "confidence": "high",
+      "diff": "--- a/basic/main.go\n+++ b/basic/main.go\n@@ -8,13 +8,21 @@\n  \n  var db = make(map[string]string)\n  \n  func setupRouter() *gin.Engine {\n  \t// Disable Console Color\n  \t// gin.DisableConsoleColor()\n  \tr := gin.Default()\n+ \n+ \t// [SiteDoctor: CORS Middleware]\n+ \tr.Use(cors.New(cors.Config{\n+ \t\tAllowOrigins:     []string{\"https://yourfrontend.com\"},\n+ \t\tAllowMethods:     []string{\"GET\", \"POST\", \"PUT\", \"DELETE\", \"OPTIONS\"},\n+ \t\tAllowHeaders:     []string{\"Origin\", \"Content-Type\", \"Authorization\"},\n+ \t\tAllowCredentials: true,\n+ \t}))\n  \n  \t// Ping test\n  \tr.GET(\"/ping\", func(c *gin.Context) {\n  \t\tc.String(http.StatusOK, \"pong\")\n  \t})\n  "
+    },
+    "repo_python_django": {
+      "repo": "https://github.com/django/django",
+      "framework": "Python (Django)",
+      "targetFile": "django/conf/global_settings.py",
+      "targetLine": 482,
+      "confidence": "high",
+      "diff": "--- a/django/conf/global_settings.py\n+++ b/django/conf/global_settings.py\n@@ -476,13 +476,20 @@\n  # MIDDLEWARE #\n  ##############\n  \n  # List of middleware to use. Order is important; in the request phase, these\n  # middleware will be applied in the order given, and in the response\n  # phase the middleware will be applied in reverse order.\n  MIDDLEWARE = []\n+     'csp.middleware.CSPMiddleware',  # [SiteDoctor: Content Security Policy]\n+ \n+ # [SiteDoctor: CSP & Security Directives]\n+ CSP_DEFAULT_SRC = (\"'self'\",)\n+ SECURE_BROWSER_XSS_FILTER = True\n+ SECURE_CONTENT_TYPE_NOSNIFF = True\n+ X_FRAME_OPTIONS = 'DENY'\n  \n  ############\n  # SESSIONS #\n  ############\n  \n  # Cache to store session data if using the cache session backend."
+    },
+    "repo_sveltekit": {
+      "repo": "https://github.com/sveltejs/kit",
+      "framework": "SvelteKit (TypeScript)",
+      "targetFile": "packages/kit/src/runtime/server/index.js",
+      "targetLine": 12,
+      "confidence": "high",
+      "diff": "--- a/packages/kit/src/runtime/server/index.js\n+++ b/packages/kit/src/runtime/server/index.js\n@@ -6,13 +6,14 @@\n  import { set_private_env, set_public_env } from '../shared-server.js';\n  import { options, get_hooks } from '__SERVER__/internal.js';\n  import { filter_env } from '../../utils/env.js';\n  import { format_server_error } from './utils.js';\n  import { set_read_implementation, set_manifest } from '__sveltekit/server';\n  import { set_env } from '__sveltekit/env';\n  import { set_app } from './app.js';\n+ res.setHeader('X-Frame-Options', 'DENY');\n  \n  /** @type {Promise<any>} */\n  let init_promise;\n  \n  /** @type {Promise<void> | null} */\n  let current = null;"
+    }
+  },
+  "categoryD_stability": {
+    "https://www.rust-lang.org": {
+      "runs": [
+        {
+          "runNumber": 1,
+          "healthScore": 73,
+          "findingsCount": 7,
+          "critical": 0,
+          "warning": 5,
+          "info": 2,
+          "durationMs": 32220
+        },
+        {
+          "runNumber": 2,
+          "healthScore": 73,
+          "findingsCount": 7,
+          "critical": 0,
+          "warning": 5,
+          "info": 2,
+          "durationMs": 32489
+        },
+        {
+          "runNumber": 3,
+          "healthScore": 73,
+          "findingsCount": 7,
+          "critical": 0,
+          "warning": 5,
+          "info": 2,
+          "durationMs": 32431
+        }
+      ],
+      "scoreSpread": 0,
+      "findingCountSpread": 0,
+      "isScoreStable": true,
+      "isFindingsCountStable": true
+    },
+    "https://svelte.dev": {
+      "runs": [
+        {
+          "runNumber": 1,
+          "healthScore": 84,
+          "findingsCount": 4,
+          "critical": 0,
+          "warning": 3,
+          "info": 1,
+          "durationMs": 33749
+        },
+        {
+          "runNumber": 2,
+          "healthScore": 84,
+          "findingsCount": 4,
+          "critical": 0,
+          "warning": 3,
+          "info": 1,
+          "durationMs": 33557
+        },
+        {
+          "runNumber": 3,
+          "healthScore": 84,
+          "findingsCount": 4,
+          "critical": 0,
+          "warning": 3,
+          "info": 1,
+          "durationMs": 33657
+        }
+      ],
+      "scoreSpread": 0,
+      "findingCountSpread": 0,
+      "isScoreStable": true,
+      "isFindingsCountStable": true
+    },
+    "https://curl.se": {
+      "runs": [
+        {
+          "runNumber": 1,
+          "healthScore": 78,
+          "findingsCount": 6,
+          "critical": 0,
+          "warning": 4,
+          "info": 2,
+          "durationMs": 32432
+        },
+        {
+          "runNumber": 2,
+          "healthScore": 78,
+          "findingsCount": 6,
+          "critical": 0,
+          "warning": 4,
+          "info": 2,
+          "durationMs": 32247
+        },
+        {
+          "runNumber": 3,
+          "healthScore": 78,
+          "findingsCount": 6,
+          "critical": 0,
+          "warning": 4,
+          "info": 2,
+          "durationMs": 32099
+        }
+      ],
+      "scoreSpread": 0,
+      "findingCountSpread": 0,
+      "isScoreStable": true,
+      "isFindingsCountStable": true
+    }
+  },
+  "categoryF_performance": {}
+}
